@@ -1,0 +1,59 @@
+{
+  "source": "Advanced Player's Guide",
+  "ancestries": [
+    {
+      "id": "catfolk",
+      "name": "Catfolk",
+      "tags": ["non_core", "mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Curious and agile feline-folk with keen senses, retractable claws, and an innate grace that makes them natural travelers.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=34",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Wisdom"]
+    },
+    {
+      "id": "ratfolk",
+      "name": "Ratfolk",
+      "tags": ["non_core", "mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "description": "Communal, inquisitive rodent-folk who thrive in tight-knit communities and excel at crafting, trading, and squeezing into small spaces.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=35",
+      "boosts": ["Dexterity", "Intelligence", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "kobold",
+      "name": "Kobold",
+      "tags": ["non_core", "non_mammal", "small", "feared_culture", "compulsion", "non_human_appearance", "light_blindness"],
+      "description": "Small, reptilian tunnel-dwellers who revere dragons, love traps, and possess an almost pathological need to serve powerful creatures.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=36",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "lizardfolk",
+      "name": "Lizardfolk",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Scaly, cold-blooded hunters with a pragmatic worldview, powerful jaws, and an instinctive connection to swamps and jungles.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=37",
+      "boosts": ["Strength", "Wisdom", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "orc",
+      "name": "Orc",
+      "tags": ["non_core", "mammal", "feared_culture", "requires_darkvision"],
+      "description": "Powerful, tusked warriors with a fierce reputation, deep loyalty to their kin, and an indomitable will to survive.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=38",
+      "boosts": ["Strength", "Free", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "hobgoblin",
+      "name": "Hobgoblin",
+      "tags": ["non_core", "mammal", "feared_culture", "compulsion", "requires_darkvision"],
+      "description": "Disciplined, militaristic goblinoids who value order, strategy, and martial excellence above all else.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=39",
+      "boosts": ["Constitution", "Intelligence", "Free"],
+      "flaws": ["Wisdom"]
+    }
+  ]
+}

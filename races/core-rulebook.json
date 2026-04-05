@@ -1,0 +1,59 @@
+{
+  "source": "Core Rulebook",
+  "ancestries": [
+    {
+      "id": "dwarf",
+      "name": "Dwarf",
+      "tags": ["core", "mammal", "requires_darkvision"],
+      "description": "Short, sturdy folk renowned for their craftsmanship, resilience, and deep affinity for stone and metal.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=2",
+      "boosts": ["Constitution", "Wisdom", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "elf",
+      "name": "Elf",
+      "tags": ["core", "mammal", "requires_darkvision"],
+      "description": "Graceful, long-lived people with a deep connection to nature, magic, and the ancient world.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=4",
+      "boosts": ["Dexterity", "Intelligence", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "gnome",
+      "name": "Gnome",
+      "tags": ["core", "mammal", "small"],
+      "description": "Small, fey-touched folk with boundless curiosity, eccentric personalities, and a vulnerability to the Bleaching.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=7",
+      "boosts": ["Constitution", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "goblin",
+      "name": "Goblin",
+      "tags": ["core", "mammal", "small", "feared_culture", "compulsion"],
+      "description": "Small, excitable, and often misunderstood folk with a love for fire, noise, and unconventional problem-solving.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=8",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Wisdom"]
+    },
+    {
+      "id": "halfling",
+      "name": "Halfling",
+      "tags": ["core", "mammal", "small"],
+      "description": "Small, cheerful folk known for their luck, adaptability, and talent for blending into communities of larger peoples.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=11",
+      "boosts": ["Dexterity", "Wisdom", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "human",
+      "name": "Human",
+      "tags": ["core", "mammal"],
+      "description": "Adaptable and ambitious people found in every corner of Golarion, known for their drive, versatility, and short but impactful lives.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=12",
+      "boosts": ["Free", "Free", "Free"],
+      "flaws": []
+    }
+  ]
+}

@@ -122,27 +122,35 @@
   // ============================================================
   
   const QUESTIONNAIRES = [
-    {
-      id: "class-picker",
-      title: "🏛️ Class Picker",
-      description: "The classic class recommendation tree. Answer a few questions about your playstyle and find your perfect Pathfinder 2E class.",
-      icon: "🎲",
-      tags: ["23 classes", "~5 min", "beginner friendly"],
-      path: "questionnaires/class-picker.html"
-    }
-    // ============================================================
-    //  TO ADD A NEW QUESTIONNAIRE:
-    //  Uncomment and modify the template below:
-    // ============================================================
-    // {
-    //   id: "your-quiz-id",
-    //   title: "🎯 Your Quiz Title",
-    //   description: "Brief description of what this questionnaire helps with.",
-    //   icon: "✨",
-    //   tags: ["tag1", "tag2", "~X min"],
-    //   path: "questionnaires/your-quiz.html"
-    // }
-  ];
+  {
+    id: "class-picker",
+    title: "🏛️ Class Picker",
+    description: "The classic class recommendation tree. Answer a few questions about your playstyle and find your perfect Pathfinder 2E class.",
+    icon: "🎲",
+    tags: ["23 classes", "~5 min", "beginner friendly"],
+    path: "questionnaires/class-picker.html"
+  },
+  {
+    id: "race-picker",
+    title: "🌍 Ancestry Picker",
+    description: "Discover your ideal ancestry through 16 questions about appearance, culture, size, and playstyle preferences.",
+    icon: "🧬",
+    tags: ["59 ancestries", "~5 min", "elimination style"],
+    path: "questionnaires/race-picker.html"
+  }
+  // ============================================================
+  //  TO ADD A NEW QUESTIONNAIRE:
+  //  Uncomment and modify the template below:
+  // ============================================================
+  // {
+  //   id: "your-quiz-id",
+  //   title: "🎯 Your Quiz Title",
+  //   description: "Brief description of what this questionnaire helps with.",
+  //   icon: "✨",
+  //   tags: ["tag1", "tag2", "~X min"],
+  //   path: "questionnaires/your-quiz.html"
+  // }
+];
 
   function renderQuizList() {
     const container = document.getElementById("quiz-list");

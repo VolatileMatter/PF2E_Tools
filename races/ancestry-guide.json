@@ -1,0 +1,176 @@
+{
+  "source": "Ancestry Guide",
+  "ancestries": [
+    {
+      "id": "anadi",
+      "name": "Anadi",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "feared_culture", "no_functional_tail"],
+      "description": "Peaceful, reclusive spider-people who can shift between humanoid and giant spider forms, hiding their true nature from a world that fears them.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=44",
+      "boosts": ["Dexterity", "Wisdom", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "tags": ["non_core", "construct", "no_soul", "non_human_appearance"],
+      "description": "Artificial beings created with synthetic flesh and mechanical components, capable of experiencing human emotions while possessing inhuman durability.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=45",
+      "boosts": ["Constitution", "Intelligence", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "automaton",
+      "name": "Automaton",
+      "tags": ["non_core", "construct", "no_soul", "non_human_appearance"],
+      "description": "Ancient clockwork beings powered by a fragment of a forgotten deity's spark, awakening after millennia to find a world that has moved on without them.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=46",
+      "boosts": ["Strength", "Intelligence", "Free"],
+      "flaws": ["Wisdom"]
+    },
+    {
+      "id": "azarketi",
+      "name": "Azarketi",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "no_functional_tail"],
+      "description": "Aquatic humanoids adapted to life beneath the waves, with gills and webbed features, who can survive on land but long for the sea.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=47",
+      "boosts": ["Dexterity", "Constitution", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "conrasu",
+      "name": "Conrasu",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_soul"],
+      "description": "Mysterious beings of cosmic order made of glowing aeon shards contained within exoskeletons of their own construction, seeking purpose in the mortal world.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=48",
+      "boosts": ["Constitution", "Wisdom", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "fetchling",
+      "name": "Fetchling",
+      "tags": ["non_core", "mammal", "requires_darkvision", "non_human_appearance"],
+      "description": "Shadow-touched humans who dwell in the Plane of Shadow, with pale skin, dark hair, and the ability to blend seamlessly into darkness.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=49",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "fleshwarp",
+      "name": "Fleshwarp",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "feared_culture", "no_soul"],
+      "description": "Beings twisted by alchemy, magic, or planar energies into monstrous new forms, struggling to find acceptance in a world that sees them as abominations.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=50",
+      "boosts": ["Constitution", "Free", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "ghoran",
+      "name": "Ghoran",
+      "tags": ["non_core", "plant", "non_human_appearance", "no_soul"],
+      "description": "Sentient plants grown from alchemically created seeds, reborn anew each generation with fragmented memories of their past lives.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=51",
+      "boosts": ["Constitution", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "goloma",
+      "name": "Goloma",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "feared_culture", "compulsion", "no_functional_tail"],
+      "description": "Horse-sized, multi-eyed creatures covered in chitinous plates, whose many eyes see in all directions and whose culture is defined by deep paranoia.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=52",
+      "boosts": ["Wisdom", "Free", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "grippli",
+      "name": "Grippli",
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "description": "Small, tree-dwelling frog-people with colorful skin, leaping ability, and a deep connection to jungle environments.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=53",
+      "boosts": ["Dexterity", "Wisdom", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "kashrishi",
+      "name": "Kashrishi",
+      "tags": ["non_core", "mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "description": "Small, psychic rhinoceros-beetle-people with crystalline horns that allow them to sense and manipulate mental energies.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=54",
+      "boosts": ["Constitution", "Wisdom", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "nagaji",
+      "name": "Nagaji",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "feared_culture", "body_shape_restriction", "no_functional_tail"],
+      "description": "Serpentine humanoids with scaly skin and snake-like lower bodies, descended from the servants of forgotten snake deities.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=55",
+      "boosts": ["Strength", "Charisma", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "poppet",
+      "name": "Poppet",
+      "tags": ["non_core", "construct", "small", "no_soul", "non_human_appearance"],
+      "description": "Stuffed dolls, wooden mannequins, or other crafted toys brought to life by accident, magic, or a child's love.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=56",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "samsaran",
+      "name": "Samsaran",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Pale-skinned, blue-veined humanoids who reincarnate across multiple lifetimes, retaining fragments of their past existences.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=57",
+      "boosts": ["Intelligence", "Wisdom", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "shisk",
+      "name": "Shisk",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Hedgehog-porcupine humanoids covered in quills, guardians of ancient secrets who live in underground warrens.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=58",
+      "boosts": ["Dexterity", "Intelligence", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "tags": ["non_core", "construct", "no_soul", "non_human_appearance", "compulsion"],
+      "description": "Undead skeletons animated by necromantic magic or lingering will, clattering through unlife with bones held together by dark forces.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=59",
+      "boosts": ["Dexterity", "Free", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "sprite",
+      "name": "Sprite",
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_soul"],
+      "description": "Tiny fey creatures with butterfly wings, glowing with primal magic and barely a foot tall.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=60",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "strix",
+      "name": "Strix",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "feared_culture", "requires_darkvision", "body_shape_restriction", "no_functional_tail"],
+      "description": "Winged humanoids who dwell on mountain peaks, shunned by land-bound civilizations and gifted with the power of flight.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=61",
+      "boosts": ["Dexterity", "Free", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "vanara",
+      "name": "Vanara",
+      "tags": ["non_core", "mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Monkey-folk with prehensile tails, curious and mischievous, who love climbing, scavenging, and collecting trinkets.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=62",
+      "boosts": ["Dexterity", "Wisdom", "Free"],
+      "flaws": ["Constitution"]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "source": "Lost Omens Character Guide",
+  "ancestries": [
+    {
+      "id": "kitsune",
+      "name": "Kitsune",
+      "tags": ["non_core", "mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Shape-shifting fox-folk who can appear as humans or their true fox-eared form, known for their trickery and adaptability.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=41",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "tengu",
+      "name": "Tengu",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "compulsion", "no_functional_tail"],
+      "description": "Crow-like bird-folk with a love for storytelling, blades, and a curse that makes them obsessed with collecting shiny objects.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=42",
+      "boosts": ["Dexterity", "Free", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "leshy",
+      "name": "Leshy",
+      "tags": ["non_core", "plant", "small", "non_human_appearance"],
+      "description": "Small, sentient plants given life by primal magic, with bodies made of leaves, vines, fungi, or flowers.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=40",
+      "boosts": ["Constitution", "Wisdom", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "lizardfolk",
+      "name": "Lizardfolk",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_functional_tail"],
+      "description": "Ancient reptilian people who ruled the world before the age of humans, with powerful jaws and a deep connection to nature.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=37",
+      "boosts": ["Strength", "Wisdom", "Free"],
+      "flaws": ["Intelligence"]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "source": "Multiple Sources (Ancestry Guide, Rage of Elements, Bestiaries, Lost Omens)",
+  "ancestries": [
+    {
+      "id": "aphorite",
+      "name": "Aphorite",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Planar scions touched by the lawful energy of Axis, with metallic skin tones, geometric patterns, and an innate drive toward order and perfection.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=58",
+      "boosts": ["Strength", "Intelligence", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "caligni",
+      "name": "Caligni",
+      "tags": ["non_core", "mammal", "small", "requires_darkvision", "feared_culture", "non_human_appearance"],
+      "description": "Pale-skinned descendants of dark folk who dwell in underground cities, with milky white eyes that see perfectly in absolute darkness.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=31",
+      "boosts": ["Dexterity", "Free", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "centaur",
+      "name": "Centaur",
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "body_shape_restriction", "no_functional_tail"],
+      "description": "Powerful creatures with the upper body of a human and the lower body of a horse, galloping across plains and defending their herds.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=174",
+      "boosts": ["Strength", "Wisdom", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "dragonet",
+      "name": "Dragonet",
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_functional_tail", "feared_culture"],
+      "description": "Tiny dragon-kin with leathery wings, scaly hides, and a draconic lineage that gives them a breath weapon and an instinct to hoard treasure.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=242",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "drow",
+      "name": "Drow",
+      "tags": ["non_core", "mammal", "requires_darkvision", "light_blindness", "feared_culture", "non_human_appearance"],
+      "description": "Dark-skinned, white-haired elves who dwell in the deep underworld, worshipping demons and slaving to expand their cruel empire.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=32",
+      "boosts": ["Dexterity", "Charisma", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "ganzi",
+      "name": "Ganzi",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Planar scions infused with the chaotic energy of the Maelstrom, sporting random physical mutations and an unpredictable nature.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=59",
+      "boosts": ["Constitution", "Charisma", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "ifrit",
+      "name": "Ifrit",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Planar scions touched by the elemental fire of the Plane of Fire, with reddish skin, fiery hair, and an innate resistance to heat.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=56",
+      "boosts": ["Charisma", "Free", "Free"],
+      "flaws": ["Wisdom"]
+    },
+    {
+      "id": "jotunborn",
+      "name": "Jotunborn",
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture", "no_functional_tail"],
+      "description": "Giant-kin with the blood of frost giants, fire giants, or stone giants flowing through their veins, towering over most humanoids.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=185",
+      "boosts": ["Strength", "Constitution", "Free"],
+      "flaws": ["Dexterity"]
+    },
+    {
+      "id": "merfolk",
+      "name": "Merfolk",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "land_disabled", "body_shape_restriction", "no_functional_tail"],
+      "description": "Aquatic people with fish-like tails instead of legs, ruling underwater kingdoms and rarely venturing onto land.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=92",
+      "boosts": ["Constitution", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "minotaur",
+      "name": "Minotaur",
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture", "compulsion", "no_functional_tail"],
+      "description": "Bull-headed giants with powerful horns, labyrinthine minds, and an instinctive drive to hunt, charge, and track their prey.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=203",
+      "boosts": ["Strength", "Constitution", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "oread",
+      "name": "Oread",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Planar scions touched by the elemental earth of the Plane of Earth, with crystalline growths, stone-like skin, and grounded personalities.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=55",
+      "boosts": ["Strength", "Wisdom", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "sarangay",
+      "name": "Sarangay",
+      "tags": ["non_core", "mammal", "non_human_appearance", "compulsion", "no_functional_tail"],
+      "description": "Water-buffalo people with golden horns and a powerful curse that compels them to seek out and hoard wealth and gems.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=257",
+      "boosts": ["Strength", "Constitution", "Free"],
+      "flaws": ["Intelligence"]
+    },
+    {
+      "id": "shoony",
+      "name": "Shoony",
+      "tags": ["non_core", "mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "description": "Small, pig-faced people who value community, farming, and simple pleasures, with snouts perfect for rooting out truffles.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=99",
+      "boosts": ["Constitution", "Charisma", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "surki",
+      "name": "Surki",
+      "tags": ["non_core", "non_mammal", "small", "requires_darkvision", "non_human_appearance", "feared_culture", "no_functional_tail"],
+      "description": "Insectile humanoids with chitinous exoskeletons, multiple arms, and a hive-mind culture that terrifies surface-dwellers.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=276",
+      "boosts": ["Strength", "Wisdom", "Free"],
+      "flaws": ["Charisma"]
+    },
+    {
+      "id": "sylph",
+      "name": "Sylph",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "description": "Planar scions touched by the elemental air of the Plane of Air, with pale blue skin, windswept hair, and an innate lightness.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=54",
+      "boosts": ["Dexterity", "Intelligence", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "tripkee",
+      "name": "Tripkee",
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "description": "Small, agile frog-people with adhesive toe-pads, long jumping tongues, and a deep connection to swamps and wetlands.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=53",
+      "boosts": ["Dexterity", "Wisdom", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "undine",
+      "name": "Undine",
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "water_breather"],
+      "description": "Planar scions touched by the elemental water of the Plane of Water, with blue-green skin, webbed digits, and the ability to breathe underwater.",
+      "aon": "https://2e.aonprd.com/Heritages.aspx?ID=57",
+      "boosts": ["Dexterity", "Constitution", "Free"],
+      "flaws": ["Strength"]
+    },
+    {
+      "id": "wayang",
+      "name": "Wayang",
+      "tags": ["non_core", "mammal", "small", "requires_darkvision", "non_human_appearance", "compulsion"],
+      "description": "Shadowy, puppet-like people who dwell in the Plane of Shadow, with stringy limbs, exaggerated features, and a love for dramatic storytelling.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=100",
+      "boosts": ["Dexterity", "Intelligence", "Free"],
+      "flaws": ["Constitution"]
+    },
+    {
+      "id": "awakened-animal",
+      "name": "Awakened Animal",
+      "tags": ["non_core", "mammal", "non_human_appearance", "body_shape_restriction", "no_soul"],
+      "description": "Animals granted human-like intelligence and speech through magic, walking on two legs or four depending on their original form.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=224",
+      "boosts": ["Free", "Free", "Free"],
+      "flaws": []
+    },
+    {
+      "id": "athamaru",
+      "name": "Athamaru",
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "no_functional_tail"],
+      "description": "Aquatic humanoids with fish-like scales, webbed hands, and gills, who build coral cities beneath the waves.",
+      "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=289",
+      "boosts": ["Strength", "Constitution", "Free"],
+      "flaws": ["Charisma"]
+    }
+  ]
+}
