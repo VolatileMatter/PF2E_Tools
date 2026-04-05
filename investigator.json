@@ -1,0 +1,66 @@
+{
+  "name":    "Investigator",
+  "icon":    "🔍",
+  "tagline": "The tactical intellectual",
+  "color":   "#0a1020",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=59",
+
+  "tags": ["martial"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Dexterity"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple weapons plus the hand crossbow, rapier, sap, shortbow, and shortsword. The Investigator's combat effectiveness comes primarily from Devise a Stratagem rather than weapon selection — almost any weapon works because the attack roll is pre-determined by their class feature.",
+    "armor":   "Light armor only. Investigators stay mobile and prefer tactical positioning over standing still and absorbing hits. High Intelligence compensates somewhat for lower AC through smarter positioning."
+  },
+
+  "ancestry": {
+    "good": [
+      "Elf — Intelligence and Dexterity both naturally emphasized; low-light vision for investigation at night; Elven Instincts for better initiative",
+      "Gnome — Intelligence and Charisma both strong; the eccentric academic with a wildly specific fixation is a natural Investigator archetype",
+      "Human — Bonus skill training at level 1 is excellent for a class that needs broad knowledge; Natural Ambition for an early class feat",
+      "Tengu — Intelligence emphasis, naturally multilingual, urban setting flavor fits the detective identity perfectly"
+    ],
+    "bad": [
+      "Orc — No Intelligence emphasis; Strength-focused combat style doesn't interact with Devise a Stratagem the way the class intends",
+      "Dwarf — Intelligence can work, but slow Speed limits the Investigator's ability to reposition between targets"
+    ],
+    "disclaimer": "Any ancestry can reason their way through a problem. Intelligence is what matters mechanically — these are starting stat observations only."
+  },
+
+  "unique": "The Investigator is the only class that uses Recall Knowledge — looking up facts about an enemy mid-fight — as a direct combat attack. Every other class ignores this action in combat. The Investigator builds their entire offensive system around it, pre-rolling their attack each turn and adding Intelligence bonus to damage when the identification succeeds.",
+
+  "summary": "Before each Strike, you Devise a Stratagem: roll a d20 in advance and set it aside. When you attack your Studied target, you use that pre-rolled die instead of rolling fresh — letting you decide whether to commit to the attack or do something else entirely. If you succeed at Recalling Knowledge about the target, you add your Intelligence modifier to the damage. You're the class that turns information into injury.",
+
+  "character": {
+    "name":       "Constance Ashvale",
+    "meta":       "Gnome Investigator, Level 1",
+    "appearance": "A gnome woman with wild white hair permanently escaping from whatever she last pinned it with, a notebook that has never left her hand in recorded memory, and an expression of permanent low-grade concern about something the rest of the room hasn't noticed yet.",
+    "quote":      "The blood spatter is wrong. This wasn't a robbery. Everyone stay where you are."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Constance spent the first round watching. She knows exactly how the bandit captain favors his left side. Now she acts.",
+      "mechanic":  "Devise a Stratagem is a free action at the start of each turn: roll 1d20 and hold it. When you Strike your Studied target this turn, substitute that pre-rolled die for the normal attack roll. If your Recall Knowledge check to Study the creature succeeded, add your Intelligence modifier to damage. The power: you know before committing whether the attack will hit.",
+      "example":   "Constance Devises — pre-roll comes up 16. Good enough. She Studies (Society DC 14): 1d20 + 4 Intelligence + 4 trained = 20. Success — +4 Intelligence to damage. She Strikes using the pre-rolled 16 + 4 Dex + 4 trained = 24 vs. AC 16. Hit — 1d6 + 4 Dex + 4 Intelligence = 13 damage. She placed it precisely where she knew it would land."
+    },
+    "social": {
+      "narrative": "The witness claims to have been asleep when the theft occurred. Constance has been writing in her notebook for thirty seconds without looking up.",
+      "mechanic":  "Investigators invest heavily in Society, Diplomacy, and Perception. Their class feature Pursue a Lead gives mechanical advantages on all checks related to a specific mystery. Sense Motive (Perception) reads deception; Gather Information (Diplomacy) builds a case over time.",
+      "example":   "Sense Motive on the witness: 1d20 + 3 Wisdom + 4 trained Perception = rolls 14, total 21 vs. Deception DC 16. Success — the witness's breathing changed when asked about the east corridor. Constance closes her notebook. 'You weren't asleep. You were in the east corridor. What did you see?' The witness stares at the notebook like it might contain their name."
+    },
+    "puzzle": {
+      "narrative": "A room full of strange symbols, a locked door, and four levers with no obvious pattern. Constance walks in, looks at it for a minute, and begins taking notes.",
+      "mechanic":  "Pursue a Lead lets Investigators officially investigate a mystery, granting a circumstance bonus to all related checks. Combined with trained Recall Knowledge in nearly every skill, Investigators approach puzzles the same way they approach crime scenes: gather evidence, identify the pattern, act with precision.",
+      "example":   "The symbols are in an obscure historical script. Occultism Recall Knowledge DC 18: 1d20 + 4 Intelligence + 4 trained = rolls 9, total 17. Fail. She switches to Society: 1d20 + 4 + 4 = rolls 14, total 22. Success — pre-Chelish administrative notation, used in the First Vault accounting system. The 'locks' are budget line items. Constance pulls the levers in fiscal year order. The door opens."
+    }
+  },
+
+  "alts": ["rogue", "thaumaturge", "wizard"]
+}

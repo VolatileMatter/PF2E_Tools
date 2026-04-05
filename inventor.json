@@ -1,0 +1,69 @@
+{
+  "name":    "Inventor",
+  "icon":    "🔧",
+  "tagline": "Mad scientist with a customizable creation",
+  "color":   "#1a1208",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=19",
+
+  "tags": ["hard", "companion"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Strength"
+  },
+
+  "npc": {
+    "type": "Construct Companion (Construct Innovation)",
+    "desc":  "An automaton, clockwork animal, or any mechanical creation you designed yourself. Unlike animal companions, the Construct Companion's appearance is entirely up to you — it looks like whatever you built. It can be humanoid, animal-shaped, wheeled, or completely novel. Customized with modifications you choose as you level."
+  },
+
+  "gear": {
+    "weapons": "All simple and martial weapons, plus exclusive access to Inventor-specific Innovation weapons with Unstable modifications. Weapon Innovation builds focus on a single customized weapon. Construct Innovation builds rely on the companion's attacks and let the Inventor themselves hang back. Armor Innovation builds turn their own armor into the invention.",
+    "armor":   "Light and medium armor, plus the exclusive Armor Innovation subclass that treats your armor as your invention — with Unstable modifications that make the armor itself do dangerous and spectacular things. Regular Inventor builds use medium armor for decent protection while working."
+  },
+
+  "ancestry": {
+    "good": [
+      "Dwarf — Intelligence and Constitution work well together; dwarven craftsmanship identity fits the master engineer archetype; excellent for Armor Innovation builds",
+      "Gnome — Intelligence bonus, the obsessive-tinkerer aesthetic is almost synonymous with gnome identity; Construct Companion feels perfectly on-brand for a gnome",
+      "Human — Natural Ambition for a bonus 1st-level class feat; flexible stat boosts; the 'eccentric genius from nowhere in particular' is a classic human archetype",
+      "Automaton — Playing a construct who builds constructs is wonderful, fully supported by the rules, and produces consistently memorable characters"
+    ],
+    "bad": [
+      "Elf — Intelligence works mechanically but the mad-scientist aesthetic runs against the grain of most elvish character concepts and cultural flavor",
+      "Sprite — Tiny and physically fragile; construction work, heavy tools, and the physical demands of operating a construct companion are all complicated by Tiny size"
+    ],
+    "disclaimer": "Great minds come in every shape. Any ancestry can become obsessed with machinery — these are thematic and stat-line observations only."
+  },
+
+  "unique": "The Inventor's Unstable modifications are the only class features in the game that can catastrophically misfire and cause you to hurt yourself mid-combat — by intentional design. The gamble for a potential double-damage ability or powerful effect creates a risk-reward loop unlike anything else in PF2E. No other class treats failure as a dramatic event that is itself part of the fun.",
+
+  "summary": "You build either a weapon, armor, or a construct companion as your Innovation — a customized invention that you continually upgrade and modify. Unstable actions apply powerful modifications to your Innovation at the risk of it overheating and needing to cool down, or occasionally backfiring entirely. You are not a safe class to play. You are a class where spectacular things happen, and some of them are bad, and this is considered a feature.",
+
+  "character": {
+    "name":       "Torque Brasswick",
+    "meta":       "Dwarf Inventor (Construct Innovation), Level 1",
+    "appearance": "A dwarf in a heavy leather apron covered in burn marks and oil stains, accompanied everywhere by a four-foot automaton named Bolt who has developed strong opinions about combat tactics and expresses them through posture.",
+    "quote":      "Bolt, don't do that. — He's going to do that."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Torque activates an Unstable modification. The outcome is not entirely predictable. This is part of the design.",
+      "mechanic":  "Unstable actions require rolling 1d20 after using them. On a 17+: the ability works perfectly and you can use Unstable actions again normally. On a 2-16: the ability works but the Innovation overheats — no more Unstable actions until you spend 1 action to cool it (this happens automatically at the start of your next turn). On a 1: the ability works but your Innovation malfunctions and damages you or causes another negative effect. The power is real. The risk is real.",
+      "example":   "Torque activates Explode (Unstable, Overdrive): his crossbow fires a supercharged bolt. Unstable die: rolls 14 — works, but overheats. The bolt hits: 1d20 + 4 Dex + 4 trained = 15 vs. AC 13. Hit — deals 2d6 + 3 Intelligence (Overdrive bonus) = 11 damage. Meanwhile Bolt charges the second target and Grapples: 1d20 + 5 = 14 vs. Fortitude DC 13. Success — target is Grabbed. Torque spends his third action to cool the crossbow automatically. Next round: Unstable actions available again."
+    },
+    "social": {
+      "narrative": "Torque and Bolt enter the engineering guild hall. The guildmaster starts to say something dismissive. Then he sees Bolt.",
+      "mechanic":  "Crafting is the Inventor's primary knowledge skill and confers immediate credibility in any community of makers, engineers, or artificers. The Construct Companion can interact with environments Torque cannot reach — carrying objects, operating mechanisms at a distance, or entering spaces too small or dangerous for a humanoid. Among non-engineers, Bolt's existence is a perpetual conversation-starter and status signal.",
+      "example":   "The dwarven engineering guild won't share their aqueduct plans without proof of competence. Torque opens his satchel and places his current schematic on the table — a working pressure-differential valve, half the size of their version. Crafting check to demonstrate genuine expertise: 1d20 + 5 Intelligence + 4 trained = 22 vs. DC 18. Critical success — the guildmaster leans forward. 'Where did you learn this reduction?' The plans appear shortly after."
+    },
+    "puzzle": {
+      "narrative": "Two levers on opposite sides of the room must be pulled simultaneously. There are only three of them and one of them is Bolt.",
+      "mechanic":  "Crafting and Thievery cover mechanical puzzles directly. The Construct Companion acts on its own initiative and can be directed to interact with objects, pull levers, hold mechanisms, or reach spaces Torque cannot. This means two-person puzzles are solved alone, and puzzles requiring physical presence in dangerous areas can be delegated.",
+      "example":   "The two-lever problem: Torque pulls the east lever (Athletics, automatic — no check needed for a simple lever). He directs Bolt to the west lever as a free action (Commanding your Companion). Bolt pulls it: no check for a simple Interact action. Both levers down simultaneously. The door opens. 'I built him for exactly this,' Torque says. Bolt's posture communicates skepticism."
+    }
+  },
+
+  "alts": ["alchemist", "ranger", "summoner"]
+}

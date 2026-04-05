@@ -1,0 +1,66 @@
+{
+  "name":    "Oracle",
+  "icon":    "🌀",
+  "tagline": "Cursed divine spellcaster",
+  "color":   "#1a0a2a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=61",
+
+  "tags": ["magic", "heal", "hard"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Simple weapons only. The Oracle is a full spellcaster — their magic is their weapon. A staff or light one-handed weapon serves as backup for emergencies, but most Oracles never need to make a weapon attack.",
+    "armor":   "Light armor only. Oracles rely on spells, Constitution HP, and keeping distance rather than absorbing direct hits. Some invest in Mage Armor as a cantrip substitute."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Natural Ambition accesses strong early domain spells; the 'chosen one who didn't ask for this' narrative is deeply human",
+      "Aasimar or Dhampir — Divine-touched or undeath-adjacent lineage fits the Oracle's unwilling connection to cosmic power",
+      "Half-Elf — Charisma and Constitution flexibility; Versatile Heritage gives additional feat options",
+      "Gnome — Charisma primary; fey strangeness maps naturally onto the Oracle's cursed, slightly-off-from-normal existence"
+    ],
+    "bad": [
+      "Dwarf — Typically no Charisma emphasis; the grounded, skeptical dwarven worldview clashes with the Oracle's mystical curse narrative",
+      "Orc — No Charisma synergy in typical builds; the cursed spellcaster identity doesn't naturally align with the warrior aesthetic"
+    ],
+    "disclaimer": "The Oracle's power was not chosen — it chose them. Any ancestry can be marked by the divine against their will."
+  },
+
+  "unique": "The Oracle is the only divine caster whose power comes with an involuntary, growing cost. Casting revelation spells advances a personal Curse that escalates from minor inconvenience to dramatic physical transformation. Every other caster just spends resources. The Oracle spends themselves — and gets stronger for it.",
+
+  "summary": "You received divine power you didn't ask for, attached to a Mystery and a Curse. Casting your revelation spells makes your curse advance through three stages: minor, moderate, and major — each stage adding both a penalty and a power. Flame, Bones, Tempest, Life, Lore, Cosmos, Time, and more define your theme. Managing how far to push your curse each fight is the Oracle's central tension.",
+
+  "character": {
+    "name":       "Mireille of No Town",
+    "meta":       "Half-Elf Oracle (Flame Mystery), Level 1",
+    "appearance": "A half-elf with burn-scar patterns on her forearms that glow faintly orange when she's emotional, carrying a staff of scorched wood. She looks tired in a way that has nothing to do with sleep.",
+    "quote":      "I didn't ask for this. The fire asked for me."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Mireille casts her first revelation spell. The curse ticks forward. She knew it would.",
+      "mechanic":  "Revelation spells are special focus spells tied to the Oracle's Mystery. Casting one advances the curse by one stage. Minor curse: cosmetic effects with minor penalties. Moderate curse: significant penalties AND significant powers — enemies in your space take fire damage, your fire spells deal bonus damage. Major curse: severe penalties and overwhelming power. The Oracle chooses when to escalate, accepting worse suffering for greater effect.",
+      "example":   "Mireille accepts moderate Flame Curse and casts Incendiary Aura (revelation spell). Curse advances: she now sheds embers that deal 1d6 fire damage to adjacent allies each round, but all her fire spells deal +2 damage. She casts Fireball (3rd-level slot): 6d6 fire in a 20-foot burst, basic Reflex DC 19. The lead enemy rolls 8 — critical failure, 42 fire damage. Her allies have been warned to stay back."
+    },
+    "social": {
+      "narrative": "The candles in the room lean toward Mireille. She hasn't done anything — they just do that now.",
+      "mechanic":  "Charisma is the Oracle's primary stat, making Diplomacy, Deception, and Intimidation all naturally strong. The curse is a persistent social variable: minor curse effects are visible at all times, making disguise difficult but creating instant authority in communities that deal with supernatural forces. The Oracle is memorable whether they want to be or not.",
+      "example":   "A cultist insists she's nobody important. Mireille's minor curse is active — the torchlight bends toward her. She doesn't try to hide it. Demoralize: 1d20 + 5 Charisma + 4 trained Intimidation = 18 vs. Will DC 15. Success — the cultist is Frightened 1. 'What are you?' 'Someone the fire finds,' Mireille says. 'You should leave before it decides you're interesting too.'"
+    },
+    "puzzle": {
+      "narrative": "A room that appears empty but feels profoundly wrong. The wrong feeling intensifies when Mireille steps inside.",
+      "mechanic":  "Detect Magic and Know Direction are Oracle cantrips available at will. The Flame Mystery curse creates light that reveals hidden things — the glow from burn-scars can illuminate illusions that normal sight misses. Mystery-specific spells cover detection and revelation effects that bypass concealment in ways other divine casters don't have access to.",
+      "example":   "Detect Magic: strong illusion aura throughout the room, covering everything. Mireille holds up her scarred forearm — the minor curse glow flares, and the illusion wavers in the light. She can see through it even without identifying the specific spell. 'There's a door. Right where the back wall is. And something behind it that doesn't want us to open it.' She doesn't mention that she can also see something watching them."
+    }
+  },
+
+  "alts": ["cleric", "sorcerer", "bard"]
+}

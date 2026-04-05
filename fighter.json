@@ -1,0 +1,66 @@
+{
+  "name":    "Fighter",
+  "icon":    "⚔️",
+  "tagline": "The reliable front-line warrior",
+  "color":   "#3a1010",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=35",
+
+  "tags": ["martial", "easy"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons at Expert proficiency from level 1 — higher than any other class. Swords, axes, spears, polearms, bows, crossbows, unarmed attacks. Gains Legendary proficiency at high levels.",
+    "armor":   "Light, medium, and heavy armor plus shields. No restrictions whatsoever. Full plate on day one if you want it."
+  },
+
+  "ancestry": {
+    "good": [
+      "Half-Orc — Orc Ferocity keeps you standing when a hit would knock anyone else down",
+      "Dwarf — Unburdened Iron removes the Speed penalty from heavy armor; Ancient Enmity for situational bonuses",
+      "Human — Versatile Heritage gives a free feat; Natural Ambition for an extra 1st-level class feat",
+      "Lizardfolk — Natural armor, Strength boost, and tough survivability feats"
+    ],
+    "bad": [
+      "Gnome — Charisma-focused stat array; small size limits reach on Large weapons",
+      "Sprite — Tiny and physically fragile; very few Strength options in the ancestry"
+    ],
+    "disclaimer": "Any ancestry can make an excellent Fighter. These are mechanical optimization notes, not requirements — play the ancestry that fits your character concept."
+  },
+
+  "unique": "No other class matches the Fighter's raw attack bonus. While everyone else starts out merely trained with weapons, the Fighter begins at Expert — and keeps pulling ahead every few levels. That one-step advantage turns near-misses into hits and hits into crits far more often than any other martial.",
+
+  "summary": "You wade into the front line and hit things better than anyone else in the game. The Fighter has the highest attack bonus, access to every weapon and armor type, and a deep library of combat maneuvers — trips, disarms, shoves, feints. You don't manage spells or complex resources. You decide what to do on your turn and do it with maximum effectiveness.",
+
+  "character": {
+    "name":       "Grulk Ironjaw",
+    "meta":       "Half-Orc Fighter, Level 1",
+    "appearance": "Seven feet of green muscle in a battered breastplate, carrying a greataxe nearly as tall as a human. The axe has a notch for every named enemy.",
+    "quote":      "You think a lot. I hit things. Between the two of us we solve most problems."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Grulk charges the goblin chief and swings his greataxe in a wide arc.",
+      "mechanic":  "The Fighter rolls 1d20 + Strength modifier + weapon proficiency bonus. At level 1 the Fighter is already Expert (+4 proficiency), better than every other class. A greataxe deals 1d12 + Strength on a hit. Extra actions can go toward Power Attack (double damage dice), combat maneuvers, or a second Strike.",
+      "example":   "Grulk rolls 14. +4 Strength, +4 Expert proficiency = 22 total vs. the chief's AC 17. Hit — 1d12+4 = 10 damage. He still has one action left and spends it on a Shove: Athletics 1d20+5+4 = 18 vs. Fortitude DC 16. The chief stumbles back 5 feet and loses his footing."
+    },
+    "social": {
+      "narrative": "Grulk lets the party's talker handle most negotiations. But when a merchant is being stubborn, Grulk steps forward, says nothing, and rests his axe on the table.",
+      "mechanic":  "Coerce (Intimidation) can use Strength instead of Charisma, making it a natural fit for Fighters. On a success the target complies for about an hour before resentment sets in. On a critical success they remain cooperative much longer.",
+      "example":   "Intimidation: 1d20 + 4 Strength + 2 trained = rolls 11, total 17 vs. the merchant's Will DC 15. Success — the merchant stops stalling. Grulk retrieves his axe. The meeting continues productively."
+    },
+    "puzzle": {
+      "narrative": "A heavy stone door has no handle and no lock — just a seam in the wall and a crack at the base where cold air flows through.",
+      "mechanic":  "Force Open (Athletics) lets a character try to break or pry open stuck doors, bars, and gates. The Fighter's high Strength and Athletics investment makes this a genuine specialty. On a critical success the door flies open; on a failure it can be tried again with a -2 circumstance penalty until a critical failure jams it permanently.",
+      "example":   "Athletics vs. DC 20: Grulk rolls 9 + 5 Strength + 4 trained = 18. Fail — but the door shifted. The Rogue uses Aid (rolling 14 vs. DC 15, success): Grulk now has a +2 bonus. He tries again: rolls 9 + 5 + 4 + 2 = 20. The door grinds open, scraping stone."
+    }
+  },
+
+  "alts": ["barbarian", "guardian", "monk"]
+}

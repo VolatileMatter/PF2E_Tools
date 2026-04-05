@@ -1,0 +1,66 @@
+{
+  "name":    "Psychic",
+  "icon":    "🧠",
+  "tagline": "Mind-powered occultist who builds momentum",
+  "color":   "#0a0a20",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=68",
+
+  "tags": ["magic", "hard"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Charisma"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Simple weapons only. The Psychic is a full occult caster — their combat power is entirely mental. A light weapon exists as a backup option that almost never comes up in practice.",
+    "armor":   "Light armor only. Most Psychics avoid melee entirely, staying at range and letting the physical barrier between themselves and danger do the work. High Intelligence supports broad skill coverage for navigating encounters without taking hits."
+  },
+
+  "ancestry": {
+    "good": [
+      "Elf — Intelligence and Dexterity naturally emphasized; sharp perception fits the Psychic's heightened awareness identity; ancient memory resonates with psychic lore",
+      "Gnome — Intelligence and Charisma both useful; fey strangeness maps naturally onto the Psychic's slightly-off-from-normal existence and psi aesthetics",
+      "Human — Natural Ambition for early access to strong Psi Cantrip options; flexible stat boosts accommodate both Intelligence and Charisma",
+      "Dhampir — Charisma and Intelligence; the liminal existence between life and death fits the Psychic's threshold-crossing, edge-of-perception flavor perfectly"
+    ],
+    "bad": [
+      "Orc — No Intelligence or Charisma emphasis in typical builds; neither combat style nor knowledge breadth is served by the Orc stat array",
+      "Dwarf — Constitution and Strength focused; no synergy with the mental stat combination that drives every Psychic feature"
+    ],
+    "disclaimer": "The mind knows no ancestral boundaries. Psychic power awakens in anyone — these are starting stat observations only."
+  },
+
+  "unique": "The Psychic is the only caster that gets stronger as a fight continues rather than weaker. Every other magical class starts at full power and depletes. The Psychic starts reserved and escalates toward an Unleashed state of maximum output — a completely inverted resource arc that no other class in the game replicates.",
+
+  "summary": "You cast occult spells through pure mental force. Psi Cantrips are enhanced versions of cantrips drawn from a separate pool called Amps — spending an Amp turns a cantrip into something more powerful without using a spell slot. You build toward Unleashing your psyche: a 2-action surge that automatically Amps all your abilities for 2 rounds before leaving you Stupefied. The longer a fight drags on, the more dangerous you become.",
+
+  "character": {
+    "name":       "Sera of the Quiet Voice",
+    "meta":       "Half-Elf Psychic (Distant Grasp Psi Cantrip), Level 1",
+    "appearance": "A small, very still half-elf who rarely blinks and speaks barely above a whisper. Objects in her vicinity occasionally drift slightly without her appearing to notice. She levels objects she is not touching when she is thinking.",
+    "quote":      "I know what you're about to say. Please say it anyway. I like hearing things confirmed."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Sera opens conservatively. She is watching the fight develop. Watching is not the same as waiting.",
+      "mechanic":  "Psi Cantrips can be cast normally (free) or Amped (spending 1 Amp for enhanced effects). Amps refill on daily prep and when you Unleash. Unleash Psyche (2 actions, usable once per 10 minutes): for 2 rounds all your psi cantrips are automatically Amped at no cost, and you gain additional power. Afterward you are Stupefied 2 for 1 minute. This is a deliberate Nova turn you choose when to deploy.",
+      "example":   "Round 1-2: Sera uses Telekinetic Projectile (standard, no Amp): 1d20 + 4 Intelligence + 4 trained = 15 vs. AC 14. Hit — 1d6 + 4 = 7 bludgeoning. Conserving. Round 3 (boss at half HP): Sera Unleashes (2 actions). Round 4 (Unleashed): Amped Telekinetic Projectile automatically — deals 2d6 + 4 and knocks the target prone on a hit. Rolls 17 vs. AC 14. Hit — 2d6 + 4 = 13, target prone. Stupefied 2 incoming, but the fight ends this round anyway."
+    },
+    "social": {
+      "narrative": "The crime boss has prepared a lie. He has rehearsed it. Sera listens to the first sentence and then says what the second sentence was going to be.",
+      "mechanic":  "Occultism covers the Psychic's primary knowledge domain. High Intelligence supports Society and broad skill coverage. At higher levels, Mindlink and Telepathy spells enable silent communication, emotional reading, and social manipulation that bypasses normal channels entirely. Even at low levels, the Psychic's perceptive precision creates strong social effects without requiring a dedicated social skill.",
+      "example":   "The boss delivers his opening lie smoothly. Sense Motive (Perception): 1d20 + 3 Wisdom + 4 trained = rolls 14, total 21 vs. his Deception DC 18. Success — Sera notes micro-tension in his right shoulder when he says the name 'Harwick.' She doesn't challenge the lie directly. She asks about Harwick. He pauses for exactly one beat too long. The party has what they need."
+    },
+    "puzzle": {
+      "narrative": "The abandoned room has no visible clues. Sera steps inside, touches the doorframe, and goes very still.",
+      "mechanic":  "Occultism and the Psychic's psi abilities create a unique puzzle approach: psychic residue, emotional impressions, and mental echoes left by strong events can be perceived directly. The Recall Memories feat (available to Psychics) allows extraction of psychic impressions from objects and locations. Standard Detect Magic covers magical elements.",
+      "example":   "Sera touches the doorframe and concentrates. Occultism DC 18 to read psychic residue (requires 10 minutes or Recall Memories feat): 1d20 + 5 Intelligence + 4 trained = 16. Fail. She switches to Detect Magic (cantrip, free): faint transmutation in the northeast corner. She crosses to it — a loose floorboard, psychic impression of concealment and fear. No check needed to find what's beneath it once she knows where to look. A sealed journal."
+    }
+  },
+
+  "alts": ["sorcerer", "oracle", "thaumaturge"]
+}

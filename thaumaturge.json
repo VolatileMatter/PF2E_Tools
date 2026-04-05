@@ -1,0 +1,66 @@
+{
+  "name":    "Thaumaturge",
+  "icon":    "🔮",
+  "tagline": "Monster hunter who weaponizes knowledge",
+  "color":   "#1a0a2a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=69",
+
+  "tags": ["martial", "magic"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Strength"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple weapons plus the hand crossbow, rapier, sap, shortbow, and shortsword. Thaumaturges typically use a one-handed weapon to keep the other hand free for their implement. The weapon matters less than the implement — it's the knowledge that hurts things.",
+    "armor":   "Light and medium armor. More durable than a Rogue, the Thaumaturge can stand in the thick of a fight while deploying their esoteric knowledge. Medium armor is common for those who expect to be in melee range."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — The 'self-taught monster hunter with a coat full of esoteric curios' is one of the most human archetypes; Natural Ambition gives early access to implement feats",
+      "Half-Elf — Charisma flexibility, Multitalented for dedication feats, human adaptability mixed with elven occult tradition",
+      "Gnome — Charisma primary; Fey heritage gives occult flavor that matches the Thaumaturge's esoteric toolkit perfectly",
+      "Dhampir — Undead-adjacent ancestry with natural thematic resonance for a class that specializes in hunting the supernatural"
+    ],
+    "bad": [
+      "Orc — No Charisma emphasis in typical builds; the Exploit Vulnerability system doesn't benefit from Strength the way raw martial damage does",
+      "Sprite — Tiny size, limited armor options, and physically fragile constitution conflict with the front-line monster hunter identity"
+    ],
+    "disclaimer": "The Thaumaturge's power comes from knowledge and force of personality, not heritage. Any ancestry can study the esoteric and face the unknown."
+  },
+
+  "unique": "The Thaumaturge is the only martial class that bypasses monster damage resistances as a trained class ability — not a magic item, not a spell, not a special weapon. Against enemies with resistance 10 or 15 to physical damage, the Thaumaturge deals full damage while everyone else bounces. The more unusual and powerful the monster, the better this class performs relative to the rest of the party.",
+
+  "summary": "You carry magical implements — an amulet, a bell, a chalice, a lantern, and others — and use them to Exploit Vulnerability, forcing monsters to take your full damage regardless of their resistances. Each implement also grants its own toolkit of abilities. You are a martial class whose offense comes entirely from esoteric knowledge rather than brute force — a monster hunter who wins because they've done their homework.",
+
+  "character": {
+    "name":       "Vance Holloway",
+    "meta":       "Human Thaumaturge (Amulet + Bell), Level 1",
+    "appearance": "A lean man in a long coat with too many pockets, carrying a battered silver amulet around his neck, a brass bell on his hip, a leather bestiary that shows heavy use, and a shortsword he treats as a backup plan.",
+    "quote":      "That's a shadow demon. Don't touch it, don't let it touch you, and for gods' sake don't look directly at it. I'll handle this."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Everyone else is still deciding what to do. Vance already identified it, already knows what it's vulnerable to, and is already moving.",
+      "mechanic":  "Exploit Vulnerability (1 action): attempt a Recall Knowledge check against the creature. On a success, your Strikes ignore one type of the creature's resistance and deal +2 damage. On a failure you still get a weaker benefit. As you level up, the damage bonus increases and you learn to exploit multiple weaknesses simultaneously. This action makes the Thaumaturge uniquely effective against high-resistance monsters.",
+      "example":   "The vampire has resistance 10 to physical damage. Exploit: Occultism 1d20 + 4 Intelligence + 4 trained = 17 vs. DC 15. Success — physical resistance bypassed, +2 damage. Strike: 1d20 + 3 Strength + 4 trained = 15 vs. AC 16. Hit — 1d6 + 3 + 2 = 9 damage, full, unresisted. The Fighter's last three attacks did a combined 0 damage. Vance's did 9."
+    },
+    "social": {
+      "narrative": "The Vudrani merchant hasn't warmed to the party at all — until Vance addresses her by the correct honorific for her caste, in the right order, without being told.",
+      "mechanic":  "Thaumaturges invest in Society, Occultism, Religion, and Arcana — the full Recall Knowledge suite. High Charisma makes Diplomacy and Intimidation both naturally effective. They function as the party's living encyclopedia: the person who already knows what this culture values, what offends them, and what they fear.",
+      "example":   "Society Recall Knowledge on Vudrani customs (DC 14): 1d20 + 4 Intelligence + 4 trained = 21. Vance knows the correct greeting, which topic would insult her, and that gifting a particular type of incense would signal respect. He does all three in the first thirty seconds. The merchant's attitude shifts from Indifferent to Friendly before any business is discussed."
+    },
+    "puzzle": {
+      "narrative": "A door sealed with ten carved symbols in an unfamiliar script. Vance sets down his bag, takes out a different bestiary, and gets to work.",
+      "mechanic":  "Multiple Recall Knowledge skills mean the Thaumaturge can approach the same puzzle from several angles — Arcana if magical, Religion if divine, Occultism if esoteric, Society if historical. The Lantern implement specifically reveals hidden writing and pierces illusions, giving a direct mechanical edge on puzzles involving concealment.",
+      "example":   "Arcana check on the door symbols (DC 16): 1d20 + 4 Intelligence + 4 trained = 19. Success — standard Chelish administrative ward, set in the sequence a vault-keeper would use. Religion check on the central glyph (DC 14): 1d20 + 4 + 4 = 16. Success — the sun symbol is always the initialization key. Vance solves it in the order it was written. Twenty seconds. He doesn't explain how."
+    }
+  },
+
+  "alts": ["investigator", "ranger", "rogue"]
+}

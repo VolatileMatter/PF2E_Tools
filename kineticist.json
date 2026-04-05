@@ -1,0 +1,66 @@
+{
+  "name":    "Kineticist",
+  "icon":    "🌊",
+  "tagline": "Living channel of elemental power",
+  "color":   "#0a1520",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=23",
+
+  "tags": ["magic"],
+
+  "stats": {
+    "primary":   "Constitution",
+    "secondary": "Strength"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Elemental Blast is the Kineticist's primary attack — it is a class feature, not a weapon, and scales automatically with class level rather than weapon proficiency. Most Kineticists carry a backup melee weapon but rarely need it. Blasts can be melee or ranged depending on the element and how you build.",
+    "armor":   "Light armor. Kineticists don't need heavy protection because Constitution — their primary stat — builds a large HP pool, and many impulse abilities provide battlefield control that keeps enemies at a distance. The kinetic aura itself deters adjacent enemies."
+  },
+
+  "ancestry": {
+    "good": [
+      "Gnome — Constitution boost, Elemental Heart ancestry feat resonates with the kinetic gate flavor, and gnome magical nature fits the class well",
+      "Dwarf — Excellent Constitution bonus, early HP survivability, and Stonebody for poison and disease resistance pairs naturally with Earth gate",
+      "Human — Natural Ambition gives a bonus 1st-level class feat for additional Impulse options immediately",
+      "Orc — Constitution bonus, Orc Ferocity as insurance against the damage the Kineticist absorbs by staying in the aura's range"
+    ],
+    "bad": [
+      "Elf — Intelligence and Dexterity focus misses the Constitution dependency entirely; the stat spread works against every Kineticist feature",
+      "Sprite — Tiny and physically fragile; very low Constitution options undercut the class's primary defensive mechanism"
+    ],
+    "disclaimer": "Any ancestry can awaken a kinetic gate. Constitution is the main mechanical concern — the rest is flavor."
+  },
+
+  "unique": "The Kineticist is the only class in the game with absolutely no limited resources. No spell slots. No focus points. No per-day abilities of any kind. You blast elemental energy at full power in every fight, all day, without ever running out. Every other caster eventually goes quiet. The Kineticist does not.",
+
+  "summary": "A kinetic gate tied to your body channels raw elemental power from the planes — fire, water, earth, air, metal, or wood. You sustain a kinetic aura that empowers your Impulses, blast enemies with Elemental Blasts that never consume slots, and shape the battlefield with a growing library of elemental abilities. Unlike every other magical class, your power is infinite — the trade-off is that your toolkit is elemental rather than flexible.",
+
+  "character": {
+    "name":       "Ember of the Western Shore",
+    "meta":       "Gnome Kineticist (Fire Gate), Level 1",
+    "appearance": "A gnome woman whose hair genuinely flickers at the tips, hands permanently warm to the touch, leaving faint scorch marks on anything she grips too long. The wisps of flame trailing her gestures are involuntary.",
+    "quote":      "I don't run out. That's the whole thing."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Ember opens combat by activating her kinetic aura. It blazes to life around her — and then she starts firing, and keeps firing, and keeps firing.",
+      "mechanic":  "Channel Elements (1 action) activates your kinetic aura and lets you use an Elemental Blast or stance Impulse in the same action. Elemental Blast is a ranged or melee attack that uses your class attack modifier, deals 1d6 damage at level 1 scaling automatically with level, and costs nothing to use. The aura must be active to use any Impulse — if it drops, one action reactivates it.",
+      "example":   "Ember channels and blasts in one action: 1d20 + 4 Constitution + 4 trained = 16 vs. AC 14. Hit — 1d6 + 4 fire = 7 fire damage. Round two, she blasts again with her first action: rolls 11, total 19. Hit — 9 fire damage. Round three: same. The Wizard ran out of good spells two fights ago. Ember is exactly as dangerous now as she was at the start of the day."
+    },
+    "social": {
+      "narrative": "The kinetic aura is always visible. There is no version of this conversation where Ember is a normal person passing through.",
+      "mechanic":  "Kineticists invest in Nature and Survival as their primary knowledge skills. The aura makes disguise nearly impossible in most circumstances — but communities near elemental power, volcano settlements, river towns, and druidic enclaves often treat a Kineticist with deep reverence or intense fear, creating social openings unavailable to other classes.",
+      "example":   "Entering a village built around a volcanic hot spring. Ember lets a flame curl up her forearm as a greeting rather than a threat. The GM calls it a DC 12 Religion check to recognize the gesture as a spiritual acknowledgment rather than aggression: she rolls 1d20 + 2 Wisdom + 4 trained Nature = 14. The village elder steps forward and clasps both hands. The gate opens without a word."
+    },
+    "puzzle": {
+      "narrative": "An iron portcullis, welded shut. A flooded corridor. A rope suspending a counterweight over a pressure plate. For most classes these are three different problems. For Ember they are all the same problem.",
+      "mechanic":  "Base Kinesis is an innate Impulse every Kineticist has: it can move, shape, or manipulate a small amount of any element the Kineticist channels. Melt iron. Freeze water. Move earth. Bend wood. This is a utility power that sidesteps many physical obstacles entirely without requiring a check.",
+      "example":   "Iron portcullis, no mechanism visible. Base Kinesis (Fire/Metal): Ember heats the bars where they meet the frame. No check required — it takes one minute and the metal softens enough to bend. Alternatively she targets the hinges specifically: two actions, the pins flow like wax, the gate falls inward. The Fighter stares. 'I was going to lift it.' 'I know,' Ember says."
+    }
+  },
+
+  "alts": ["sorcerer", "druid", "magus"]
+}

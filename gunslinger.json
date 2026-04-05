@@ -1,0 +1,66 @@
+{
+  "name":    "Gunslinger",
+  "icon":    "🔫",
+  "tagline": "Stylish firearms expert",
+  "color":   "#1a1010",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=20",
+
+  "tags": ["martial"],
+
+  "stats": {
+    "primary":   "Dexterity",
+    "secondary": "Wisdom"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial firearms and crossbows, plus all simple melee weapons. The Gunslinger is entirely defined by their firearm — pistols, muskets, pepperboxes, double-barreled weapons, and more exotic options from Guns & Gears. Every Way (subclass) shapes which firearms work best.",
+    "armor":   "Light armor only. Gunslingers depend on Dexterity and movement rather than absorbing hits. Most Ways reward staying mobile and repositioning frequently rather than holding ground."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Extra feat works for any Way; Natural Ambition gives access to strong 1st-level Deed options early",
+      "Gnome — Curiosity and oddity-seeking nature fits the Unexpected Sharpshooter perfectly; Fey Touched adds utility",
+      "Tiefling — Charisma and Dexterity emphasis; the lone gunslinger aesthetic is well served by the fiendish outsider look",
+      "Halfling — Dexterity bonus, Halfling Luck on attacks, small and genuinely difficult to pin down in a shootout"
+    ],
+    "bad": [
+      "Dwarf — Slow base Speed of 20 feet works against mobility-dependent Ways like Drifter and Vanguard",
+      "Orc — Strength-focused stat array without the Dexterity emphasis that firearm attack rolls require"
+    ],
+    "disclaimer": "Any ancestry can pick up a gun. These are style and stat-line observations — the important thing is that your character has a reason to carry one."
+  },
+
+  "unique": "The Gunslinger is the only class built entirely around Reload as a mechanical loop woven into every turn. Fire, reload, fire — managing when to shoot, when to reload, and how to stay dangerous during both is a tactical rhythm completely unlike anything else in PF2E. The action economy of maintaining a firearm creates a distinct and satisfying playstyle no other class replicates.",
+
+  "summary": "You fight with firearms, managing a unique action economy built around reloading between shots. Your Way — Drifter (close range), Vanguard (melee-firearm hybrid), Sniper (long range), Triggerbrand (paired pistol and blade), or Unexpected Sharpshooter (chaos and improvisation) — defines your combat style. Deeds are special gunslinger moves that bend or bypass the usual rules. For players who want flair, rhythm, and a completely different feel from sword-and-board fighters.",
+
+  "character": {
+    "name":       "Domino Vex",
+    "meta":       "Tiefling Gunslinger (Drifter Way), Level 1",
+    "appearance": "A tiefling with short horns and a wide-brimmed hat, wearing a long coat with enough pockets to be suspicious, two pistols at the hips. Smiles more in dangerous situations than safe ones.",
+    "quote":      "I wasn't aiming at him. I was aiming at where he was going to be."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Domino draws his right pistol the moment initiative is called. The action economy is already playing out in his head.",
+      "mechanic":  "Most one-handed firearms are 1-action Interact to reload. A standard turn looks like: Strike (fire), Interact (reload), Strike again — two shots from two actions, with one action left for movement or a Deed. Some Deeds let you fire without reloading or produce special effects. Drifter Way allows mixing melee strikes and firearm shots in the same turn at close quarters.",
+      "example":   "Domino fires: 1d20 + 5 Dex + 4 trained = 17 vs. AC 15. Hit — 1d6 + 5 Dex = 9 piercing damage. He reloads (1 action, Interact). Fires again at -5 MAP: 1d20 + 5 + 4 - 5 = rolls 8, total 13. Hit — 7 damage. Two shots in three actions; he uses the last action to Step behind a barrel."
+    },
+    "social": {
+      "narrative": "Four bandits have the party surrounded. Domino draws slowly, making sure every bandit has time to think about what they've decided to do today.",
+      "mechanic":  "Demoralize (Intimidation) imposes the Frightened condition, imposing a penalty to all rolls that degrades by 1 each round. Gunslingers naturally invest in Intimidation, and a loaded firearm is itself a powerful social prop — in many situations the GM will simply ask the GM if the target thinks the gun is real before asking for a roll.",
+      "example":   "Domino levels both pistols and Demoralizes the bandit leader: 1d20 + 4 Dex + 4 trained Intimidation = 17 vs. Will DC 14. Success — the leader is Frightened 1 for 1 round, then Frightened 0. The other three bandits watch their boss flinch. Two of them are already backing toward the tree line."
+    },
+    "puzzle": {
+      "narrative": "The puzzle room has a mechanical door operated by counterweights and a gear mechanism that's seized up. Domino examines it for about thirty seconds.",
+      "mechanic":  "Gunslingers are trained in Crafting by default — a requirement for maintaining and modifying firearms. This same skill covers understanding and interacting with mechanical devices, making Gunslingers more capable with mechanical puzzles than most martial classes.",
+      "example":   "Crafting to identify the mechanism: DC 16 — rolls 9 + 3 Intelligence + 4 trained = 16. Success exactly — the counterweight is held by a single corroded pin. Domino steps back twenty feet, draws his pistol, and shoots the pin. The door swings open. 'Could have used a hammer,' the Fighter says. Domino reloads without looking up."
+    }
+  },
+
+  "alts": ["ranger", "rogue", "swashbuckler"]
+}

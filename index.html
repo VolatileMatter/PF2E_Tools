@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PF2E — What Class Should I Play?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <div class="eyebrow">Pathfinder Second Edition</div>
+    <h1>What Class Should I Play?</h1>
+    <p class="subtitle">A guide for adventurers new to the game</p>
+  </header>
+
+  <div id="app"></div>
+
+</div>
+<script>
+
+// ============================================================
+//  DECISION TREE
+//  Each node has: label, q, sub?, choices[]
+//  Each choice has: text, sub?, next (node id OR class id)
+// ============================================================
+
+const TREE_ROOT = {
+  id: "root",
+  label: "Starting question",
+  q: "What kind of character fantasy calls to you most?",
+  sub: "Don't overthink it — pick the one that sounds fun.",
+  choices: [
+    { text: "⚔️  I want to fight",     sub: "Swords, axes, fists, bows — in the middle of danger", next: "martial_q1" },
+    { text: "✨  I want to use magic",  sub: "Spells, divine power, the supernatural",               next: "magic_q1" },
+    { text: "🔧  I want to be clever",  sub: "Gadgets, skills, schemes, knowledge",                  next: "tooly_q1" }
+  ]
+};
+
+const NODES = {
+  martial_q1: {
+    label: "Combat role",
+    q: "How do you feel about being the one who takes the hits?",
+    choices: [
+      { text: "🛡️  Yes — front and center, soaking damage", sub: "Big HP pool, in everyone's face", next: "martial_front" },
+      { text: "💨  No — dodge around the edges",            sub: "Agile, mobile, precise",           next: "martial_skirmish" }
+    ]
+  },
+  martial_front: {
+    label: "Frontliner priority",
+    q: "What matters most to you in a fight?",
+    choices: [
+      { text: "🛡️  Protecting my friends — I want enemies focused on me",   next: "guardian" },
+      { text: "💥  Hitting hard and being nearly unkillable",                next: "martial_front_offense" },
+      { text: "🥋  Discipline and technique — a real fighting style",        next: "martial_front_style" }
+    ]
+  },
+  martial_front_offense: {
+    label: "Power source",
+    q: "Does your power come from rage or precision training?",
+    choices: [
+      { text: "🔥  Rage and instinct — force of nature",             next: "barbarian" },
+      { text: "⚔️  Training and excellence — the best fighter alive", next: "fighter" }
+    ]
+  },
+  martial_front_style: {
+    label: "Fighting style",
+    q: "Unarmed and spiritual, or armored and on a divine mission?",
+    choices: [
+      { text: "👊  Unarmed — fists, kicks, ki energy",          next: "monk" },
+      { text: "🌟  Armored holy warrior serving a god",         next: "champion" }
+    ]
+  },
+  martial_skirmish: {
+    label: "Skirmisher style",
+    q: "Cinematic action hero or precise hunter?",
+    choices: [
+      { text: "🤺  Action hero — dramatic moves, swagger, style", next: "martial_skirmish_flair" },
+      { text: "🏹  Precise hunter — patient, methodical",         next: "martial_skirmish_hunter" }
+    ]
+  },
+  martial_skirmish_flair: {
+    label: "Flavor of flair",
+    q: "Where does your flair come from?",
+    choices: [
+      { text: "🤺  Dashing dueling, acrobatics, theatrical kills", next: "swashbuckler" },
+      { text: "🔫  Guns, powder, and a cool coat",                next: "gunslinger" }
+    ]
+  },
+  martial_skirmish_hunter: {
+    label: "Animal companion",
+    q: "Is a loyal animal companion important to you?",
+    choices: [
+      { text: "🐺  Yes — a companion at my side", next: "ranger" },
+      { text: "🗡️  No — I work better alone",     next: "rogue" }
+    ]
+  },
+
+  magic_q1: {
+    label: "Magic source",
+    q: "Where does your magic come from?",
+    choices: [
+      { text: "✨  Faith — I serve a god or the forces of nature", sub: "Divine or primal power",          next: "magic_divine" },
+      { text: "📖  Study — I researched and earned this power",    sub: "Arcane, bookish, prepared",       next: "magic_arcane" },
+      { text: "🩸  Blood or bargain — born to it or made a deal",  sub: "Innate, inherited, or pact",      next: "magic_innate" },
+      { text: "👁️  Something stranger",                           sub: "The mind, spirits, the occult",   next: "magic_occult" }
+    ]
+  },
+  magic_divine: {
+    label: "Divine role",
+    q: "Front lines or supporting from the back?",
+    choices: [
+      { text: "⚔️  Front line — in melee, protected by faith", next: "magic_divine_front" },
+      { text: "✨  Back line — heal, command, call down power", next: "magic_divine_back" }
+    ]
+  },
+  magic_divine_front: {
+    label: "Divine front style",
+    q: "Divine champion of a specific deity, or nature's shapeshifter?",
+    choices: [
+      { text: "🌟  Holy warrior who protects allies and serves a deity", next: "champion" },
+      { text: "🌿  I wild shape into animals and call on nature's power", next: "druid" }
+    ]
+  },
+  magic_divine_back: {
+    label: "Dramatic stakes",
+    q: "How do you feel about your power having a dramatic cost?",
+    choices: [
+      { text: "✨  Clean reliable divine power — best healer in the game", next: "cleric" },
+      { text: "🌀  Drama — a curse that grows with my power",              next: "oracle" },
+      { text: "👻  Flexibility — different spirits that reshape my abilities each day", next: "animist" }
+    ]
+  },
+  magic_arcane: {
+    label: "Arcane style",
+    q: "How do you want to use your arcane power?",
+    choices: [
+      { text: "📖  From a spellbook — maximum variety and flexibility", next: "wizard" },
+      { text: "⚡  Through a weapon — cast spells through my blade",    next: "magus" }
+    ]
+  },
+  magic_innate: {
+    label: "Power origin",
+    q: "What is the source of your innate power?",
+    choices: [
+      { text: "🐉  My bloodline — dragon, angel, or fey heritage",                      next: "sorcerer" },
+      { text: "🧙  A mysterious Patron channeling magic through a familiar",             next: "witch" },
+      { text: "🔥  A spark of divinity — I'm literally becoming a demigod",             next: "exemplar" }
+    ]
+  },
+  magic_occult: {
+    label: "Occult style",
+    q: "How do you engage with the occult?",
+    choices: [
+      { text: "🎵  Music and performance — inspire allies and bend minds",              next: "bard" },
+      { text: "🧠  Pure mental force — telekinesis and psychic power",                  next: "psychic" },
+      { text: "👻  Spirit bonds — channel the spirits of the world",                    next: "animist" },
+      { text: "🌊  Elemental power — fire, water, earth, air from within",              next: "kineticist" }
+    ]
+  },
+
+  tooly_q1: {
+    label: "Crafting vs. cunning",
+    q: "Is crafting and building important to you?",
+    choices: [
+      { text: "⚗️  Yes — I love making things and using items I create",  next: "tooly_craft" },
+      { text: "🔍  No — outwit enemies through observation and cunning",   next: "tooly_skill" }
+    ]
+  },
+  tooly_craft: {
+    label: "Craft flavor",
+    q: "Chemistry or machinery?",
+    choices: [
+      { text: "⚗️  Chemistry — bombs, elixirs, mutagens, poisons",          next: "alchemist" },
+      { text: "🔧  Machines — build a robot companion or innovative weapon", next: "inventor" }
+    ]
+  },
+  tooly_skill: {
+    label: "Tactical identity",
+    q: "What's your role when things get complicated?",
+    choices: [
+      { text: "🔮  I exploit my enemies' weaknesses directly",           next: "tooly_skill_exploit" },
+      { text: "📯  I orchestrate my team — I make everyone else better", next: "commander" },
+      { text: "🗡️  I avoid direct conflict — stealth, guile, cunning",  next: "rogue" }
+    ]
+  },
+  tooly_skill_exploit: {
+    label: "Exploitation method",
+    q: "Occult knowledge or detective logic?",
+    choices: [
+      { text: "🔮  Occult — magical implements that bypass monster resistances", next: "thaumaturge" },
+      { text: "🔍  Logic — analyze weak points tactically before striking",      next: "investigator" }
+    ]
+  }
+};
+
+// All valid class IDs — used to distinguish result nodes from tree nodes
+const CLASS_IDS = new Set([
+  "alchemist","animist","barbarian","bard","champion","cleric",
+  "commander","druid","exemplar","fighter","guardian","gunslinger",
+  "inventor","investigator","kineticist","magus","monk","oracle",
+  "psychic","ranger","rogue","sorcerer","summoner","swashbuckler",
+  "thaumaturge","witch","wizard"
+]);
+
+// ============================================================
+//  QUIZ STATE
+// ============================================================
+
+let history = [];   // [{from: nodeId, choiceIndex: n}]
+let current  = "root";
+
+function getNode(id) {
+  return id === "root" ? TREE_ROOT : (NODES[id] ?? null);
+}
+function isClass(id) {
+  return CLASS_IDS.has(id);
+}
+
+// ============================================================
+//  PROGRESS UI
+// ============================================================
+
+function buildProgress() {
+  const total = Math.max(history.length + 1, 4);
+  const dots  = Array.from({ length: total }, (_, i) => {
+    const cls = i < history.length ? "done" : i === history.length ? "active" : "";
+    return `<div class="progress-dot ${cls}"></div>`;
+  }).join("");
+  const pct = history.length === 0 ? 2 : Math.round((history.length / (history.length + 2)) * 100);
+  return `
+    <div class="progress-wrap">
+      <div class="progress-label">Progress</div>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="progress-dots">${dots}</div>
+    </div>`;
+}
+
+function buildNavRow() {
+  const back = history.length > 0
+    ? `<button class="back-btn" onclick="goBack()">← Back</button>` : "";
+  const crumbs = history.map(h => {
+    const n = getNode(h.from);
+    return n ? `<span>${n.label || h.from}</span>` : "";
+  }).filter(Boolean).join('<span class="breadcrumb-sep">›</span>');
+  const bc = crumbs ? `<div class="breadcrumbs">${crumbs}</div>` : "";
+  return (back || bc) ? `<div class="nav-row">${back}${bc}</div>` : "";
+}
+
+// ============================================================
+//  QUESTION RENDERING
+// ============================================================
+
+function renderQuestion() {
+  const node    = getNode(current);
+  const choices = node.choices.map((c, i) => `
+    <button class="choice-btn" onclick="choose(${i})">
+      <span class="choice-title">${c.text}</span>
+      ${c.sub ? `<span class="choice-sub">${c.sub}</span>` : ""}
+    </button>`).join("");
+
+  document.getElementById("app").innerHTML =
+    buildProgress() + buildNavRow() + `
+    <div class="q-card">
+      ${node.label ? `<div class="q-eyebrow">${node.label}</div>` : ""}
+      <div class="q-text">${node.q}</div>
+      ${node.sub   ? `<div class="q-sub">${node.sub}</div>` : ""}
+      <div class="choices">${choices}</div>
+    </div>`;
+}
+
+// ============================================================
+//  RESULT RENDERING
+//  Fetches classes/{id}.json, then builds the card.
+// ============================================================
+
+function renderLoading() {
+  document.getElementById("app").innerHTML =
+    buildProgress() + buildNavRow() + `
+    <div class="loading-card">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Consulting the Archives of Nethys…</div>
+    </div>`;
+}
+
+function renderError(id) {
+  document.getElementById("app").innerHTML =
+    buildProgress() + buildNavRow() + `
+    <div class="error-card">
+      <p>Could not load data for <strong>${id}</strong>.</p>
+      <p>Make sure <code>classes/${id}.json</code> exists in the same folder as this page.</p>
+      <button class="btn btn-gold" onclick="restart()" style="margin-top:1rem">↩ Start Over</button>
+    </div>`;
+}
+
+async function renderResult(id) {
+  renderLoading();
+  let r;
+  try {
+    const res = await fetch(`classes/${id}.json`);
+    if (!res.ok) throw new Error(res.status);
+    r = await res.json();
+  } catch {
+    renderError(id);
+    return;
+  }
+  buildResultCard(r);
+}
+
+// ============================================================
+//  RESULT CARD BUILDER
+//  Reads a standardised class JSON and produces the card HTML.
+// ============================================================
+
+function buildResultCard(r) {
+  const tags = (r.tags ?? []).map(t => {
+    const labels = {
+      magic:"Magic", martial:"Martial", support:"Support role",
+      heal:"Can heal", companion:"Has companion",
+      hard:"Complex to learn", easy:"Beginner-friendly"
+    };
+    return `<span class="tag tag-${t}">${labels[t] ?? t}</span>`;
+  }).join("");
+
+  // NPC / companion block — omitted entirely if r.npc is null/missing
+  const npcBlock = r.npc ? `
+    <div class="info-box npc-box">
+      <div class="box-header">
+        <span class="box-icon">🐾</span>
+        <span class="box-title box-title-green">Companion / Mount / NPC</span>
+      </div>
+      <div class="info-text npc"><strong>${r.npc.type}:</strong> ${r.npc.desc}</div>
+    </div>` : "";
+
+  const infoGrid = `
+    <div class="info-grid${r.npc ? "" : " no-npc"}">
+      <div class="info-box">
+        <div class="box-header">
+          <span class="box-icon">📊</span>
+          <span class="box-title">Key Stats</span>
+        </div>
+        <div class="stat-pills">
+          <span class="stat-pill stat-primary">${r.stats.primary}</span>
+          <span class="stat-pill stat-secondary">${r.stats.secondary}</span>
+        </div>
+        <div class="info-note">Gold = primary · Gray = secondary</div>
+      </div>
+      ${npcBlock}
+    </div>`;
+
+  const gearBlock = `
+    <div class="gear-row">
+      <div class="gear-box">
+        <div class="box-header">
+          <span class="box-icon">🗡️</span>
+          <span class="box-title">Weapons &amp; Armor</span>
+        </div>
+        <div class="gear-cols">
+          <div>
+            <div class="gear-sublabel">Weapons</div>
+            <div class="gear-text">${r.gear.weapons}</div>
+          </div>
+          <div>
+            <div class="gear-sublabel">Armor</div>
+            <div class="gear-text">${r.gear.armor}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  const goodItems = (r.ancestry.good ?? []).map(a => `<li>${a}</li>`).join("");
+  const badItems  = (r.ancestry.bad  ?? []).map(a => `<li>${a}</li>`).join("");
+  const ancestryBlock = `
+    <div class="ancestry-row">
+      <div class="ancestry-box">
+        <div class="box-header">
+          <span class="box-icon">🧬</span>
+          <span class="box-title box-title-blue">Ancestry Synergy</span>
+        </div>
+        <div class="ancestry-cols">
+          <div>
+            <div class="good-label">✅ Strong synergy</div>
+            <ul class="ancestry-list">${goodItems}</ul>
+          </div>
+          <div>
+            <div class="warn-label">⚠️ Less synergy</div>
+            <ul class="ancestry-list">${badItems}</ul>
+          </div>
+        </div>
+        <div class="ancestry-disc">${r.ancestry.disclaimer}</div>
+      </div>
+    </div>`;
+
+  const c = r.character;
+  const characterBlock = `
+    <div class="character-card">
+      <div class="character-name">${c.name}</div>
+      <div class="character-meta">${c.meta}</div>
+      <div class="section-text">${c.appearance}</div>
+      <div class="character-quote">"${c.quote}"</div>
+    </div>`;
+
+  // Vignettes — each has: narrative, mechanic, example
+  function buildVignette(cls, icon, label, v) {
+    return `
+      <div class="vignette vignette-${cls}">
+        <div class="vignette-header">
+          <span class="vignette-icon">${icon}</span>
+          <span class="vignette-label">${label}</span>
+        </div>
+        <div class="vignette-text">
+          <p>${v.narrative}</p>
+          <div class="mech-note"><span class="mech-label">Mechanic</span>${v.mechanic}</div>
+          <div class="dice-eg"><strong>Example:</strong> ${v.example}</div>
+        </div>
+      </div>`;
+  }
+
+  const alts = (r.alts ?? []).map(id =>
+    `<button class="alt-chip" onclick="jumpTo('${id}')">${id.charAt(0).toUpperCase() + id.slice(1)}</button>`
+  ).join("");
+
+  document.getElementById("app").innerHTML =
+    buildProgress() + buildNavRow() + `
+    <div class="result-card">
+
+      <div class="wiki-banner">
+        <span class="wiki-banner-label">📚 Full rules &amp; details</span>
+        <a href="${r.aon}" target="_blank" rel="noopener">View ${r.name} on Archives of Nethys ↗</a>
+      </div>
+
+      <div class="result-hero" style="background:linear-gradient(135deg,${r.color}88 0%,var(--card-bg) 80%)">
+        <div class="result-icon-wrap" style="background:${r.color}">${r.icon}</div>
+        <div>
+          <div class="result-name">${r.name}</div>
+          <div class="result-tagline">${r.tagline}</div>
+          <div class="result-tags">${tags}</div>
+        </div>
+      </div>
+
+      <div class="unique-box">
+        <div class="box-header">
+          <span class="box-icon">⭐</span>
+          <span class="box-title">What makes this class unique?</span>
+        </div>
+        <div class="unique-text">${r.unique}</div>
+      </div>
+
+      ${infoGrid}
+      ${gearBlock}
+      ${ancestryBlock}
+
+      <div class="result-body">
+
+        <div class="section">
+          <div class="section-header">
+            <span class="section-icon">📜</span>
+            <span class="section-title">What is this class?</span>
+          </div>
+          <div class="section-text">${r.summary}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-header">
+            <span class="section-icon">🎭</span>
+            <span class="section-title">Example Character</span>
+          </div>
+          ${characterBlock}
+        </div>
+
+        <div class="vignettes">
+          ${buildVignette("combat", "⚔️", "In Combat",             r.vignettes.combat)}
+          ${buildVignette("social", "🗣️", "In Social Situations",  r.vignettes.social)}
+          ${buildVignette("puzzle", "🧩", "In Puzzles & Exploration", r.vignettes.puzzle)}
+        </div>
+
+        ${alts ? `
+        <div class="alts-section">
+          <div class="alts-label">Similar classes you might also enjoy:</div>
+          <div class="alts-chips">${alts}</div>
+        </div>` : ""}
+
+      </div>
+
+      <div class="result-footer">
+        <button class="btn btn-gold" onclick="restart()">↩ Start Over</button>
+      </div>
+
+    </div>`;
+}
+
+// ============================================================
+//  NAVIGATION
+// ============================================================
+
+function render() {
+  if (isClass(current)) {
+    renderResult(current);
+  } else {
+    renderQuestion();
+  }
+}
+
+function choose(i) {
+  const node = getNode(current);
+  history.push({ from: current, choiceIndex: i });
+  current = node.choices[i].next;
+  render();
+}
+
+function goBack() {
+  if (!history.length) return;
+  const last = history.pop();
+  current = last.from;
+  render();
+}
+
+function restart() {
+  history = [];
+  current = "root";
+  render();
+}
+
+function jumpTo(id) {
+  if (id && CLASS_IDS.has(id)) {
+    current = id;
+    render();
+  }
+}
+
+// ============================================================
+//  BOOT
+// ============================================================
+render();
+
+</script>
+</body>
+</html>

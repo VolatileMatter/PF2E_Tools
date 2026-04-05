@@ -1,0 +1,69 @@
+{
+  "name":    "Summoner",
+  "icon":    "🌌",
+  "tagline": "You and your Eidolon are one",
+  "color":   "#0a0a1a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=18",
+
+  "tags": ["magic", "companion", "hard"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Constitution"
+  },
+
+  "npc": {
+    "type": "Eidolon (Required)",
+    "desc":  "Your Eidolon is not a pet — it is your other self, a creature from another plane bound to your soul. You cannot play the Summoner without it. Each turn you and your Eidolon together share a pool of three actions. Choose its form: angelic, demonic, draconic, fey, construct, psychopomp, or others. Its appearance within that type is entirely yours to design."
+  },
+
+  "gear": {
+    "weapons": "Simple weapons for the Summoner personally. The Eidolon is the primary combat presence — its unarmed attacks (claws, jaws, slams, energy blasts) scale automatically with Summoner level and are the class's main damage source. The Summoner's own weapons rarely see use.",
+    "armor":   "Light armor for the Summoner. The Eidolon has its own AC based on its form and scales separately. Protecting the Summoner is important because if either the Summoner or the Eidolon drops to 0 HP, the Eidolon is immediately banished until the Summoner recovers."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Versatile Heritage and Natural Ambition; the 'ordinary person bound to something extraordinary' narrative is deeply human and fits the Summoner identity well",
+      "Aasimar — Angelic Eidolon synergy is nearly perfect; Charisma bonus; the celestial bond made literal and manifest",
+      "Tiefling — Demonic Eidolon flavor; Charisma emphasis; the fiendish companion as externalized inner nature is rich territory",
+      "Gnome — Charisma primary; fey Eidolon matches gnome magical heritage; gnome creativity produces interesting Eidolon designs"
+    ],
+    "bad": [
+      "Dwarf — Typically no Charisma emphasis; the Summoner's planar-bond identity sits uneasily with the grounded, self-reliant dwarven worldview",
+      "Orc — Charisma not prioritized; the action-sharing combat model doesn't align with the Orc warrior archetype's straightforward fighting style"
+    ],
+    "disclaimer": "The Eidolon chose its partner. Any ancestry can be marked by the planes — these are mechanical and narrative fit notes only."
+  },
+
+  "unique": "The Summoner is the only class that shares its action economy with a companion. You and your Eidolon split three actions between you each turn — not four actions, three, shared. No other class plays two characters simultaneously on a single turn. This is the highest-complexity class in the game for exactly this reason, and also potentially the most powerful.",
+
+  "summary": "You and your Eidolon are one creature in two bodies, sharing a soul and splitting actions each turn. The Eidolon handles most combat — its attacks and defenses scale automatically — while the Summoner casts spells, uses items, and provides the magical backbone. Your Eidolon type determines its appearance, damage types, and special abilities. Managing two bodies in combat takes practice, but when it clicks it feels unlike anything else in the game.",
+
+  "character": {
+    "name":       "Cassian and the Pale",
+    "meta":       "Human Summoner (Phantom Eidolon), Level 1",
+    "appearance": "A young man in modest traveling clothes, beside a towering translucent entity called the Pale that moves like something that studied humans from a distance for a long time before deciding to try walking upright. They communicate without speaking.",
+    "quote":      "The Pale doesn't speak. It understands. There's a difference."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Three actions. Two bodies. The math of what is possible is different for the Summoner than for anyone else.",
+      "mechanic":  "Act Together (1 action): Cassian uses 1 action to give the Eidolon 1 action. He can do this up to twice per turn. The Eidolon's attacks, AC, and HP all scale automatically with Summoner level — no separate investment needed. If either Cassian or the Pale drops to 0 HP, the Pale is banished and cannot return until Cassian rests. This shared vulnerability is the class's primary risk.",
+      "example":   "Cassian uses Act Together (1 action): the Pale Strikes with Ghostly Grasp: 1d20 + 7 (Eidolon attack) = 15 vs. AC 14. Hit — 1d8 + 4 spirit damage = 9. Cassian uses Act Together again (second action): the Pale Strikes again at -5 MAP: 1d20 + 7 - 5 = 11 vs. AC 14. Miss. Cassian uses his third action to cast Shield on himself (cantrip), raising his AC by 2 as a reaction if hit. Two Eidolon attacks and a defensive spell from three actions."
+    },
+    "social": {
+      "narrative": "The Pale is visible at all times. There has never been a subtle version of this.",
+      "mechanic":  "Charisma is the Summoner's primary stat — Diplomacy, Deception, and Intimidation are all naturally high. The Eidolon's presence functions as free Intimidation in many social situations before any roll is made. At higher levels, Eidolons can use their own actions to gather information, interact with objects, or enter restricted spaces the Summoner cannot. The Summoner speaks for both and learns to make the Eidolon's reactions legible to others.",
+      "example":   "Guards at a checkpoint are skeptical. The Pale drifts slightly forward and turns its face toward them without expression. Cassian does nothing. The guard captain looks at the Pale, then at Cassian. 'Is that... under your control?' 'The Pale goes where it chooses,' Cassian says. 'We tend to agree.' Demoralize check not required — the GM judges the captain is already Frightened 1 from the display. The gate opens."
+    },
+    "puzzle": {
+      "narrative": "Two mechanisms on opposite sides of a room, separated by a ward that stops humanoids. The Pale is not humanoid.",
+      "mechanic":  "Eidolons have their own Perception and can use their actions to Seek, Interact with objects, open doors, pull levers, or trigger mechanisms. Some Eidolon types have special senses — the Phantom Eidolon can perceive incorporeal or hidden things; the Construct Eidolon ignores biological hazards. Running two independent actors through a puzzle simultaneously is a genuine mechanical advantage.",
+      "example":   "The ward stops humanoids. Cassian cannot cross. The Pale is a planar entity, not a humanoid — it passes through unaffected. Cassian directs the Pale (Act Together, 1 action): the Pale Interacts with the far lever. Cassian pulls the near lever simultaneously with his own action. Both at once. The mechanism unlocks. 'How did you know it wouldn't affect the Pale?' the Wizard asks. 'It said humanoids,' Cassian says. 'The Pale isn't from here.'"
+    }
+  },
+
+  "alts": ["druid", "ranger", "inventor"]
+}

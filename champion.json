@@ -1,0 +1,69 @@
+{
+  "name":    "Champion",
+  "icon":    "🌟",
+  "tagline": "Holy warrior who protects allies",
+  "color":   "#1a1408",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=58",
+
+  "tags": ["magic", "heal", "companion", "easy"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Charisma"
+  },
+
+  "npc": {
+    "type": "Divine Mount (optional)",
+    "desc":  "Via the Divine Ally: Steed feat, you can bond with a sacred mount — a warhorse, a riding horse, or another creature blessed by your deity. The mount fights alongside you, grows in power as you level, and represents your deity's blessing made manifest. Entirely optional, but deeply iconic."
+  },
+
+  "gear": {
+    "weapons": "All simple and martial weapons, plus the favored weapon of your deity at an elevated proficiency. Champions typically wield longswords, warhammers, or their god's chosen weapon. The deity's favored weapon is where most Champions focus their investment.",
+    "armor":   "Light, medium, and heavy armor plus shields. The Champion is the definitive heavy-armor class — full plate from level 1, and Shield Block as a core option. Several Champion feats make shields dramatically more effective than they are for any other class."
+  },
+
+  "ancestry": {
+    "good": [
+      "Aasimar — Divine heritage synergy is nearly perfect; Charisma boost; the celestial lineage makes the holy warrior fantasy entirely literal",
+      "Human — Natural Ambition for an early bonus class feat; the iconic human paladin archetype; flexible stat boosts fit any Champion cause",
+      "Dwarf — Constitution, shield synergy, Stonebody for poison resistance; dwarven holy warriors have deep lore roots in the setting",
+      "Gnoll — Pack Attack gives an offensive contribution while protecting the party; unexpected but mechanically solid"
+    ],
+    "bad": [
+      "Sprite — Tiny size and physical fragility work directly against every feature that makes the Champion effective",
+      "Gnome — Charisma works but small stature and fey-touched nature conflicts with the heavy-armor divine warrior fantasy"
+    ],
+    "disclaimer": "Any ancestry can answer a divine calling. These are mechanical optimization notes — the Champion's identity is about conviction, not lineage."
+  },
+
+  "unique": "The Champion's reaction abilities are the only class features in the game that let you heal or protect allies as a free interruption during the enemy's turn — before the damage even resolves. Lay on Hands heals an ally the moment they'd be hit, faster than any spell. No other class can insert itself into the enemy's action this way.",
+
+  "summary": "You are a heavily armored divine warrior who fights at the front and uses reactions to protect the party. When an ally is threatened, your Champion's Reaction fires — Lay on Hands restores HP before the blow lands, Retributive Strike punishes anyone who hurts your friends. You optionally ride a sacred mount. The Champion feels like a paladin but without rigid alignment mechanics — your Cause (Liberator, Paladin, Redeemer, Desecrator) shapes your specific abilities.",
+
+  "character": {
+    "name":       "Serel of the Dawn",
+    "meta":       "Aasimar Champion of Iomedae (Paladin Cause), Level 1",
+    "appearance": "A tall aasimar in gleaming full plate with faint golden light at the edges of every joint, astride a white horse named Justice. She has the unhurried bearing of someone who has decided what she will and won't do.",
+    "quote":      "I don't ask whether you deserve mercy. I ask whether you'll do something with it."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "The skeleton lunges at the party healer. Serel's reaction fires before the blow lands.",
+      "mechanic":  "Lay on Hands (reaction): when an ally within 15 feet would take damage from an attack, Serel can use her reaction to restore HP to that ally before the damage is applied. At level 1 this restores 6 HP. It costs one Focus Point, which refills after 10 minutes of rest. She gets one Focus Point per day at level 1, scaling up with level. The Paladin Cause's Retributive Strike reaction deals damage to any enemy that harms an ally.",
+      "example":   "Skeleton's attack hits the Wizard for 11 damage. Serel uses Lay on Hands as a reaction: the Wizard regains 6 HP first, then takes the 11. Net damage: 5 instead of 11. On Serel's turn she Strikes the skeleton: 1d20 + 4 Strength + 4 trained = 16 vs. AC 13. Hit — 1d8 + 4 = 9. The skeleton collapses. Serel still has her regular actions next round."
+    },
+    "social": {
+      "narrative": "The village won't open the gates — there have been undead on the road for a week and every traveler looks like a threat.",
+      "mechanic":  "Religion and Diplomacy are the Champion's social foundation. Lay on Hands used visibly outside combat — healing a wounded guard or frightened child at the gate — creates instant, profound trust that no roll can match. Champions of major deities carry institutional authority in most cities and towns.",
+      "example":   "Serel dismounts, removes her helmet, and holds up the Starknife of Iomedae. Religion check to establish priestly legitimacy, DC 12: 1d20 + 4 Wisdom + 4 trained = auto-success. The gate opens a crack. A child inside is crying from a gash on their arm. Serel uses Lay on Hands without being asked. The gate opens fully. 'Get inside before dark. All of you.'"
+    },
+    "puzzle": {
+      "narrative": "Five identical doors. Four of them are warded. Serel raises a hand and walks slowly past each one.",
+      "mechanic":  "Champions can cast Detect Alignment and Divine Lance as cantrips from their deity. Detect Magic identifies magical auras. Religion covers divine wards, sacred geometry, and consecrated or desecrated spaces. Lay on Hands also damages undead, which occasionally matters when the puzzle involves undead-locked mechanisms.",
+      "example":   "Detect Alignment (1 action, unlimited uses): one door radiates evil alignment. Religion DC 14: 1d20 + 4 Wisdom + 4 trained = 16. Success — the evil-aligned door is a decoy; passing through it requires divine protection or it triggers. The safe route is through it, shielded. 'Stay close. I'll cover us.' She doesn't explain further. They walk through. Nothing happens."
+    }
+  },
+
+  "alts": ["cleric", "guardian", "fighter"]
+}

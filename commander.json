@@ -1,0 +1,66 @@
+{
+  "name":    "Commander",
+  "icon":    "📯",
+  "tagline": "The battlefield chess master",
+  "color":   "#0a1020",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=66",
+
+  "tags": ["hard"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Charisma"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons. The Commander uses weapons as a secondary contribution — their Tactics are the real offense. A versatile one-handed weapon is standard so the other hand is free for the Banner and for gesturing at exactly where the Fighter should be standing right now.",
+    "armor":   "Light and medium armor, plus shields. Commanders stay mobile between allies rather than anchoring to one position. Medium armor gives adequate protection for a class that is not supposed to be the primary target."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Extra feat, flexible stats, and the 'natural leader who earned every rank' is one of the most human archetypes in existence",
+      "Half-Elf — Intelligence and Charisma flexibility; the between-worlds identity maps onto the Commander's role as the person who understands everyone else's position",
+      "Nagaji — Charisma emphasis, imposing authority presence, commanding bearing that NPCs respond to immediately",
+      "Gnoll — Pack Attack synergy; tactical ambush leadership flavor; the gnoll warband commander is an underexplored but excellent archetype"
+    ],
+    "bad": [
+      "Sprite — Tiny, physically fragile, and the leadership presence required to make Tactics function is genuinely undermined by a two-foot stature",
+      "Gnome — Intelligence works but the Commander needs both Intelligence and Charisma high simultaneously; typical Gnome builds emphasize Charisma or Constitution, rarely both evenly"
+    ],
+    "disclaimer": "Leadership is a practiced skill, not a birthright. Any ancestry can command — these are mechanical starting-stat observations only."
+  },
+
+  "unique": "The Commander is the only class whose primary combat contribution is giving other characters additional actions. Through Tactics, the Commander increases the party's total action count per round. No other class can mathematically demonstrate that their presence caused more actions to happen on other players' turns. They don't win fights by hitting things — they win by making everyone else hit more, better, and at the right moment.",
+
+  "summary": "You plant your Banner and issue Tactics — special actions that grant allies bonus Strikes, movement, reactions, or defensive benefits on their turns. Your own combat contribution is deliberately secondary; your value is measured in the attacks your allies make because of you, not the attacks you make yourself. This class requires genuine knowledge of PF2E's action economy and your allies' abilities to play well. Played well, it makes the whole party perform above its level.",
+
+  "character": {
+    "name":       "General Marcus Vell",
+    "meta":       "Human Commander, Level 1",
+    "appearance": "A compact man in a military dress uniform carrying a banner and a short sword he almost never draws. He moves through a fight like someone who has already calculated three turns ahead and is mildly impatient waiting for the present to catch up.",
+    "quote":      "Fighter goes left. Rogue goes right. Cleric stays center. On my signal. — What's the signal? — You'll know."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Marcus plants his Banner and issues a Tactic. The Fighter hits twice this turn instead of once. Marcus's own swing, almost an afterthought, connects.",
+      "mechanic":  "Tactics are special Commander actions issued while the Banner is planted within range. Examples: Press the Attack — an ally who hits gets a free second Strike as a reaction. Rally — remove Frightened or a similar condition from an ally. Defensive Formation — allies within Banner range gain +1 AC as a reaction to being targeted. Each Tactic can only be issued once per round, and the Commander must be able to see and be heard by the affected ally.",
+      "example":   "Marcus issues Press the Attack (1 action). The Fighter hits the ogre: 1d20 + 8 = 18. Hit — 12 damage. Press the Attack triggers: Fighter makes a free reaction Strike at -5 MAP: 1d20 + 8 - 5 = 16. Hit — 9 more damage. Marcus then Strikes himself: 1d20 + 4 = 13. Hit — 5 damage. That turn generated 26 total damage. Marcus personally dealt 5 of it. The other 21 happened because of his 1-action Tactic."
+    },
+    "social": {
+      "narrative": "Marcus enters the room like he was expected, sits where he wants to sit, and has already assessed every person present before the host finishes their opening sentence.",
+      "mechanic":  "Intelligence and Charisma both high — Society, Diplomacy, and History are the Commander's social toolkit. Military hierarchy, political leverage, and institutional authority are their native language. They approach social encounters the same way they approach battle: identify the objective, assess the players, deploy resources in the right order.",
+      "example":   "Meeting a noble who controls the garrison they need access to. Marcus has prepared: Society recall on the noble's financial situation (DC 16, rolled earlier today: success), Lore: Military on his service record (auto from class). He opens by referencing a specific engagement from the noble's service history — correctly, with details. Diplomacy: 1d20 + 4 Charisma + 4 trained = 17 vs. DC 15. Success — the noble is Friendly before the formal request is made. 'You were at Sunken Citadel.' 'Third position, eastern wall.' 'I know.'"
+    },
+    "puzzle": {
+      "narrative": "The puzzle room has four components that must be addressed simultaneously. Marcus doesn't solve it himself. He assigns it.",
+      "mechanic":  "Society, Intelligence, and the Commander's tactical system all translate to puzzle coordination. Identifying which party member has the right skill for each component and sequencing their actions correctly is the same cognitive process as Tactics. High Intelligence supports Recall Knowledge across most relevant topics.",
+      "example":   "Four-lever puzzle requiring a specific sequence. Marcus observes for one round while others investigate. Society DC 14 to recognize the pattern: 1d20 + 4 Intelligence + 4 trained = 17. Success — it's the standard Chelish flag-signal sequence, used for administrative acknowledgment protocols. 'First. Third. Second. Fourth. Move.' He calls the order. The party pulls in sequence without another roll needed. The door opens. 'How did you know?' 'I've seen this before. Different context.'"
+    }
+  },
+
+  "alts": ["bard", "investigator", "rogue"]
+}

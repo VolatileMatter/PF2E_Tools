@@ -1,0 +1,66 @@
+{
+  "name":    "Animist",
+  "icon":    "👻",
+  "tagline": "Spirit-bonded divine caster",
+  "color":   "#0a1510",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=64",
+
+  "tags": ["magic", "heal", "hard"],
+
+  "stats": {
+    "primary":   "Wisdom",
+    "secondary": "Charisma"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Simple weapons only. The Animist is a full divine caster — spirits provide most of their combat contribution. A staff or simple weapon is the standard backup for emergencies.",
+    "armor":   "Light and medium armor. More flexible than Clerics who depend on heavy armor, since Animists can rely on spirit abilities to supplement defense and often position themselves at medium range rather than the front line."
+  },
+
+  "ancestry": {
+    "good": [
+      "Leshy — Plant-creature ancestry with deep nature resonance; the spirit world and the natural world overlap directly; mechanically strong Wisdom and Constitution",
+      "Half-Orc — Wisdom and Charisma flexibility; spiritual awareness and the connection between the living and the honored dead fits the Animist identity well",
+      "Human — Natural Ambition for early Apparition feats; bonus skill training is valuable for a class that communicates across many social and spiritual contexts",
+      "Gnome — Fey connection and supernatural awareness; the gnome's natural attunement to the First World makes spirit-speaking feel entirely in character"
+    ],
+    "bad": [
+      "Automaton — Construct nature creates a genuine conceptual and mechanical conflict with the spirit world, primal connection, and the living-energy foundation of the class",
+      "Dwarf — Wisdom can work, but the typical dwarven cultural grounding in stone and craft sits uneasily with the Animist's fluid, spirit-flowing identity"
+    ],
+    "disclaimer": "Spirits exist in every place and every culture. Any ancestry can learn to hear them — these are thematic and starting stat observations only."
+  },
+
+  "unique": "The Animist is the only class that completely replaces its spell list each day based on which spirits it bonds with at dawn. Other classes prepare different spells from a fixed list. The Animist replaces the list itself. Bond with the Steward of Stone and Sky and you are a nature-blaster. Bond with the Stalker in Darkness and you are an ambush predator. You are a different caster depending on who found you that morning.",
+
+  "summary": "You bond with Apparitions — spirits that grant you their spell lists, vessel abilities (free focus spells), and domain access for the day. Each morning you choose which spirits to invite, and they determine what kind of caster you are until tomorrow. The more Apparitions you can bond simultaneously as you level up, the more roles you can fill at once. One of the most flexible casters in the game, at the cost of requiring deliberate planning before each session.",
+
+  "character": {
+    "name":       "Yua of the Fogwood",
+    "meta":       "Half-Orc Animist, Level 1",
+    "appearance": "A half-orc who moves very quietly for her size, adorned with bone charms and dried herbs that rattle faintly when she walks. Shapes drift at the edges of her peripheral vision that she stopped mentioning to people a long time ago.",
+    "quote":      "The grandmother-spirit says take the other path. I've learned not to argue with grandmothers."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Yua bonded the Steward of Stone and Sky this morning. Today she is a nature-blaster. Tomorrow she might be something else entirely.",
+      "mechanic":  "Apparitions grant a spell list, a vessel ability (a free focus spell unique to that spirit), and domain spell access. The Steward of Stone and Sky grants primal spells — Gust of Wind, Earthbind, Stone Tell — plus a vessel ability that lets Yua anchor difficult terrain around herself as a reaction. Switching Apparitions at dawn changes which spells she can cast and what her focus powers do.",
+      "example":   "Yua uses her vessel ability: Anchor the Flesh (reaction, Steward of Stone and Sky) — when an enemy moves through her aura, she can force a Fortitude save DC 16. The bandit rolls 9 — failure, movement halved and Slowed 1 until end of their turn. She follows with Heal (a spell her Apparition also grants): 1d8 + 4 Wisdom = 9 HP restored to the wounded Fighter. Control and healing from a single Apparition."
+    },
+    "social": {
+      "narrative": "The village well has been dry for two weeks and the crops are failing. The elder is describing it as a curse. Yua sits down next to the well and closes her eyes.",
+      "mechanic":  "Spirit Conduit and related Animist features allow direct communication with lingering spirits in a location — who are functionally witnesses to everything that has happened there. Nature and Religion cover the knowledge side. Communities that honor ancestor or nature spirits extend immediate informal authority to an Animist that functions as a social proficiency bonus in relevant situations.",
+      "example":   "Yua communes with the well-spirit (10 minutes, no check required). The spirit is grieving — something was buried on the south hill two weeks ago that does not belong in living soil. It has been pulling the water toward itself. No one needed to roll anything. The information is simply available to someone who knows how to ask. The village elder stares at her. 'No one has spoken to the well-spirit since my grandmother.' The gate to the south field opens immediately."
+    },
+    "puzzle": {
+      "narrative": "An altar of unclear purpose in an abandoned shrine. No inscriptions. No symbols remaining. Just residue.",
+      "mechanic":  "Spirit Conduit lets the Animist communicate with the building or location spirit — a functionally perfect witness to everything that has ever happened there. The Apparition's domain spells sometimes directly address puzzle elements: a death-domain Apparition senses what was killed nearby; a dreams-domain Apparition reads what someone feared in this space. Nature and Occultism cover the rest.",
+      "example":   "Yua communes with the shrine spirit (Nature DC 14 to attune to an active spirit): 1d20 + 4 Wisdom + 4 trained = 16. Success — the spirit remembers who built it and what the ritual required. It was a river-deity shrine sealed when the river changed course three generations ago. The unlocking ritual requires water from wherever the river runs now. Yua already has a waterskin. She refills it at the stream outside and the altar responds."
+    }
+  },
+
+  "alts": ["druid", "cleric", "oracle"]
+}

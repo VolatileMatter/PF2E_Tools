@@ -1,0 +1,69 @@
+{
+  "name":    "Bard",
+  "icon":    "🎵",
+  "tagline": "The glue of the party",
+  "color":   "#0a0a1a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=32",
+
+  "tags": ["magic", "heal", "support"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Intelligence"
+  },
+
+  "npc": {
+    "type": "Familiar (optional)",
+    "desc":  "Bards can bond with a small magical familiar — a cat, raven, lizard, or stranger creature — that assists with spellcasting and can be customized with a growing list of abilities. Not required, but a natural fit for a performer with secrets."
+  },
+
+  "gear": {
+    "weapons": "Simple weapons plus the longsword, rapier, sap, shortbow, shortsword, and whip. Bards typically carry a light one-handed weapon for emergencies or stay at range. The weapon is almost never the point — the spells and compositions are.",
+    "armor":   "Light armor only. Bards stay mobile, using spells and their composition cantrips to contribute rather than standing in melee. High Charisma and Reflex saves help them avoid the hits they can't absorb."
+  },
+
+  "ancestry": {
+    "good": [
+      "Elf — Charisma and Intelligence both naturally emphasized; ancient lore access; the graceful aesthetic fits every Bard archetype",
+      "Gnome — Charisma primary; fey magical heritage synergizes with the occult tradition; gnome eccentricity is a natural fit for the performer identity",
+      "Human — Bonus skill training at level 1 is excellent for a class that needs broad social coverage; Natural Ambition for early composition feats",
+      "Catfolk — Charisma bonus; Pounce combines a Leap and Strike into one action for emergencies; performance and feline grace fit naturally"
+    ],
+    "bad": [
+      "Dwarf — Typically no Charisma emphasis; the dwarven cultural identity doesn't naturally lean toward occult performance and social manipulation",
+      "Orc — Charisma deprioritized in most Orc stat arrays; the bardic identity is a poor fit for the warrior-focused Orc archetype"
+    ],
+    "disclaimer": "Storytelling, song, and inspiration belong to every culture in the world. Any ancestry can be a Bard — these are starting stat observations, not restrictions."
+  },
+
+  "unique": "Inspire Courage — the Bard's signature composition cantrip — is the only class ability in the game that buffs the entire party's attack rolls and damage rolls every single round at effectively zero action cost. No other support ability has this mechanical efficiency. The party plays measurably better because the Bard is present, every round, without the Bard spending a single resource to make it happen.",
+
+  "summary": "You inspire allies with composition cantrips that cost almost nothing and improve everyone around you every round. Inspire Courage raises attack rolls and damage for the whole party. Inspire Defense raises AC. Dirge of Doom frightens enemies. On top of this you cast occult spells — illusions, enchantments, and a surprising amount of healing. Your Muse (Enigma, Maestro, Polymath, or Warrior) defines which compositions you emphasize.",
+
+  "character": {
+    "name":       "Zephyrine Lace",
+    "meta":       "Elf Bard (Maestro Muse), Level 1",
+    "appearance": "An elf with violet hair and a lute across her back, dressed practically but expensively, with a dagger at her hip she has drawn exactly once and a smile that suggests she already knows how this ends.",
+    "quote":      "I wrote a song about this fight three days ago. It ends well. For most of us."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Zephyrine starts her turn with a free action. The Fighter hits harder. The Rogue crits. The Champion's reaction fires perfectly. None of them know why everything is going so well.",
+      "mechanic":  "Inspire Courage is a composition cantrip — a free action usable once per turn, every turn, with no resource cost. It grants a +1 status bonus to attack rolls, damage rolls, and saves against fear to every ally within 60 feet who can hear it. In a party of four, that's a minimum of 4 extra damage per round, plus attacks that were near-misses becoming hits. The bonus scales at higher levels.",
+      "example":   "Without Inspire Courage: Fighter rolls 1d20 + 8 = 19 vs. AC 20. Miss. With Inspire Courage active: 1d20 + 8 + 1 = 20. Hit — 10 damage +1 = 11. Zephyrine didn't swing once. She used a free action at the start of her turn and that hit existed because of her. She then casts Hideous Laughter on the enemy boss with her remaining actions: Will DC 17, rolls 9 — failure, boss is Slowed 1."
+    },
+    "social": {
+      "narrative": "The merchant lord needs to be charmed, informed, and slightly deceived simultaneously. Zephyrine handles all three in the order they become relevant.",
+      "mechanic":  "Charisma is the Bard's primary stat — Diplomacy, Deception, Intimidation, and Performance are all naturally high. Versatile Performance lets them substitute Performance for social skill checks in appropriate contexts. Bardic Lore gives trained proficiency in any single Lore topic they choose, covering obscure knowledge gaps. The Bard is the default party face for most groups.",
+      "example":   "Zephyrine performs at the merchant lord's dinner (booked herself three days in advance). Performance: 1d20 + 5 Charisma + 4 trained = 21 vs. DC 18 for an impressive display. Success — the lord is delighted, pulls her aside after, offers a private tour of the estate. She tours it carefully. She memorizes the location of his study. She finds the ledger. She is back at the table before the dessert arrives."
+    },
+    "puzzle": {
+      "narrative": "The inscription above the door is in a dead dialect of Thassilonian. Most of the party stares at it. Zephyrine hums thoughtfully and starts translating.",
+      "mechanic":  "Occultism, Society, and Bardic Lore cover the Bard's knowledge range. Bardic Lore specifically provides trained proficiency in any topic — including obscure historical scripts, forgotten traditions, and specific esoteric subjects — that other skills cannot reach. The Bard is the best general-knowledge class in the game for this reason.",
+      "example":   "Obscure Thassilonian dialect, Occultism DC 22 (very hard): 1d20 + 4 Intelligence + 4 trained = rolls 9, total 17. Fail. Society DC 20 (hard): rolls 12, total 20. Success exactly — old Thassilonian administrative script, typically used for storage vault markings. The symbol means 'hazard requiring Wisdom.' Zephyrine steps back. 'Don't touch anything until I say.' She has a theory."
+    }
+  },
+
+  "alts": ["sorcerer", "cleric", "witch"]
+}

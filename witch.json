@@ -1,0 +1,69 @@
+{
+  "name":    "Witch",
+  "icon":    "🧙",
+  "tagline": "Patron-bound occultist",
+  "color":   "#1a0a10",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=38",
+
+  "tags": ["magic", "companion"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Wisdom"
+  },
+
+  "npc": {
+    "type": "Familiar (Required)",
+    "desc":  "The Witch's familiar is not optional — it is mechanically mandatory. Your familiar holds your Patron's power and teaches you new spells each morning. It is your spellbook, your ally, and your connection to whatever made this deal with you. If you lose your familiar you lose access to your spells until it is recovered or replaced. It can be deeply customized with familiar abilities as you level."
+  },
+
+  "gear": {
+    "weapons": "Simple weapons only. The Witch is a pure spellcaster — their hexes and spells are their weapons. A staff or light weapon exists as backup and rarely sees use.",
+    "armor":   "Light armor only. Most Witches avoid even light armor to preserve casting freedom and lean into the traditional image. Staying out of melee range is the real defensive strategy."
+  },
+
+  "ancestry": {
+    "good": [
+      "Gnome — Charisma and Intelligence both useful; fey heritage resonates with Patron flavor; Fey Touched ancestry feat slots in naturally",
+      "Elf — Intelligence and Dexterity naturally emphasized; Arcane Sight for magical awareness; the scholarly, removed aesthetic fits many Witch concepts",
+      "Half-Elf — Flexible stats; Multitalented dedication feat for expanding into other magical traditions at higher levels",
+      "Vishkanya — Poison-themed; naturally synergizes with Curse and Hex-focused Witch builds that debilitate rather than blast"
+    ],
+    "bad": [
+      "Orc — Intelligence not prioritized in typical builds; the spell-dependent class identity doesn't map naturally to the Orc warrior aesthetic",
+      "Automaton — Construct nature creates a conceptual conflict with the Patron bond and the familiar, both of which require a living magical connection"
+    ],
+    "disclaimer": "Patrons find who they find. Any ancestry can receive an unexpected offer of power — these are mechanical starting-stat observations only."
+  },
+
+  "unique": "The Witch is the only class whose familiar is not optional flavor but a mechanically mandatory component — your familiar literally is your spellbook and your Patron's conduit. Lose it and your magic goes with it. The familiar is also the most deeply customizable companion in the game, with a longer list of ability options than any animal companion or eidolon.",
+
+  "summary": "A mysterious Patron granted you magic through a familiar, and you are not entirely sure what the arrangement costs yet. Your Patron type — Ferrous, Inscribed, Silence, Wilding, and others — determines your magical tradition and bonus spells. Hexes are your signature focus spells: Evil Eye, Cackle, Needle of Vengeance, Malicious Shadow. You debilitate, curse, and undermine enemies rather than blasting them directly.",
+
+  "character": {
+    "name":       "Old Nessa",
+    "meta":       "Gnome Witch (Winter Patron), Level 1",
+    "appearance": "A tiny elderly gnome who looks precisely like a fairytale witch: crooked nose, a black cat familiar named Spite with unsettling silver eyes, a hat adorned with dried mushrooms and small bones, and a walking stick carved with faces that change expression when no one is looking directly at them.",
+    "quote":      "The cat says you're lying. I never doubt the cat."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Nessa doesn't strike. She makes the enemy's own mind work against them, and she sustains it for free every turn after.",
+      "mechanic":  "Evil Eye is a 1-action focus spell targeting one creature within 30 feet. The target attempts a Will save: on a failure they take a -2 status penalty to Will saves; on a success they're unaffected; on a critical failure they're also Frightened 1. Cackle is a free action that sustains any active hex — meaning Nessa can maintain Evil Eye indefinitely while casting other spells and moving normally.",
+      "example":   "Nessa casts Evil Eye on the bandit captain. His Will save: 1d20 + 3 = 11 vs. DC 17. Failure — -2 penalty to Will saves. She Cackles (free action, hex sustained). Next round: free Cackle, then casts Ill Omen on him. His Will save against Ill Omen: 1d20 + 3 minus 2 Evil Eye = 10 vs. DC 17. Critical failure — he must reroll his next d20 and take the worse result. The captain is unraveling and Nessa has spent two actions total."
+    },
+    "social": {
+      "narrative": "The merchant has been lying for ten minutes. Spite has been staring at him without blinking for nine of them.",
+      "mechanic":  "Occultism and Society cover the Witch's social knowledge range. The familiar can gather information independently using its own actions — scouting ahead, listening through a door, or delivering a message without being seen. Hexes like Needle of Vengeance have social-pressure applications beyond combat. The Witch's uncanny presence creates strong reactions in NPCs that can be leaned into or carefully managed.",
+      "example":   "The merchant claims he hasn't been to the docks. Nessa lets Spite jump onto the table and sit directly in front of him — staring. Society check to recall relevant information about the merchant's known associates: 1d20 + 4 Intelligence + 4 trained = 17 vs. DC 14. Success — she knows his business partner owns a warehouse at Pier 7. 'You were at Pier 7. Wednesday evening and Thursday at dawn. Spite watched.' The merchant's expression breaks. She hadn't actually confirmed either visit."
+    },
+    "puzzle": {
+      "narrative": "The binding circle punishes anyone who speaks a falsehood while standing inside it. The party needs to enter it to access the mechanism beyond.",
+      "mechanic":  "Occultism covers curses, fey contracts, binding circles, spirit workings, and esoteric agreements — exactly the kind of magic that doesn't appear in scholarly arcane texts. The familiar can cross boundaries and interact with mechanisms that the Witch cannot reach safely, including entering warded spaces that target humanoids or spellcasters specifically.",
+      "example":   "The binding circle targets humanoids. Occultism DC 18 to identify the exact restriction: 1d20 + 4 Intelligence + 4 trained = 17. Fail by 1. Nessa sends Spite across the boundary instead — familiars are not humanoids. Spite examines the release mechanism from inside and returns. From Spite's description, Nessa deduces the restriction: no spoken falsehood, not no entry. She walks in and says nothing. The mechanism is a lever. She pulls it."
+    }
+  },
+
+  "alts": ["sorcerer", "oracle", "animist"]
+}

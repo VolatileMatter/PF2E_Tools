@@ -1,0 +1,66 @@
+{
+  "name":    "Sorcerer",
+  "icon":    "💥",
+  "tagline": "High-volume innate spellcaster",
+  "color":   "#1a0a0a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=62",
+
+  "tags": ["magic", "heal"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Simple weapons only. Sorcerers cast with Charisma and rarely need weapons — they have more spell slots than any other caster and almost never run out. A light weapon exists for emergencies that essentially never arise.",
+    "armor":   "Light armor only. Most Sorcerers avoid even light armor in practice, relying on spells like Mage Armor and keeping distance from melee. Constitution helps absorb the hits that do land."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Flexible stat boosts; Natural Ambition for early bloodline-specific feats; the blank-slate human is a natural vessel for any bloodline origin story",
+      "Aasimar — Angelic Bloodline synergy is nearly perfect; Charisma bonus; the celestial ancestry making literal divine magic manifest is deeply satisfying",
+      "Tiefling — Diabolic Bloodline flavor is an obvious fit; Charisma emphasis; the outsider aesthetic suits the 'power from a dark inheritance' narrative",
+      "Dragonborn — Draconic Bloodline synergy is thematically exact; matching scales and breath weapon; one of the most iconic archetypes in the entire game"
+    ],
+    "bad": [
+      "Dwarf — Typically no Charisma emphasis; innate magical power from an ancient bloodline conflicts with the dwarven cultural narrative of earned skill",
+      "Orc — Charisma deprioritized in most Orc builds; the innate spellcaster identity doesn't align naturally with the warrior archetype"
+    ],
+    "disclaimer": "Magic in the blood respects no ancestry rules. Any lineage can carry a spark — these are starting stat observations and narrative fit notes only."
+  },
+
+  "unique": "The Sorcerer has more spell slots than any other class in the game, and Signature Spells allow casting the same powerful spells at any level repeatedly throughout the day. A Wizard can prepare a spell once per slot. A Sorcerer can cast their Signature Fireball five times if they want to. Raw magical volume is the Sorcerer's identity and their advantage in any extended adventuring day.",
+
+  "summary": "Magic is in your blood — you don't study it, you simply cast it, and you cast more than anyone. Your Bloodline determines your magical tradition and grants bonus spells themed around your heritage. You choose two Signature Spells per spell level that can be heightened freely to any slot, making your favorites available at full power all day. You trade the Wizard's flexibility of preparation for sheer quantity of output.",
+
+  "character": {
+    "name":       "Korrak the Ember",
+    "meta":       "Dragonborn Sorcerer (Draconic Bloodline, Fire), Level 1",
+    "appearance": "A tall dragonborn with deep red scales, brass horns, and eyes like lit coals. He smells faintly of smoke at all times and does not appear to notice. His grandmother was a great red dragon. He mentions this exactly as often as you'd expect.",
+    "quote":      "My grandmother was a great red dragon. I have inherited her humility."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Korrak fires Produce Flame. Next round he fires it again. The wizard ran dry three fights ago. Korrak has not started to consider rationing.",
+      "mechanic":  "Sorcerers have one more spell slot per spell level than Wizards and don't prepare spells — they cast anything they know at any time. Signature Spells (two per spell level) can be freely heightened to fill any slot, meaning Korrak can cast his best fire spell at 1st, 2nd, or 3rd level slots interchangeably. Blood Magic gives a bonus effect each time he casts a Bloodline spell.",
+      "example":   "Korrak casts Burning Hands (Signature Spell, heightened to 2nd level): 4d6 fire damage in a 15-foot cone, basic Reflex DC 17. Three goblins caught: first rolls 7 (critical fail, 20 fire damage), second rolls 14 (fail, 10 damage), third rolls 19 (success, 5 damage). 35 total damage, one action, one 2nd-level slot. He has two more 2nd-level slots and three 1st-level slots remaining. It is the second fight of the day."
+    },
+    "social": {
+      "narrative": "Korrak doesn't negotiate. He states outcomes. This is surprisingly effective.",
+      "mechanic":  "Charisma is the Sorcerer's primary stat — Intimidation, Deception, and Diplomacy are all naturally strong. Bloodline-specific spells sometimes have direct social applications: Fey Bloodline brings glamour and charm spells, Angelic Bloodline carries healing and authority, Shadow Bloodline enables deception at a level most classes can't match.",
+      "example":   "A guard captain is reluctant to let the party through. Korrak steps forward, lets the faint smell of sulfur and dragonscale do some work, and uses Demoralize: 1d20 + 5 Charisma + 4 trained Intimidation = 18 vs. Will DC 15. Success — the captain is Frightened 1 for one round. He steps aside without being directly asked. Korrak nods once and walks through."
+    },
+    "puzzle": {
+      "narrative": "Five pressure plates in a corridor, combination unknown. Korrak casts Detect Magic and immediately knows which three are safe to step on.",
+      "mechanic":  "Arcana (for Arcane Bloodlines like Draconic) and Occultism (for Fey and Shadow Bloodlines) are the Sorcerer's knowledge skills. Detect Magic as a cantrip is unlimited and provides the first layer of puzzle analysis at no cost. At higher levels, powerful utility spells are available from a broad list without preparation — cast whatever the situation needs.",
+      "example":   "Detect Magic (cantrip, 1 action): three of the five plates radiate abjuration magic. Arcana DC 14 to interpret the aura type: 1d20 + 2 Intelligence + 4 trained = 14. Success exactly — abjuration plates are warding triggers, not safe paths; the unenchanted plates are the route through. Korrak maps the safe tiles by process of elimination. 'Follow where I step. Exactly where I step.' He crosses first."
+    }
+  },
+
+  "alts": ["bard", "wizard", "oracle"]
+}

@@ -1,0 +1,66 @@
+{
+  "name":    "Barbarian",
+  "icon":    "🪓",
+  "tagline": "Rage-fueled unstoppable force",
+  "color":   "#2a0a0a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=57",
+
+  "tags": ["martial", "easy"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons. Two-handed weapons — greataxes, mauls, falchions — are the go-to choice because Rage's flat damage bonus applies to every Strike, making big dice even bigger.",
+    "armor":   "Light and medium armor only. Heavy armor restricts the mobility Rage demands, but high Constitution compensates through generous temporary HP. Medium armor plus a good Constitution score is typically enough."
+  },
+
+  "ancestry": {
+    "good": [
+      "Half-Orc — Orc Ferocity lets you survive a hit that would otherwise drop you; outstanding Rage synergy",
+      "Orc — Raw Strength emphasis, Frenzy and Ferocity ancestry feats, fits the identity perfectly",
+      "Dwarf — Constitution boost, Stonebody for poison and disease resistance, Clan Dagger as a reliable backup weapon",
+      "Human — Natural Ambition grants an extra 1st-level class feat, giving access to strong Instinct options early"
+    ],
+    "bad": [
+      "Gnome — Charisma-focused stat array with no Strength emphasis; small size limits reach",
+      "Elf — Dexterity and Intelligence focus; Constitution tends to run low, undercutting temp HP generation"
+    ],
+    "disclaimer": "Any ancestry can Rage. These are stat synergy notes — play what fits your barbarian's story, not what min-maxes the damage."
+  },
+
+  "unique": "The Barbarian is the only martial class that trades defense for offense on purpose and comes out ahead. Raging grants bonus damage AND generates temporary hit points simultaneously — you hit harder and survive longer at the same time. No other class has this offense-and-durability loop built into a single free action.",
+
+  "summary": "You tap into primal fury to hit harder and absorb punishment. When you Rage, you deal bonus damage on every Strike and gain temporary hit points equal to your Constitution modifier. Your Instinct — Animal, Dragon, Giant, Spirit, and more — shapes what kind of berserker you become and unlocks powerful abilities as you level. The most satisfying class for players who want to feel unstoppable.",
+
+  "character": {
+    "name":       "Mara Stoneblood",
+    "meta":       "Dwarf Barbarian, Level 1",
+    "appearance": "A stocky dwarf woman with braided red hair, tattooed forearms, and a two-handed maul she named Gentle. She has a habit of smiling right before combat starts.",
+    "quote":      "Gentle says hello."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "The ogre swings first and Mara shrugs it off. Then she enters Rage and the fight changes entirely.",
+      "mechanic":  "Rage is a free action (or 1 action outside of a combat turn) that lasts 1 minute. While Raging: you gain +2 circumstance bonus to damage on every Strike, you gain temporary HP equal to your Constitution modifier, your AC takes a -1 penalty, and you cannot use most concentration actions like casting spells. Instinct abilities add further effects on top of this base.",
+      "example":   "Mara Rages (free action, gains 4 temp HP). She Strikes with Gentle: 1d20 + 5 Strength + 4 trained = rolls 13, total 22 vs. ogre's AC 16. Hit — 2d6 + 5 Strength + 2 Rage = 14 damage. Second Strike at -5 MAP: rolls 8, total 13. Miss. Still — one swing and the ogre is already below half HP."
+    },
+    "social": {
+      "narrative": "Mara is blunt as her hammer. She describes what will happen if negotiations fail, in graphic detail, while maintaining a pleasant smile.",
+      "mechanic":  "Coerce (Intimidation) forces an NPC into short-term compliance. Success makes them helpful for roughly an hour before resentment builds. Barbarians often have the highest Strength in a party, and Strength-based Intimidation is fully supported — no Charisma needed.",
+      "example":   "Coerce against the gang boss: 1d20 + 4 Strength + 4 trained Intimidation = rolls 15, total 23 vs. Will DC 18. Success — the boss is cooperative for the scene. He'll resent Mara later. She considers this a reasonable trade-off."
+    },
+    "puzzle": {
+      "narrative": "A portcullis blocks the only path forward. Mara examines it for about two seconds, then grabs the bars.",
+      "mechanic":  "Force Open (Athletics) is the Barbarian's default puzzle tool. Their Strength is typically the highest in any party, making physical obstacle removal quick and reliable. For anything requiring cleverness, the Barbarian guards the others while they think.",
+      "example":   "DC 22 Force Open: rolls 11 + 6 Strength + 4 Athletics = 21. Fail by 1 — not a critical fail, so no jam. Tries again: rolls 14, total 24. Success — the portcullis groans upward. Mara holds it with one hand while the party passes through single-file."
+    }
+  },
+
+  "alts": ["fighter", "guardian", "monk"]
+}

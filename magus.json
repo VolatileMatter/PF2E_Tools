@@ -1,0 +1,66 @@
+{
+  "name":    "Magus",
+  "icon":    "⚡",
+  "tagline": "Sword-and-sorcery warrior",
+  "color":   "#1a1020",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=17",
+
+  "tags": ["magic", "hard"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Intelligence"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons. Most Magus builds center on a single favored weapon — a longsword, bastard sword, or reach weapon — which serves as the physical delivery mechanism for Spellstrike. The weapon choice matters because its damage dice combine with the spell's damage on a hit.",
+    "armor":   "Light and medium armor. Heavy armor is available via feats but slows Spellstrike recharging. Most Magus builds use medium armor — solid protection without the Speed or action penalties that undermine the class's rhythm."
+  },
+
+  "ancestry": {
+    "good": [
+      "Half-Elf — Strength and Intelligence or Dexterity both accessible; Multitalented opens dedication feats for additional spell options at higher levels",
+      "Human — Natural Ambition for an early bonus class feat; flexible stat boosts accommodate both Strength and Intelligence simultaneously",
+      "Elf — Dexterity and Intelligence naturally emphasized; excellent for finesse-weapon Magus builds that use Dexterity to hit; ancient fighting tradition flavor",
+      "Dwarf — Constitution and Strength for a durable Magus; Stonebody pairs well with the front-line positioning Spellstrike requires"
+    ],
+    "bad": [
+      "Gnome — Charisma-focused stat array with no natural Strength or Intelligence emphasis; the Spellstrike delivery system doesn't benefit from Gnome's strengths",
+      "Halfling — Dexterity and Charisma focus; Magus needs Strength for typical builds or Intelligence for Spellstrike damage, neither of which Halflings naturally provide"
+    ],
+    "disclaimer": "The fusion of blade and spell transcends any single lineage. Any ancestry can pursue the discipline — these are starting stat notes only."
+  },
+
+  "unique": "Spellstrike delivers a spell and a weapon Strike simultaneously in a single attack roll. This is mechanically unique in the entire game — no other class combines spell damage and physical weapon damage into one hit. When that hit is a critical, both the weapon and the spell critically succeed at once, producing some of the highest single-hit damage numbers in PF2E.",
+
+  "summary": "You charge a spell into your weapon and release both together with Spellstrike — one attack roll that delivers steel and magic simultaneously. After Spellstrike you must spend an action to Recharge before you can Spellstrike again, creating a deliberate fire-charge-fire rhythm. Your Hybrid Study — Inexorable Iron, Laughing Shadow, Sparkling Targe, Starlit Span, or Twisting Tree — shapes which spells and weapons define your style.",
+
+  "character": {
+    "name":       "Karos Ashblade",
+    "meta":       "Half-Elf Magus (Inexorable Iron Study), Level 1",
+    "appearance": "A lean half-elf with a runic tattoo running the length of his sword arm, carrying a longsword that crackles faintly with stored electricity at all times. He speaks in short sentences and never explains his methods.",
+    "quote":      "The sword is the spell. The spell is the sword. No, I won't explain it further."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Karos charges his blade. One action. Then he steps in and Spellstrikes — one attack that delivers both.",
+      "mechanic":  "Spellstrike (2 actions): Cast a spell with a touch or melee range, then make a melee Strike. If the Strike hits, the spell also discharges — dealing its full damage in addition to the weapon damage, all from a single attack roll. On a critical hit, both the weapon and the spell critically hit simultaneously. After Spellstrike, the weapon is discharged: Karos must spend 1 action to Recharge before Spellstriking again.",
+      "example":   "Karos casts Shocking Grasp into his longsword (free, part of Spellstrike), then Strikes: 1d20 + 4 Strength + 4 trained = 16 vs. AC 15. Hit — longsword deals 1d8 + 4 = 9 piercing, Shocking Grasp deals 2d12 = 14 electricity, total 23 damage in one action sequence. He spends his third action to Recharge. Next turn: Spellstrike again."
+    },
+    "social": {
+      "narrative": "Karos is intense in a way that people find either impressive or exhausting depending on whether they share his interests. Among soldiers and scholars he has immediate, unusual credibility.",
+      "mechanic":  "Arcana and Society are the Magus's knowledge skills. They don't typically function as the party face, but their combination of martial presence and evident magical expertise creates a unique authority — respected by both fighters and academics, which is rare. High-level Magus characters can identify magical items and enchantments on sight.",
+      "example":   "A mercenary captain refuses entry without a bribe. Karos doesn't argue. He casts Detect Magic (cantrip) and examines the captain's sword quietly. Arcana DC 16 to identify the enchantment: 1d20 + 4 Intelligence + 4 trained = 16. Success — the blade is a +1 striking sword with a minor frost rune, uncommon enchantment, not mass-produced. 'Kintargo work. Early Rebellion era. Where did you get it?' The captain stares. The conversation changes entirely. The bribe is forgotten."
+    },
+    "puzzle": {
+      "narrative": "A door protected by an arcane lock that triggers a lightning trap on forced entry. Karos reads it and recognizes it.",
+      "mechanic":  "Arcana and Athletics give the Magus a combined physical-and-magical puzzle toolkit. Detect Magic as a cantrip is available at will. Dispel Magic in the spellbook provides a hard counter to magical locks and wards. Spells like Knock remove mundane locks entirely. Better at magical puzzles than environmental ones.",
+      "example":   "The arcane lock glows faintly blue. Arcana DC 15 to identify the ward type: 1d20 + 4 Intelligence + 4 trained = 17. Success — standard Arcane Lock, counteract level 1. Karos casts Dispel Magic targeting it: counteract check 1d20 + 4 Intelligence = 15 vs. the lock's DC 15. Success — the lock dissolves. He opens the door normally. 'Mundane locks now,' the Fighter says helpfully. Karos says nothing."
+    }
+  },
+
+  "alts": ["wizard", "fighter", "thaumaturge"]
+}

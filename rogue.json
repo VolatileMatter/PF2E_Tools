@@ -1,0 +1,66 @@
+{
+  "name":    "Rogue",
+  "icon":    "🗡️",
+  "tagline": "Versatile skill specialist",
+  "color":   "#0d0d1a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=37",
+
+  "tags": ["martial"],
+
+  "stats": {
+    "primary":   "Dexterity",
+    "secondary": "Intelligence"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple weapons plus the hand crossbow, rapier, sap, shortbow, and shortsword. Rogues use finesse weapons, hitting and dealing damage with Dexterity instead of Strength. Sneak Attack's bonus damage applies to most of these, so weapon choice is mostly about range and style.",
+    "armor":   "Light armor only. Rogues rely on not being targeted rather than absorbing hits. High Dexterity keeps their AC competitive despite the light armor restriction, and their mobility ensures they rarely stand in the open."
+  },
+
+  "ancestry": {
+    "good": [
+      "Halfling — Dexterity bonus, Halfling Luck on skill checks, small size makes them naturally hard to spot and easy to overlook",
+      "Gnome — Charisma and Dexterity both useful; excellent for face-focused Rogue builds that do most work through deception",
+      "Elf — Dexterity and Intelligence both emphasized; low-light vision is genuinely useful for a class that spends time in the dark",
+      "Ratfolk — Dexterity bonus, tunnel sense, natural urban skulker flavor; Cheek Pouches for carrying small items discreetly"
+    ],
+    "bad": [
+      "Dwarf — Slow Speed of 20 feet undermines the Rogue's need to reposition quickly and escape after striking",
+      "Orc — Strength-focused; Sneak Attack already handles damage output without Strength, so the stat emphasis is wasted"
+    ],
+    "disclaimer": "Any ancestry can be a Rogue. Halflings are the cliché, not the requirement — these are starting stat observations, nothing more."
+  },
+
+  "unique": "The Rogue gets more trained skills than any other class in the game. They're also the only class that can use Dexterity for melee attack rolls and damage instead of Strength. This means one stat — Dexterity — makes a Rogue nimble, skilled, dangerous in melee, and accurate at range simultaneously. No other class achieves that economy.",
+
+  "summary": "You deal Sneak Attack bonus damage whenever an enemy is Off-Guard — flanked, unaware, or caught in certain conditions. Your Racket defines your fighting style: Thief (steal items during a Strike), Scoundrel (use Deception to set up attacks), or Mastermind (Recall Knowledge to make enemies Off-Guard against you). With more trained skills than anyone else, you handle everything the party can't handle through direct confrontation.",
+
+  "character": {
+    "name":       "Pip Nightspark",
+    "meta":       "Halfling Rogue (Thief Racket), Level 1",
+    "appearance": "A cheerful halfling currently wearing servant's livery that doesn't quite fit, carrying nothing visible despite having at least six things hidden on their person. Pip looks exactly as suspicious as someone trying very hard not to look suspicious.",
+    "quote":      "I'm not stealing it. I'm redistributing it to someone who will appreciate it more. Me."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Pip was in the shadows before the fight started. The moment the Fighter engages and flanks, they appear behind the target.",
+      "mechanic":  "Sneak Attack adds 1d6 precision damage on every Strike against a creature that is Off-Guard. Off-Guard happens when the target is flanked (two enemies on opposite sides), when the target hasn't acted yet this combat, or through certain conditions. This bonus damage is why Rogues deal competitive damage without the Fighter's attack bonus advantage.",
+      "example":   "Pip flanks with the Fighter — target is Off-Guard. Strike with shortsword: 1d20 + 5 Dex + 4 trained = 17 vs. AC 14. Hit — 1d6 shortsword + 5 Dex + 1d6 Sneak Attack = 3 + 5 + 4 = 12 damage. Pip then Steps out of reach using their remaining action. They never stayed adjacent long enough to be hit back."
+    },
+    "social": {
+      "narrative": "Eight trained skills at level 1. Pip handles the parts of a job that can't be solved with a sword.",
+      "mechanic":  "Rogues begin play with 8 + Intelligence modifier trained skills — the most of any class. Combined with Skill Increases at every level, a Rogue can realistically maintain expert or master proficiency in Stealth, Thievery, Deception, Society, Diplomacy, and Intimidation simultaneously by mid-levels. No other class comes close to this breadth.",
+      "example":   "Impersonating a palace servant to deliver a package to a restricted floor. Deception (Impersonate): 1d20 + 4 Charisma + 4 trained = rolls 13, total 21 vs. the guard's Perception DC 17. Success — the uniform is wrong but the confidence is right. 'Delivery for the steward? Second door on the left.' Pip is through before the guard finishes the sentence."
+    },
+    "puzzle": {
+      "narrative": "A complex lock on a heavy iron door. Everyone else is looking at the inscription above the frame. Pip is already working.",
+      "mechanic":  "Thievery covers picking locks and disabling traps — two of the most common dungeon obstacle types. Disable Device (a Thievery action) defuses a trap entirely on a success, removing it from play. Rogues are the only class for whom this is a reliable option rather than a desperate gamble.",
+      "example":   "Complex lock, DC 22 Thievery: rolls 15 + 4 Dex + 4 trained Thievery + 1 circumstance from Thieves' Tools = 24. Success. The door swings open in under ten seconds, silently. The Wizard is still reading the first line of the inscription. Pip holds the door open and waits."
+    }
+  },
+
+  "alts": ["swashbuckler", "investigator", "bard"]
+}

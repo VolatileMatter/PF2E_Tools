@@ -1,0 +1,69 @@
+{
+  "name":    "Druid",
+  "icon":    "🌿",
+  "tagline": "Shape-shifting nature caster",
+  "color":   "#0a1808",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=34",
+
+  "tags": ["magic", "heal", "companion"],
+
+  "stats": {
+    "primary":   "Wisdom",
+    "secondary": "Constitution"
+  },
+
+  "npc": {
+    "type": "Animal Companion (Animal Order)",
+    "desc":  "Druids of the Animal Order bond with a devoted animal companion from level 1. Other Orders — Leaf, Storm, Wild, Wave, Stone — have different class features instead. The companion path is a beloved classic: a wolf, bear, cat, or bird that grows in power alongside you."
+  },
+
+  "gear": {
+    "weapons": "Simple weapons only. Druids take a nature-oath that forbids metal weapons — wood, bone, and stone only. Spears, staves, clubs, and slings are the standard toolkit. Wild Shape bypasses this restriction entirely while shapeshifted, providing natural attacks regardless of what you're carrying.",
+    "armor":   "Light and medium armor, but no metal armor — same nature-oath restriction. Leather and hide are standard. Wooden shields are permitted. Wild Shape bypasses all of this while in beast form, since the form provides its own statistics."
+  },
+
+  "ancestry": {
+    "good": [
+      "Leshy — Plant-creature ancestry; deeply nature-aligned; Constitution and Wisdom both emphasized; no metal restrictions feel like features rather than limits",
+      "Human — Natural Ambition for a bonus feat; works equally well for Animal, Wild, or Storm Order builds",
+      "Gnome — Natural magical talent, fey heritage flavor, excellent Leaf Order aesthetic; Gnome Polyglot for extra languages with animals",
+      "Strix — Flight, primal attunement, strong scouting capabilities; excellent for Storm Order or scout-focused builds"
+    ],
+    "bad": [
+      "Dwarf — The metal weapon and armor restriction creates genuine friction with dwarven cultural identity centered on metalwork and forged equipment",
+      "Automaton — Construct nature creates an uncomfortable conceptual conflict with the Druid's oath to the living, natural world"
+    ],
+    "disclaimer": "Any ancestry can honor the natural world. The metal restriction is a flavor and mechanical note simultaneously — but every good druid concept can work around it."
+  },
+
+  "unique": "The Druid is the only class that can completely replace their body with a different creature's form mid-fight. While shapeshifted through Wild Shape, your AC, movement type, attacks, and sometimes even your size change entirely. You don't borrow the form — you become it. No other class transformation is this comprehensive.",
+
+  "summary": "You draw power from the natural world. Wild Shape transforms you into animals for combat, with your attacks and defenses drawn entirely from the beast form. Outside of Wild Shape you cast primal spells: lightning, entangling vines, healing, summoned creatures. Your Order — Animal, Leaf, Storm, Wild, Wave, or Stone — changes your playstyle significantly, from companion-focused to shapeshifter to storm-caller.",
+
+  "character": {
+    "name":       "Brynja",
+    "meta":       "Human Druid (Wild Order), Level 1",
+    "appearance": "A young woman in bark-brown robes with mud on her hands and leaves in her hair, accompanied by a crow named Soot who speaks exclusively in questions and has strong opinions about everything.",
+    "quote":      "The forest told me you were coming. The forest also says you shouldn't have come."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Two enemies, close range, closing fast. Brynja doesn't run. She shifts.",
+      "mechanic":  "Wild Shape is a focus spell (costs 1 Focus Point) that transforms you into a specific battle form for 1 minute. While transformed, your AC and attack rolls both use the form's statistics rather than your own. The Wolf form has AC 16 and a jaws attack dealing 1d8 + 4. Wild Order Druids can use Wild Shape one additional time before needing to refocus. Your animal companion, if you have one, acts on its own initiative.",
+      "example":   "Brynja spends 1 Focus Point and Wild Shapes into wolf form (1 action). Wolf AC: 16. She moves adjacent and bites: wolf jaws attack 1d20 + 7 (form attack bonus) = 14 vs. AC 14. Hit — 1d8 + 4 = 9 piercing. Soot simultaneously dives at the second enemy's face: crow Strike 1d20 + 5 = 12 vs. AC 12. Hit — 1d4 + 2 = 5 piercing. Two bodies, one initiative slot."
+    },
+    "social": {
+      "narrative": "The party needs to know whether anyone passed through this stretch of forest last night. Brynja looks at a squirrel.",
+      "mechanic":  "Speak with Animals is a 2nd-level primal spell that allows full conversation with animals. No check is required for the communication itself — animals simply talk. They're not intelligent, but they observe their environment constantly. What a local animal witnessed is often more useful than what any human informant would share. Animal Companions also build trust with wild animals before the party has even spoken.",
+      "example":   "Brynja casts Speak with Animals and addresses the squirrel directly. No check needed — the squirrel saw three humans with torches moving east along the ridge around midnight. One was limping. They stopped at the old stone marker for several minutes before continuing. The squirrel wants to know if Brynja has any hazelnuts. She does."
+    },
+    "puzzle": {
+      "narrative": "A door sealed by a ward that triggers on humanoid presence. The wording is specific: humanoid.",
+      "mechanic":  "Wild Shape changes your creature type while active — a shapeshifted Druid is an Animal, not a Humanoid. This bypasses many wards, detection spells, and puzzle conditions that target humanoids specifically. Combined with spider or insect forms that can fit through tiny gaps, Druids can access spaces and avoid triggers that stop every other class cold.",
+      "example":   "The ward pulses when the Fighter reaches for the handle. Brynja reads the inscription: humanoid presence triggers a paralysis effect. She Wild Shapes into a spider — no longer humanoid. She crawls under the door, finds the release lever on the far side, and pulls it. The ward deactivates. She shifts back. 'You could have just told me it was a spider door,' the Fighter says. 'I did,' Brynja says."
+    }
+  },
+
+  "alts": ["ranger", "animist", "cleric"]
+}

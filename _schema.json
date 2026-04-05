@@ -1,0 +1,79 @@
+{
+  "_comment": "Schema reference for every file in classes/*.json — not loaded by the app.",
+  "_schema": {
+    "name":    "string — display name, e.g. 'Fighter'",
+    "icon":    "string — single emoji",
+    "tagline": "string — one-line flavour, e.g. 'The reliable front-line warrior'",
+    "color":   "string — CSS hex, used as hero gradient accent, e.g. '#3a1010'",
+    "aon":     "string — full URL to Archives of Nethys class page",
+
+    "tags": [
+      "array of strings — any subset of: magic | martial | support | heal | companion | hard | easy"
+    ],
+
+    "stats": {
+      "primary":   "string — most important attribute, e.g. 'Strength'",
+      "secondary": "string — second most important, e.g. 'Constitution'"
+    },
+
+    "npc": "null  OR  { type: string, desc: string }",
+    "_npc_note": "Set to null for classes with no companion/mount/familiar/eidolon. The box is hidden entirely when null.",
+
+    "gear": {
+      "weapons": "string — plain prose description of weapon access",
+      "armor":   "string — plain prose description of armor access"
+    },
+
+    "ancestry": {
+      "good":       ["array of strings — e.g. 'Half-Orc — Orc Ferocity synergy'"],
+      "bad":        ["array of strings — e.g. 'Gnome — no Strength emphasis'"],
+      "disclaimer": "string — shown below the two columns"
+    },
+
+    "unique":  "string — the one mechanical thing no other class can do",
+    "summary": "string — 2-4 sentence overview of the class",
+
+    "character": {
+      "name":       "string",
+      "meta":       "string — ancestry + class + level, e.g. 'Half-Orc Fighter, Level 1'",
+      "appearance": "string — 1-2 sentence physical description",
+      "quote":      "string — without surrounding quotes, those are added by the renderer"
+    },
+
+    "vignettes": {
+      "combat": {
+        "narrative": "string — 1-2 sentences setting the scene",
+        "mechanic":  "string — plain prose explaining the relevant rule(s)",
+        "example":   "string — a specific dice roll played out, e.g. 'Grulk rolls 14 + 4 Str + 4 Expert = 22 vs. AC 17. Hit — 1d12+4 = 10 damage.'"
+      },
+      "social": {
+        "narrative": "string",
+        "mechanic":  "string",
+        "example":   "string"
+      },
+      "puzzle": {
+        "narrative": "string",
+        "mechanic":  "string",
+        "example":   "string"
+      }
+    },
+
+    "alts": ["array of class id strings — e.g. 'fighter', 'barbarian', shown as clickable chips"]
+  },
+
+  "_example_npc_with_companion": {
+    "npc": {
+      "type": "Animal Companion",
+      "desc": "A loyal animal — wolf, hawk, bear — that fights alongside you. Acquired via the Animal Companion feat. Optional but iconic."
+    }
+  },
+  "_example_npc_required": {
+    "npc": {
+      "type": "Eidolon (Required)",
+      "desc": "Your Eidolon is not a pet — it is your other self. You cannot play the Summoner without it. You split your three actions each turn between yourself and your Eidolon."
+    }
+  },
+  "_example_npc_null": {
+    "npc": null
+  }
+}

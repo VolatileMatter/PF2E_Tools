@@ -1,0 +1,69 @@
+{
+  "name":    "Ranger",
+  "icon":    "🏹",
+  "tagline": "Self-sufficient hunter",
+  "color":   "#0a1a0a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=36",
+
+  "tags": ["martial", "companion"],
+
+  "stats": {
+    "primary":   "Dexterity",
+    "secondary": "Wisdom"
+  },
+
+  "npc": {
+    "type": "Animal Companion (optional)",
+    "desc":  "Via the Animal Companion feat, a Ranger can bond with a wolf, hawk, bear, or many other animals that fights loyally at their side. The companion grows in power alongside you. Entirely optional — but a natural fit for the class fantasy."
+  },
+
+  "gear": {
+    "weapons": "All simple and martial weapons. Rangers excel with bows for pure archery builds, or dual-wielding short swords and axes for melee. The Hunt Prey damage bonus applies equally to both, so the weapon choice is entirely about playstyle.",
+    "armor":   "Light and medium armor. Rangers are mobile hunters who rely on repositioning — medium armor gives solid protection without the Speed penalty of heavy armor. Most Rangers stick to leather or hide in practice."
+  },
+
+  "ancestry": {
+    "good": [
+      "Elf — Dexterity bonus, low-light vision for hunting in dim conditions, Elf Step for exceptional combat mobility",
+      "Halfling — Dexterity bonus, Halfling Luck for critical skill re-rolls, small size is harder to pin down",
+      "Human — Natural Ambition for an early bonus class feat; works equally well for any Ranger build",
+      "Leshy — Nature skill bonuses, plant-form utility, and an unusual visual identity that suits a wilderness wanderer"
+    ],
+    "bad": [
+      "Dwarf — Slow base Speed of 20 feet undermines the Ranger's repositioning and mobile hunter identity",
+      "Orc — Strength-focused stat array without the Dexterity emphasis that archery builds depend on"
+    ],
+    "disclaimer": "Any ancestry can be a skilled hunter. Speed and Dexterity are the main mechanical concerns — everything else is flavor."
+  },
+
+  "unique": "Hunt Prey is the only class ability in the game that simultaneously boosts attack accuracy and exploration tracking against the same target as a free action. You're the only class truly built around the concept of committing to a single quarry — and being rewarded at every level for that focus.",
+
+  "summary": "You designate a Hunted Prey each fight, gaining bonuses to hit and track them for the duration. Build toward archery, two-weapon melee, or a blend of both. An optional animal companion grows into a genuine combat partner. Rangers are the most self-sufficient class in the game: capable in any fight, extraordinary in the wilderness.",
+
+  "character": {
+    "name":       "Kael Windstep",
+    "meta":       "Elf Ranger, Level 1",
+    "appearance": "A slender elf with copper skin and close-cropped hair, carrying a shortbow across her back and two long knives at her hips. Her wolf, Fenrir, moves slightly ahead of her at all times.",
+    "quote":      "Fenrir found the tracks. We have maybe twenty minutes."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Kael marks the orc captain the moment initiative is called. Fenrir flanks left while she draws her bow from cover.",
+      "mechanic":  "Hunt Prey is a free action on your first turn: it designates one creature as your quarry and grants a +2 circumstance bonus to Seek and Track them. The first ranged attack each turn ignores one range increment penalty against them. Switching to a new Prey costs only 1 action and is unlimited. The companion, if you have one, uses its own actions each turn.",
+      "example":   "Kael fires at the captain from 60 feet away. Normally -2 for the second range increment, but Hunt Prey cancels it: 1d20 + 5 Dex + 4 trained = 16 vs. AC 18. Miss. Second arrow at -5 MAP: 1d20 + 5 + 4 - 5 = rolls 14, total 18. Hit — 1d6 + 5 Dex = 8 piercing. Fenrir simultaneously bites the captain from the other side: 1d20 + 6 = 14 vs. AC 18. Miss — but the captain can't move freely without provoking from both."
+    },
+    "social": {
+      "narrative": "The smuggler claims he has no idea where the warehouse is. Kael watches him the whole time without speaking.",
+      "mechanic":  "Sense Motive is a Perception action that detects when someone is lying or hiding something. Rangers typically have high Wisdom and trained Perception, making them reliable lie-detectors in social situations even without dedicated social skills.",
+      "example":   "Sense Motive: 1d20 + 5 Wisdom + 4 trained Perception = rolls 13, total 22 vs. the smuggler's Deception DC 16. Success — Kael notes he touched his collar twice when the warehouse was mentioned. She says nothing. She tells the party's face afterward, quietly: 'He knows where it is. He's scared of whoever owns it.'"
+    },
+    "puzzle": {
+      "narrative": "The chamber is full of carved animal reliefs and no obvious mechanism. Kael walks the perimeter at a steady pace while the Wizard studies the inscription above the door.",
+      "mechanic":  "Nature (Recall Knowledge on animals, plants, and natural phenomena) and Survival (read terrain, identify creature sign, navigate) are the Ranger's primary puzzle tools. They cover a surprising percentage of dungeon obstacles when those obstacles have an environmental or natural component.",
+      "example":   "Survival check to identify the room's pattern (tracks, markings, environmental logic): DC 17 — rolls 8 + 4 Wisdom + 4 trained Survival = 16. Fail by 1. She takes 10 minutes to Investigate instead: automatic success on DC 20 or lower with sufficient time. 'Pressure plates on every third tile starting from the east wall. The carvings show you the safe ones if you know what to look for.'"
+    }
+  },
+
+  "alts": ["gunslinger", "rogue", "druid"]
+}

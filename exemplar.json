@@ -1,0 +1,66 @@
+{
+  "name":    "Exemplar",
+  "icon":    "🔥",
+  "tagline": "Demigod in the making",
+  "color":   "#1a1008",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=65",
+
+  "tags": ["magic", "hard"],
+
+  "stats": {
+    "primary":   "Charisma",
+    "secondary": "Strength"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons. Most importantly, one of your weapons can be designated as your Ikon — a sacred object through which your divine spark flows. An Ikon weapon gains special abilities in both Mortal and Transcendent states. The specific weapon matters less than what it represents.",
+    "armor":   "Light and medium armor, with heavy armor available through feats. The Exemplar's defense comes partly from divine presence as much as physical protection. Some builds invest in an Ikon worn item (like a torque or crown) instead of an Ikon weapon, allowing any weapon choice."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Natural Ambition for early Ikon feats; the 'ordinary person who becomes something more through will and deeds' is the most human story ever told",
+      "Aasimar — Already touched by the divine and becoming more so; Charisma bonus; the celestial lineage makes the demigod trajectory feel inevitable",
+      "Orc — Strength and Charisma; the divine warrior whose power is earned through battle is deeply embedded in Orc cultural heroism narratives",
+      "Half-Elf — Flexible stats, charismatic, and the threshold-crossing identity — between worlds, between states — fits the Mortal/Transcendent duality perfectly"
+    ],
+    "bad": [
+      "Gnome — Charisma works but the small physical stature and fey nature creates friction with the demigod physical presence the class embodies in combat",
+      "Sprite — Tiny, fragile, and genuinely limited armor options; the overwhelming divine presence that defines the Exemplar is difficult to project from two feet tall"
+    ],
+    "disclaimer": "Divinity is not inherited — it is earned. Any ancestry can carry a divine spark. These are starting stat and thematic notes only."
+  },
+
+  "unique": "The Exemplar is the only class with a persistent two-state mechanical system at its core. You are always in either Mortal state or Transcendent state, and the same Ikon abilities work differently in each. Every turn involves deciding when to Transcend for maximum impact and when to remain Mortal to preserve options. No other class has this fundamental on/off divine mode woven into every ability.",
+
+  "summary": "A divine spark ignites within you — not granted by a god, but inherent, yours, growing. You carry Ikons: sacred objects (a weapon, worn item, or other significant object) that channel your divine nature. You alternate between Mortal state and Transcendent state, with each Ikon ability having two versions — one for each state. Think Hercules, Cú Chulainn, Enkidu, Maui: heroes who are becoming something the world hasn't seen before.",
+
+  "character": {
+    "name":       "Adira Sundborn",
+    "meta":       "Human Exemplar, Level 1",
+    "appearance": "A powerfully built woman with a faint permanent shimmer at the edges of her outline, as if the air near her is slightly warmer and slightly more real than everywhere else. She wears a golden torque — her Ikon — and carries herself with the absolute calm of someone who has decided what they are.",
+    "quote":      "The gods are just stories until they're standing in front of you. Hello."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Adira enters Mortal state disciplined, controlled. Then she chooses the moment and Transcends. The shimmer becomes visible. The torque blazes.",
+      "mechanic":  "Transcend (1 action): enter Transcendent state. While Transcendent, your Ikon abilities gain enhanced effects — more damage, more range, additional conditions, or new properties entirely. You return to Mortal state at the start of your next turn unless you spend an action to Sustain the Transcendence. The core loop: Mortal (efficient, reliable) → Transcend (1 action) → Transcendent (powerful, for 1 round) → return to Mortal → repeat at the right moment.",
+      "example":   "Adira is in Mortal state. She Transcends (1 action): the shimmer flares, torque blazes. Transcendent state: her Ikon torque now grants +2 status bonus to all saves and +2 damage on Strikes. She Strikes: 1d20 + 5 Strength + 4 trained = 17 vs. AC 15. Hit — 1d8 + 5 + 2 Transcendent = 13 damage. At end of turn she returns to Mortal state automatically (no action). Next turn: assess when to Transcend again for maximum impact."
+    },
+    "social": {
+      "narrative": "Adira doesn't announce she is becoming something divine. She doesn't need to. It is visible.",
+      "mechanic":  "Charisma is the Exemplar's primary stat — Diplomacy, Intimidation, and Performance all naturally high. Transcendence is externally visible: the shimmer, the blazing Ikon, the slight wrongness of the air around her. This functions as a social display of power in any context that recognizes divine authority, creating effects that would normally require a significant Intimidation or Diplomacy investment.",
+      "example":   "A warlord demands tribute from the party. Adira Transcends briefly — just enough to be visible. The warlord's Perception check (automatic, GM calls it): he sees the shimmer. Will save DC 17: rolls 9 — Frightened 1. 'What are you?' 'Someone you'd rather not test,' Adira says, and lets the Transcendence fade. Intimidation: 1d20 + 5 Charisma + 4 trained = 21 vs. Will DC 13 (already reduced by Frightened). Critical success — the warlord backs down entirely. No violence required."
+    },
+    "puzzle": {
+      "narrative": "A sealed divine vault — opened only by someone bearing a genuine divine spark. The party wizard has been here for twenty minutes.",
+      "mechanic":  "Religion and Athletics cover the Exemplar's puzzle range. While Transcendent, some Ikon abilities grant enhanced perception or knowledge effects beyond normal senses. The divine spark occasionally generates insights that seem to come from outside — the GM may offer information freely when an Exemplar Transcends in the presence of a divine mechanism that is waiting for exactly this.",
+      "example":   "The vault door is sealed with a test of divine nature, not a lock. The Wizard's Arcana check found no mechanism because there is no mechanism. Adira places her hand on the door and Transcends. The shimmer spreads into the stone. She simply knows the answer — not from a skill check, but because the door was built to recognize what she is becoming. It requires acknowledging the divine by setting aside the weapon. She lays her sword on the ground. The door opens. 'How?' the Wizard asks. 'The divine is obvious,' Adira says, 'once you stop thinking like a mortal.'"
+    }
+  },
+
+  "alts": ["champion", "barbarian", "oracle"]
+}

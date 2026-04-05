@@ -1,0 +1,66 @@
+{
+  "name":    "Swashbuckler",
+  "icon":    "🤺",
+  "tagline": "Dashing cinematic duelist",
+  "color":   "#0a1020",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=63",
+
+  "tags": ["martial"],
+
+  "stats": {
+    "primary":   "Dexterity",
+    "secondary": "Charisma"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple weapons and martial one-handed melee weapons — rapiers, scimitars, sabers, whips, and more. Swashbucklers use finesse weapons, meaning they hit and damage with Dexterity instead of Strength. One hand is always free for flourish; no two-handed weapons.",
+    "armor":   "Light armor only. The Swashbuckler is built for mobility and evasion rather than absorption. Their Style also adds Charisma to Reflex saves, making them surprisingly hard to damage with area effects and traps when Panache is active."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Versatile Heritage and Natural Ambition both slot in cleanly; the human 'dashing hero' archetype fits every Swashbuckler Style",
+      "Gnome — Charisma and Dexterity both emphasized; fey whimsy and chaotic energy match the Wit Style's social-combat loop perfectly",
+      "Elf — Natural Dexterity focus, graceful aesthetic, and Elf Step give exceptional repositioning for a class that wants to be everywhere",
+      "Catfolk — Dexterity bonus, Pounce lets you Leap and Strike in one action, acrobatic flavor fits the cinematic identity"
+    ],
+    "bad": [
+      "Dwarf — Slow base Speed directly contradicts the Swashbuckler's need to be constantly in motion and repositioning",
+      "Orc — No Dexterity or Charisma emphasis; the fighting style is more Barbarian-coded than finesse duelist"
+    ],
+    "disclaimer": "Any ancestry can be dashing. Style and swagger transcend stat arrays — these are optimization notes only."
+  },
+
+  "unique": "The Swashbuckler is the only martial class that generates its core combat resource — Panache — through stylish, non-violent actions like tumbling, taunting, and balancing. Uniquely among all martial classes, social interactions can generate Panache too. Every fight is a performance, mechanically as well as narratively.",
+
+  "summary": "You build Panache by doing flashy things: tumbling through an enemy's space, landing a Bon Mot that rattles their confidence, or balancing on the ship's railing while the others crouch behind crates. With Panache active you move faster and hit harder. Spending it on a Finisher ends the moment with a single devastating strike. Your Style — Battledancer, Braggart, Fencer, Gymnast, or Wit — determines which actions generate Panache and which Finishers you can use.",
+
+  "character": {
+    "name":       "Isolde Cavalcante",
+    "meta":       "Human Swashbuckler (Gymnast Style), Level 1",
+    "appearance": "A tall woman in a white shirt with the sleeves rolled up, a plumed hat, and a rapier at her hip. She enters every room like she was already winning before she got there.",
+    "quote":      "I'm not in danger. Danger is in my general direction."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Three goblins between Isolde and the bandit captain. She doesn't go around them.",
+      "mechanic":  "Tumble Through (Acrobatics vs. the enemy's Reflex DC): on a success, you move through their space and — if your Style triggers on it — gain Panache. With Panache active, you add 2 damage per weapon damage die and gain +5 feet of Speed. Spending Panache on a Finisher replaces a normal Strike with a special, more powerful attack.",
+      "example":   "Tumble Through the lead goblin: Acrobatics 1d20 + 5 Dex + 4 trained = 16 vs. Reflex DC 14. Success — Panache gained. Isolde reaches the captain. She Strikes with Panache active: 1d20 + 5 Dex + 4 trained = 19 vs. AC 15. Hit — 1d6 + 5 Dex + 2 Panache = 12 piercing. She steps back and gives a small bow."
+    },
+    "social": {
+      "narrative": "The city official has been stonewalling the party for twenty minutes. Isolde decides to stop letting the face handle it.",
+      "mechanic":  "Bon Mot is a free action that uses Diplomacy to make a cutting remark. On a success the target is flat-footed to Perception checks and takes a -2 penalty to Will saves for 1 minute — this applies in both combat and social encounters. It can also generate Panache for Wit Style Swashbucklers, making social skill use a direct combat buff.",
+      "example":   "Bon Mot on the official: 1d20 + 4 Charisma + 4 trained Diplomacy = 17 vs. Will DC 15. Success — he's flustered, -2 to Will saves. Isolde follows immediately with a Request (Diplomacy): 1d20 + 4 + 4 = 18 vs. the now-reduced Will DC 12. Success — he agrees to the meeting. The entire exchange took about thirty seconds."
+    },
+    "puzzle": {
+      "narrative": "A guarded hallway, a locked door at the end, and nowhere to create a distraction except Isolde's own considerable personality.",
+      "mechanic":  "Thievery, Acrobatics, and Deception are the Swashbuckler's exploration toolkit. For Wit Style Swashbucklers, succeeding at a Deception check generates Panache — meaning a successful bluff to create a distraction also primes them for the first strike of the resulting fight.",
+      "example":   "Isolde walks up to the guards and begins performing an impromptu inspection of their equipment, citing a regulation she invents on the spot. Performance: 1d20 + 3 Charisma + 4 trained = 21 vs. DC 16. Everyone is watching her. The Rogue has fifteen seconds. Isolde gains Panache. When the guards realize nothing about this inspection is legitimate, she's already past them."
+    }
+  },
+
+  "alts": ["rogue", "fighter", "bard"]
+}

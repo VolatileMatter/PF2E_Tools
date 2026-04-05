@@ -1,0 +1,66 @@
+{
+  "name":    "Guardian",
+  "icon":    "🛡️",
+  "tagline": "The living shield",
+  "color":   "#101a10",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=67",
+
+  "tags": ["martial", "easy"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple and martial weapons. Guardians most often use one-handed weapons — longsword, warhammer, morningstar — so the shield hand stays free. A free hand is essential for many Guardian reactions and class abilities.",
+    "armor":   "Light, medium, and heavy armor plus shields. The Guardian is designed around shields: Shield Block is a core class feature, and several Guardian feats make shields dramatically more effective than they are for any other class."
+  },
+
+  "ancestry": {
+    "good": [
+      "Dwarf — Constitution bonus, Slam Down ancestry feat for knockdown combos, Shield Block cultural identity",
+      "Human — Versatile Heritage and Natural Ambition provide extra feats to invest in Guardian-specific options early",
+      "Automaton — Built-in armor and resistance to mental effects; thematically fits a constructed guardian perfectly",
+      "Gnoll — Pack Attack gives an offensive contribution while the Guardian is anchoring the defensive line"
+    ],
+    "bad": [
+      "Sprite — Tiny size and physical fragility work against every Guardian class feature",
+      "Gnome — Charisma-focused ancestry with small stature; conflicts with the heavy-armor front-line identity"
+    ],
+    "disclaimer": "Any ancestry can step in front of danger. These are mechanical notes only — the Guardian's identity is about the choice to protect, not the ancestry that enables it."
+  },
+
+  "unique": "The Guardian is the only class built entirely around protecting others as a core mechanic. Through Intercept Strike and related reactions, you literally step into attacks meant for allies, absorbing damage that would otherwise drop your teammates. Every other class fights for themselves first. The Guardian fights for everyone else first.",
+
+  "summary": "You position yourself between your allies and anything that threatens them. Through reactions triggered by enemy attacks, you intercept blows headed for your friends, redirect attention onto yourself with Taunt, and use Shield Block to reduce the damage you take. You are not the biggest damage dealer — you are the reason the damage dealer survives to deal damage.",
+
+  "character": {
+    "name":       "Sister Aldara",
+    "meta":       "Human Guardian, Level 1",
+    "appearance": "A broad-shouldered woman in gleaming tower shield and heavy plate, moving with the deliberate calm of someone who has decided in advance not to be moved. Her expression doesn't change when things go badly.",
+    "quote":      "Get behind me. All of you. I said ALL of you."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "The skeleton lunges past Aldara toward the party healer in the back row. Aldara's reaction fires before the blow lands.",
+      "mechanic":  "Intercept Strike (reaction): when an adjacent ally is hit by an attack, the Guardian can use their reaction to become the target instead, taking the damage in the ally's place. Shield Block can then reduce that damage by the shield's Hardness value. Taunt (an action) forces nearby enemies to target the Guardian on their next attack or take a penalty.",
+      "example":   "Skeleton attacks the Cleric: roll 18 + 7 = 25 vs. Cleric's AC 14. Hit for 8 piercing. Aldara uses Intercept Strike — she takes the 8 instead. She then uses Shield Block: her shield has Hardness 3, reducing damage to 5. Net result: 5 damage to Aldara, 0 to the Cleric. The skeleton is now Taunted and must target Aldara on its next action."
+    },
+    "social": {
+      "narrative": "The frightened villager won't open the gate. Three armed strangers arriving after dark is not a reassuring sight.",
+      "mechanic":  "Guardians typically invest in Diplomacy for sincere, earnest social interactions. They have no special social class features, but high Wisdom and a genuinely protective demeanor make them consistently effective at earning trust from NPCs who have been recently hurt.",
+      "example":   "Diplomacy to Make an Impression: 1d20 + 3 Wisdom + 3 trained = rolls 10, total 16 vs. DC 15. Success — attitude shifts from Unfriendly to Indifferent. Aldara asks to come in out of the dark. The gate opens a crack. 'Just you. The others wait outside.' She agrees without hesitation."
+    },
+    "puzzle": {
+      "narrative": "The room has three obvious pressure plates and one less obvious one. Aldara enters first, alone, to find out which ones do what.",
+      "mechanic":  "Guardians are not specialist puzzle-solvers, but their Perception and Athletics investments make them reliable at finding hidden hazards and clearing physical obstacles. More practically: their high HP and damage mitigation mean they can safely test mechanisms that would kill squishier party members.",
+      "example":   "Aldara Seeks for hidden hazards: Perception 1d20 + 4 Wisdom + 4 trained = rolls 12, total 20 vs. Trap DC 18. Success — she spots a fourth pressure plate hidden under a scatter of old bones, positioned exactly where someone watching the other three would naturally step. 'Don't move. Go around the left wall. Single file.'"
+    }
+  },
+
+  "alts": ["fighter", "champion", "barbarian"]
+}

@@ -1,0 +1,69 @@
+{
+  "name":    "Wizard",
+  "icon":    "📖",
+  "tagline": "The arcane librarian",
+  "color":   "#0a0a1a",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=39",
+
+  "tags": ["magic", "companion", "hard"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Constitution"
+  },
+
+  "npc": {
+    "type": "Familiar (optional)",
+    "desc":  "Wizards can bond with a small magical familiar — an owl, cat, toad, or stranger creature — that assists with spellcasting and gains customizable abilities as you level. A classic companion for the bookish scholar, but entirely optional."
+  },
+
+  "gear": {
+    "weapons": "Simple weapons only, with some weapon expansion possible via Arcane Thesis choices. In practice almost every Wizard relies entirely on spells — the weapon exists for the day everything goes wrong and it hasn't gone wrong yet.",
+    "armor":   "No armor training without spending feats on it. Wizards use Mage Armor (a 1st-level spell that lasts 24 hours) in place of actual armor, giving them a +1 item bonus to AC with no encumbrance. Arcane spellcasting works in any clothing."
+  },
+
+  "ancestry": {
+    "good": [
+      "Elf — Intelligence bonus, ancient lore access, Arcane Sight for magical perception, and the scholarly aesthetics fit the Wizard identity better than almost any other class",
+      "Gnome — Intelligence and Charisma; Fey magical heritage supplements arcane study; gnome eccentricity maps naturally to the dedicated researcher archetype",
+      "Human — Bonus skill training is excellent for a class that benefits from broad knowledge; Natural Ambition gives early access to powerful Arcane Thesis options",
+      "Kobold — Intelligence bonus, Draconic Sorcery alternative for variety, excellent Arcane Scholar flavor; underplayed but mechanically sound"
+    ],
+    "bad": [
+      "Orc — No Intelligence emphasis in typical builds; the scholarly magical academic identity conflicts sharply with the Orc warrior archetype",
+      "Goblin — Typically Charisma and Dexterity focused; goblin magical tradition tends toward alchemical rather than scholarly arcane"
+    ],
+    "disclaimer": "Intelligence and relentless curiosity are found in every corner of the world. Any ancestry can pursue arcane mastery — these are starting stat observations only."
+  },
+
+  "unique": "The Wizard's spellbook grows with every adventure. Any scroll you find, any spellbook you loot from a defeated enemy wizard, any spell you can identify — you can add those spells permanently to your own book. No other class has a spell list that literally expands by plundering dungeons. The Wizard's versatility compounds over the course of a campaign in a way no other class can replicate.",
+
+  "summary": "You study magic and write it down. Every morning you select which spells to prepare from your spellbook — a deliberate choice that rewards careful planning. Your arcane spell list is the largest in the game, and it grows whenever you find new spells in the wild. Your Arcane Thesis defines your specialty: Spell Blending for raw power, Improved Familiar Attunement for a potent companion, Spell Substitution for flexibility, and others.",
+
+  "character": {
+    "name":       "Thessaly Vanthorpe",
+    "meta":       "Elf Wizard (Spell Blending Thesis), Level 1",
+    "appearance": "An elderly elf in blue robes covered edge-to-edge in arcane notation, carrying a staff, an owl familiar named Quill who judges everyone silently, and three books she claims are reference materials and uses as weapons when surprised.",
+    "quote":      "I have a spell for this. I also have spells for six other scenarios that haven't happened yet. You're welcome."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Thessaly prepared exactly the right spells this morning. She knew she would need them because she spent twenty minutes last night thinking about what this dungeon probably contains.",
+      "mechanic":  "Wizards prepare spells each morning from their spellbook, choosing which spells to fill which slots. This rewards anticipation — the right prepared spell is more powerful than a spontaneous cast. Magic Missile (automatic hit, 1d4+1 per missile) is a reliable fallback. Color Spray and Hideous Laughter end encounters before they escalate. Spell Blending Thesis lets Wizards combine lower slots into higher ones for emergency big spells.",
+      "example":   "Three goblins clustered together. Thessaly casts Color Spray (1st-level slot, 30-foot cone): each goblin makes a Will save vs. DC 17. First rolls 8 — critical failure, Blinded for 1 round and Stunned 1. Second rolls 13 — failure, Dazzled for 1 minute. Third rolls 20 — success, Dazzled for 1 round. Two of three goblins are now effectively out of the fight. Thessaly used one prepared spell."
+    },
+    "social": {
+      "narrative": "The duke claims certain trade routes are traditionally restricted. Thessaly heard this claim and quietly waited until he finished.",
+      "mechanic":  "Intelligence is the Wizard's primary stat — Society, Arcana, History, and any Lore skill all benefit. Wizards are the party's institutional authority: they cite sources, correct misconceptions, and arrive to negotiations already knowing the relevant law, history, and leverage. At higher levels, mind-affecting spells provide options that bypass social encounters entirely.",
+      "example":   "The duke cites a charter restriction. Society Recall Knowledge DC 16: 1d20 + 5 Intelligence + 4 trained = 20. Success — Thessaly knows that charter expired forty years ago under a trade reform act that the duke's own grandfather signed. She cites it by section number. The duke pauses for a long moment. 'You've read the charter.' 'Both editions,' Thessaly says. 'The second one is more favorable to us.'"
+    },
+    "puzzle": {
+      "narrative": "A room full of magical glyphs, a combination-locked door, and a mechanism that has defeated the party for twenty minutes. Thessaly requested ten minutes to study it alone.",
+      "mechanic":  "Arcana, Occultism, History, and virtually any Lore are the Wizard's puzzle toolkit. Detect Magic, Read Aura, and Identify Magic are cantrips and low-level spells that strip away concealment from magical mechanisms directly. A prepared Wizard who anticipated needing Knock or Dispel Magic has a hard counter to most magical locks.",
+      "example":   "Thessaly casts Detect Magic and Read Aura on the door (10 minutes combined). Arcana DC 17 to interpret the auras: 1d20 + 5 Intelligence + 4 trained = 22. Success — the glyphs are a six-step combination lock using arcane gestures in the sequence a pre-Azlanti vault-keeper would use. She performs them from muscle memory derived from forty years of study. The lock disengages. 'I had Knock prepared as backup,' she says. No one asks why she didn't lead with that."
+    }
+  },
+
+  "alts": ["sorcerer", "magus", "psychic"]
+}

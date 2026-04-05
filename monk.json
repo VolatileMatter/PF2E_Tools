@@ -1,0 +1,66 @@
+{
+  "name":    "Monk",
+  "icon":    "👊",
+  "tagline": "Disciplined unarmed martial artist",
+  "color":   "#0a1010",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=60",
+
+  "tags": ["martial"],
+
+  "stats": {
+    "primary":   "Strength",
+    "secondary": "Wisdom"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Unarmed attacks — fists, kicks, elbows, knees — are the Monk's primary weapons, and they scale better than most manufactured weapons by mid-game. Monks also use a specific category of monk weapons: bo staff, kama, nunchaku, sai, shuriken, and others. These are optional; many Monks never pick them up.",
+    "armor":   "No armor. The Monk's Unarmored Defense class feature uses their Wisdom modifier to set AC alongside Dexterity, often matching or exceeding medium armor without wearing anything. Putting on armor removes access to most Monk class features — it's all or nothing."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Natural Ambition gives a bonus 1st-level class feat; the large feat selection means this compounds well across every build",
+      "Halfling — Dexterity and Wisdom both boosted; Hard to Kill and Halfling Luck synergize with the Monk's high-AC survivability",
+      "Elf — Natural Dexterity and Wisdom emphasis; Elf Step gives exceptional free movement that fits the mobile Monk perfectly",
+      "Kitsune — Dexterity and Charisma; Foxfire cantrip provides a useful ranged option for a class that otherwise has to close to melee"
+    ],
+    "bad": [
+      "Dwarf — Slow base Speed of 20 feet directly contradicts the Monk's identity as the fastest and most mobile martial class",
+      "Orc — Strength and Constitution emphasis without Wisdom; misses the Unarmored Defense AC formula and leaves the Monk surprisingly squishy"
+    ],
+    "disclaimer": "Any ancestry can train body and mind. Speed matters more than Strength for most Monk builds — but these are optimization notes, not prerequisites."
+  },
+
+  "unique": "The Monk is the only class that achieves excellent AC without any armor at all, using Wisdom and sheer training alone. They're also the only class whose entire weapon set is their own body — which cannot be disarmed, sundered, confiscated at the door, or taken away under any circumstances.",
+
+  "summary": "You fight with your hands and feet, and you are better at it than anyone. Stances entered as a single action reshape your whole attack pattern — Tiger Claws for slashing damage, Wolf Jaw for knockdown potential, Crane Wing for defensive fighting, and many more. Flurry of Blows lets you make two strikes for one action. Optional Ki spells add supernatural effects without requiring spell slots in the traditional sense.",
+
+  "character": {
+    "name":       "Brother Lao",
+    "meta":       "Human Monk, Level 1",
+    "appearance": "A lean middle-aged man in simple grey robes, hands calloused from decades of training, with an expression of permanent mild patience that people consistently misread as serenity until he moves.",
+    "quote":      "Violence is a last resort. We have been in three fights today."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Brother Lao enters Tiger Stance with one action, then spends his next action on Flurry of Blows — two strikes flowing into each other.",
+      "mechanic":  "Flurry of Blows costs 1 action and makes two Strikes at the normal multiple attack penalty progression. Tiger Stance's claws have the Agile trait, which reduces the MAP from -5/-10 to -4/-8 — effectively -4 on the second hit instead of -5. This means two meaningful attacks from one action, leaving another action free for movement or a third strike.",
+      "example":   "First Strike: 1d20 + 4 Strength + 4 trained = rolls 12, total 20 vs. AC 16. Hit — 1d8 + 4 = 9 slashing damage. Second Strike at -4 MAP (Agile): 1d20 + 4 + 4 - 4 = rolls 11, total 15 vs. AC 16. Miss by 1. Lao uses his third action to Step to a flanking position for next round. One action, one hit, good setup."
+    },
+    "social": {
+      "narrative": "The informant is trying to decide whether to lie. Brother Lao has not moved or spoken in about forty seconds.",
+      "mechanic":  "Sense Motive is a Perception-based action that reads whether someone is being truthful or concealing something. Monks typically have the highest Wisdom in a party, and since Wisdom drives both their AC and their Perception, they're almost always the first to notice when something is off.",
+      "example":   "Sense Motive: 1d20 + 4 Wisdom + 4 trained Perception = rolls 11, total 19 vs. the informant's Deception DC 17. Success — Lao notes the informant looked at the back door twice while claiming not to know the exit route. He says nothing to the informant. He tells the party when they leave: 'Back door. He's been through it recently.'"
+    },
+    "puzzle": {
+      "narrative": "A stone button sits in the center of the ceiling, fifteen feet up. There is no furniture, no rope, and no ladder.",
+      "mechanic":  "High-level Acrobatics and Athletics let Monks perform feats of physical precision that are simply not available to most classes. Wall running, precise jumps, and controlled landings are all Athletics or Acrobatics checks — and the Monk's exceptional scores make success reliable where it would be a gamble for anyone else.",
+      "example":   "Wall Jump (Athletics, DC 15 to leap from wall to wall and reach a high point): 1d20 + 5 Strength + 4 trained Athletics = rolls 7, total 16. Success — Lao runs up the wall at an angle, reaches the button at the apex of his arc, presses it with two fingers, and lands in the same spot he started. The mechanism clicks. It took approximately four seconds."
+    }
+  },
+
+  "alts": ["fighter", "swashbuckler", "barbarian"]
+}

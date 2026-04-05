@@ -1,0 +1,66 @@
+{
+  "name":    "Alchemist",
+  "icon":    "⚗️",
+  "tagline": "Craftsperson who fights with chemistry",
+  "color":   "#1a1508",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=56",
+
+  "tags": ["hard", "heal"],
+
+  "stats": {
+    "primary":   "Intelligence",
+    "secondary": "Constitution"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "All simple weapons plus alchemical bombs as their own weapon category. Bombs are the Alchemist's primary offensive tool — they use Dexterity to hit, deal typed elemental damage, and have a splash radius that damages nearby creatures automatically. The bomb supply refreshes every day from the Reagent pool.",
+    "armor":   "Light and medium armor. Research Field determines the typical combat position — bombers and support builds prefer light armor and backline positioning, while Mutagenist builds that consume their own mutagens for combat boosts use medium armor and sometimes wade into melee."
+  },
+
+  "ancestry": {
+    "good": [
+      "Gnome — Intelligence and Constitution both naturally emphasized; the obsessive tinkerer aesthetic is almost synonymous with gnome identity in Golarion",
+      "Human — Bonus skill training at level 1 is excellent for a class that benefits from Crafting, Medicine, and broad knowledge; Natural Ambition for early Research Field feats",
+      "Kobold — Intelligence bonus, natural affinity for traps and dangerous devices, excellent bomber flavor; underplayed but mechanically sound",
+      "Halfling — Dexterity and Constitution; Lucky on saves helps with the occasional accidental explosion; small size makes the Alchemist harder to target while bombing from range"
+    ],
+    "bad": [
+      "Orc — No Intelligence emphasis in typical builds; the crafting-and-chemistry identity doesn't align naturally with the Orc warrior archetype without deliberate re-theming",
+      "Elf — Intelligence works but Constitution tends to run low in Elf builds, and the careful methodical nature of alchemy has an un-elvish aesthetic in most campaign settings"
+    ],
+    "disclaimer": "Anyone with curiosity, steady hands, and a tolerance for minor burns can learn alchemy. These are starting stat and flavor observations only."
+  },
+
+  "unique": "The Alchemist is the only class that produces its own consumable items for free every day from a personal Reagent pool that refreshes at dawn. Every bomb, elixir, and mutagen is created fresh each morning at no gold cost. An infinite personal supply of utility items that no other class has access to — and Quick Alchemy lets them improvise new ones mid-dungeon for 1 Reagent apiece.",
+
+  "summary": "Not a spellcaster — you use science. Each day your Advanced Alchemy lets you create a number of alchemical items equal to your level plus twice your Intelligence modifier for free, drawn from your formula book. Bombs deal reliable typed damage with splash. Elixirs of Life heal. Mutagens boost combat statistics at a cost. Quick Alchemy lets you improvise anything in your formula book mid-scene for 1 Reagent. Your Research Field — Bomber, Chirurgeon, Mutagenist, or Toxicologist — defines your specialty.",
+
+  "character": {
+    "name":       "Fizzwick Coppercoil",
+    "meta":       "Gnome Alchemist (Bomber Research Field), Level 1",
+    "appearance": "A gnome with permanently singed eyebrows, goggles pushed up on his forehead that have never once been down over his eyes during an actual explosion, and pockets containing seventeen substances that should under no circumstances be combined. He has combined them.",
+    "quote":      "It won't explode unless I want it to. Probably."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "Fizzwick reaches into his coat, selects the correct vial by feel, and throws it in a smooth arc toward the cluster of skeletons.",
+      "mechanic":  "Alchemical bombs use Dexterity to attack as a ranged weapon. On a hit they deal their listed damage type plus 1 point of splash damage to all creatures adjacent to the target. Persistent damage (fire, acid) ticks each round until the target succeeds at a DC 15 flat check to end it. Quick Alchemy (1 action, 1 Reagent) creates any formula in your book on the spot — improvised items whenever the situation calls for something specific.",
+      "example":   "Fizzwick throws an Alchemist's Fire at a skeleton cluster: 1d20 + 4 Dex + 4 trained = 15 vs. AC 14. Hit — 1d8 fire + 1 persistent fire, plus 1 splash fire to the two adjacent skeletons automatically. He Quick Alchemies an Acid Flask as his second action (1 Reagent) and throws it at the far skeleton: 1d20 + 4 + 4 - 5 MAP = 12. Hit — 1 acid splash to that skeleton and both its neighbors. Three skeletons, two throws, one action left to reposition."
+    },
+    "social": {
+      "narrative": "The merchant insists the medicine he is selling is genuine. Fizzwick asks to smell the bottle.",
+      "mechanic":  "Crafting is the Alchemist's primary knowledge skill and covers identification of any alchemical substance, poison, disease vector, or manufactured material by smell, sight, and touch. This makes them uniquely effective at identifying what people are selling, consuming, poisoning with, or have been affected by. Quick Alchemy can produce truth serums, antidotes, or social-leverage items on demand during a scene.",
+      "example":   "Fizzwick uncorks the bottle and inhales. Crafting DC 14 to identify the composition: 1d20 + 4 Intelligence + 4 trained = 18. Success — mostly diluted willow extract with trace amounts of a genuine active compound; effective dose is roughly 15% of what's labeled. He recorks it carefully and sets it down. 'Where did you source your reagents?' The merchant's expression changes. The price negotiation takes a very different direction."
+    },
+    "puzzle": {
+      "narrative": "An iron door, welded shut, no mechanism visible. Fizzwick opens his coat and starts considering which pocket.",
+      "mechanic":  "Crafting, Thievery, and the ability to Quick Alchemy any tool in the formula book make the Alchemist surprisingly versatile in exploration. Acid dissolves metal. Tanglefoot bags jam mechanisms. Smokesticks create concealment. Thunderstones create noise at a distance to trigger pressure plates safely. The formula book is a toolkit for physical problem-solving, not just combat.",
+      "example":   "Iron door welded at the hinges. Fizzwick uses Quick Alchemy (1 Reagent) to create a vial of Sovereign Glue-grade concentrated acid — not standard, but within his formula book. Crafting DC 12 to apply it precisely: 1d20 + 4 Intelligence + 4 = 22. Success — he coats the weld seam in a careful bead. Twenty seconds later the metal softens along the line. The door swings open on its own. 'That was a Reagent,' the Cleric observes. 'I have eleven more,' Fizzwick says."
+    }
+  },
+
+  "alts": ["investigator", "inventor", "rogue"]
+}

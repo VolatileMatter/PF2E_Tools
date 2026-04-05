@@ -1,0 +1,66 @@
+{
+  "name":    "Cleric",
+  "icon":    "✨",
+  "tagline": "The definitive divine caster",
+  "color":   "#1a1020",
+  "aon":     "https://2e.aonprd.com/Classes.aspx?ID=33",
+
+  "tags": ["magic", "heal"],
+
+  "stats": {
+    "primary":   "Wisdom",
+    "secondary": "Charisma"
+  },
+
+  "npc": null,
+
+  "gear": {
+    "weapons": "Clerics are trained in their deity's favored weapon and gain additional benefits when using it. A Cleric of Gorum wields a greatsword; a Cleric of Iomedae uses a longsword; a Cleric of Nethys carries a staff. Cloistered Clerics lean toward simple weapons and staves. Warpriest Clerics fight in melee with their deity's chosen weapon.",
+    "armor":   "Depends on doctrine. Warpriest Clerics are trained in all armor and fight at the front. Cloistered Clerics are trained in light armor only and position themselves behind the martial characters. The choice of doctrine at level 1 locks this in permanently."
+  },
+
+  "ancestry": {
+    "good": [
+      "Human — Flexible stat boosts fit either Wisdom or Charisma emphasis; Natural Ambition gives access to strong early domain spells",
+      "Dwarf — Wisdom sometimes boosted; Constitution for survivability; dwarven faith in Torag is one of the most iconic cleric archetypes in the setting",
+      "Halfling — Wisdom and Dexterity; Hard to Kill; Halfling Luck on saves is excellent for a back-line caster who must avoid being targeted",
+      "Aasimar — Divine heritage synergy; Charisma boost for face Clerics; the celestial lineage matches the divine caster fantasy perfectly"
+    ],
+    "bad": [
+      "Orc — No Wisdom emphasis in typical builds; though a Warpriest of Gorum can work, it requires more feat investment to compensate",
+      "Sprite — Tiny and fragile; limited armor options create problems for Warpriest builds; physically vulnerable for a class that sometimes needs to stand firm"
+    ],
+    "disclaimer": "Any ancestry worships gods. These are stat-line observations — the deity you choose matters far more than the ancestry you play."
+  },
+
+  "unique": "The Cleric's Divine Font grants bonus spell slots that can only be used for Heal or Harm spells — not anything else. No other class gets this focused amplification. A Cloistered Cleric with a high Charisma score can cast more total healing spells per day than any other class in the game, by a significant margin.",
+
+  "summary": "You serve a deity and wield their power. The Cloistered doctrine makes you the best healer in the game, with extra Heal slots from Divine Font and a full spell list for control and support. The Warpriest doctrine makes you a divine warrior — armor, weapons, martial presence, and still enough spells to swing fights. Your deity shapes your spells, your weapon, your domains, and your whole identity.",
+
+  "character": {
+    "name":       "Father Aldric",
+    "meta":       "Dwarf Cleric of Torag, Level 1",
+    "appearance": "A stocky dwarf in ceremonial plate engraved with hammers and forge-flame, carrying a warhammer in one hand and a holy symbol in the other. He has the calm of someone who genuinely believes the universe has a plan.",
+    "quote":      "Torag's forge gives us strength. Also, I can heal that."
+  },
+
+  "vignettes": {
+    "combat": {
+      "narrative": "The Fighter just took a critical hit and is down to single-digit HP. Aldric doesn't panic — he reaches into his Divine Font.",
+      "mechanic":  "Heal cast with 2 actions targets one living creature within 30 feet, restoring 1d8 + Wisdom modifier HP. Divine Font grants 1 + Charisma modifier extra Heal spell slots per day on top of regular prepared slots. It can also be cast as a 1-action self-heal or a 3-action burst that heals all living creatures in a 30-foot emanation — three very different tools from one spell.",
+      "example":   "Fighter is at 4 HP. Aldric uses a Divine Font slot: Heal (2 actions) — 1d8 + 4 Wisdom = rolls 5, total 9 HP restored. Fighter is back at 13 HP and back in the fight. Aldric still has 3 more Divine Font slots and his regular prepared spells. The party can keep going."
+    },
+    "social": {
+      "narrative": "The dwarven hold's gate is closed. The warden has seen too many strangers lately. Aldric removes his traveling cloak to show the holy symbol on his breastplate.",
+      "mechanic":  "Religion, Diplomacy, and deity-specific Lore are the Cleric's social foundation. In most communities religion is a significant source of authority and trust. Lay on Hands used visibly outside combat — healing a wounded stranger — creates profound immediate goodwill that no Diplomacy roll can fully replicate.",
+      "example":   "Aldric presents his holy symbol and speaks the opening invocation of Torag's forge-prayer. The GM treats this as a Religion check DC 12 to establish legitimate priestly credentials: 1d20 + 5 Wisdom + 4 trained = auto-success. The warden's attitude shifts from Unfriendly to Friendly in seconds. 'Welcome, priest. Your companions are expected. Come in before dark.'"
+    },
+    "puzzle": {
+      "narrative": "A flame burns on an altar that has clearly been burning for decades without fuel. It's the wrong color. Aldric circles it twice without touching it.",
+      "mechanic":  "Religion Recall Knowledge is a Cleric specialty covering deities, divine magic, undead, celestials, fiends, and ritual workings. Detect Magic as a cantrip identifies magical auras in puzzle rooms. At higher levels, Clerics can cast Read Aura and Divine Sense to strip away concealment from magical mechanisms.",
+      "example":   "Detect Magic: the flame radiates divine aura, evocation school, with a secondary necromantic tinge. Religion DC 16: 1d20 + 5 Wisdom + 4 trained = 18. Success — Aldric recognizes the flame as a Rovagug-bound sealing ward; it cannot be extinguished by mundane means, only by a specific counterseal performed with holy water from a river that runs toward the sunrise. He has holy water. He has a compass. This takes four minutes."
+    }
+  },
+
+  "alts": ["champion", "oracle", "bard"]
+}
