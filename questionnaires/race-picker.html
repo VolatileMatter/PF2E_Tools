@@ -34,11 +34,10 @@
     }
     
     .q-text {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 1.35rem;
-  line-height: 1.4;
-}
+      font-weight: 500;
+      font-size: 1.35rem;
+      line-height: 1.4;
+    }
     
     .choice-title {
       font-weight: 600;
@@ -202,126 +201,128 @@
 let ANCESTRIES = [];
 let ancestryMap = new Map();
 
-// Updated questions - "Yes" means "keep these", "No" means "eliminate these"
+// Questions with proper options
+// Each question has: text, sub, type, eliminateOnNo (for avoidance questions), keepOnYes (for requirement questions)
 const QUESTIONS = [
   {
     id: "q0",
     text: "Do you want to limit yourself to only Core Rulebook ancestries?",
     sub: "Core Rulebook ancestries: Dwarf, Elf, Gnome, Goblin, Halfling, Human",
-    keepOnYes: ["core"],           // Yes = only core, so keep core, eliminate non_core
-    eliminateOnNo: ["non_core"]    // No = keep all, so don't eliminate non_core
+    type: "limit",
+    eliminateIfPrefer: ["non_core"]  // "Yes, only Core" eliminates non_core
   },
   {
     id: "q1",
     text: "Is it okay if your ancestry is universally feared, hated, or enslaved in most of Golarion?",
     sub: "Examples: Goblins, Orcs, Kobolds, Drow, and similar ancestries with difficult reputations.",
-    keepOnYes: ["feared_culture"],
-    eliminateOnNo: ["feared_culture"]
+    type: "avoid",
+    avoidTag: "feared_culture"
   },
   {
     id: "q2",
     text: "Is it okay if your character has no conventional soul (reincarnating, construct, or undead)?",
     sub: "Examples: Samsaran, Skeleton, Automaton, Android, Poppet.",
-    keepOnYes: ["no_soul"],
-    eliminateOnNo: ["no_soul"]
+    type: "avoid",
+    avoidTag: "no_soul"
   },
   {
     id: "q3",
     text: "Is it okay if your character has a strong compulsion, taboo, or instinct that limits roleplay?",
     sub: "Examples: Kobolds serving dragons, Tengu hoarding shiny objects, Hobgoblins' rigid discipline.",
-    keepOnYes: ["compulsion"],
-    eliminateOnNo: ["compulsion"]
+    type: "avoid",
+    avoidTag: "compulsion"
   },
   {
     id: "q4",
     text: "Is it okay if you are obviously non-human (fur, scales, feathers, plant body)?",
     sub: "NPCs will often react to you as strange or frightening.",
-    keepOnYes: ["non_human_appearance"],
-    eliminateOnNo: ["non_human_appearance"]
+    type: "avoid",
+    avoidTag: "non_human_appearance"
   },
   {
     id: "q5",
     text: "Do you prefer to be a mammal (warm-blooded with fur/hair)?",
-    sub: "Answer YES to keep only mammals. Answer NO to keep only non-mammals.",
-    keepOnYes: ["mammal"],
-    keepOnNo: ["non_mammal"]
+    sub: "Answer YES to prefer mammals, NO to prefer non-mammals (reptiles, birds, plants, fish).",
+    type: "preference",
+    preferYesTag: "mammal",
+    preferNoTag: "non_mammal"
   },
   {
     id: "q6",
     text: "Is it okay to be a non-mammal (reptile, bird, plant, amphibian, fish)?",
     sub: "Examples: Lizardfolk, Tengu, Leshy, Grippli, Merfolk.",
-    keepOnYes: ["non_mammal"],
-    eliminateOnNo: ["non_mammal"]
+    type: "avoid",
+    avoidTag: "non_mammal"
   },
   {
     id: "q7",
     text: "Is it okay to be Small size (2-4 feet tall)?",
     sub: "Small ancestries: Goblins, Halflings, Kobolds, Ratfolk, Sprites, Gnomes, Leshys.",
-    keepOnYes: ["small"],
-    eliminateOnNo: ["small"]
+    type: "avoid",
+    avoidTag: "small"
   },
   {
     id: "q8",
     text: "Is it okay to be Large size (7-10+ feet tall)?",
     sub: "Large ancestries: Centaur, Minotaur, Jotunborn (giant-kin).",
-    keepOnYes: ["large"],
-    eliminateOnNo: ["large"]
+    type: "avoid",
+    avoidTag: "large"
   },
   {
     id: "q9",
-    text: "Does your ancestry need to have extra useful limbs (more than 2 arms/legs, a functional tail, wings, etc.)?",
-    sub: "YES = your ancestry MUST have extra limbs (centaur, vanara, strix, anadi, etc.). NO = you're fine with standard 2 arms/2 legs.",
-    keepOnYes: ["extra_limbs"],
-    eliminateOnNo: ["extra_limbs"]
+    text: "Does your ancestry need to have extra useful limbs (more than 2 arms/legs, functional tail, wings, etc.)?",
+    sub: "Examples: Centaurs (4 legs), Vanara (prehensile tail), Strix (wings), Anadi (8 legs).",
+    type: "require",
+    requireTag: "extra_limbs"
   },
   {
     id: "q10",
     text: "Is it okay to be a construct or animated object (no need to eat/sleep/breathe)?",
     sub: "Examples: Automaton, Poppet, Skeleton, Android.",
-    keepOnYes: ["construct"],
-    eliminateOnNo: ["construct"]
+    type: "avoid",
+    avoidTag: "construct"
   },
   {
     id: "q11",
     text: "Is it okay to be made of living plant matter (vulnerable to fire & plant magic)?",
     sub: "Examples: Leshy and Ghoran.",
-    keepOnYes: ["plant"],
-    eliminateOnNo: ["plant"]
+    type: "avoid",
+    avoidTag: "plant"
   },
   {
     id: "q12",
     text: "Is it okay to have light blindness (dazzled in sunlight, need goggles or magic to function outdoors)?",
     sub: "Examples: Some Kobold heritages and Drow.",
-    keepOnYes: ["light_blindness"],
-    eliminateOnNo: ["light_blindness"]
+    type: "avoid",
+    avoidTag: "light_blindness"
   },
   {
     id: "q13",
     text: "Do you require darkvision (ability to see in total darkness as if it were dim light)?",
     sub: "Ancestries with darkvision: Dwarf, Elf, Orc, Hobgoblin, Kobold, Fetchling, Strix, Caligni, Surki, Drow, Wayang.",
-    keepOnYes: ["requires_darkvision"],
-    eliminateOnNo: ["requires_darkvision"]
+    type: "require",
+    requireTag: "requires_darkvision"
   },
   {
     id: "q14",
     text: "Is it okay to need to breathe water (can't stay on land long without magic or equipment)?",
     sub: "Aquatic ancestries: Merfolk, Athamaru, Azarketi, Undine.",
-    keepOnYes: ["water_breather"],
-    eliminateOnNo: ["water_breather"]
+    type: "avoid",
+    avoidTag: "water_breather"
   },
   {
     id: "q15",
     text: "Is it okay to be unable to walk on land without assistance (magic, wheelchair, being carried)?",
     sub: "This primarily affects Merfolk and fully aquatic ancestries.",
-    keepOnYes: ["land_disabled"],
-    eliminateOnNo: ["land_disabled"]
+    type: "avoid",
+    avoidTag: "land_disabled"
   },
   {
     id: "q16",
     text: "Is it okay to have body shape restrictions (can't wear standard armor or use standard weapons)?",
     sub: "Affects Centaurs, Strix, Awakened Animals, Nagaji, Merfolk.",
-    keepOnYes: ["body_shape_restriction"],
-    eliminateOnNo: ["body_shape_restriction"]
+    type: "avoid",
+    avoidTag: "body_shape_restriction"
   }
 ];
 
@@ -334,11 +335,6 @@ let primaryStat = "";
 let secondaryStat = "";
 
 async function loadAncestries() {
-  // Debug: Check what path we're on
-  console.log("Current path:", window.location.pathname);
-  console.log("Full URL:", window.location.href);
-  console.log("Base path:", window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')));
-  
   const sourceFiles = [
     "core-rulebook.json",
     "advanced-players-guide.json",
@@ -350,37 +346,22 @@ async function loadAncestries() {
   const loaded = [];
   
   for (const sourceFile of sourceFiles) {
-    // Try different path options
-    const possiblePaths = [
-      `../races/${sourceFile}`,  // Original
-      `races/${sourceFile}`,      // Same directory
-      `/PF2E_TOOLS/races/${sourceFile}`, // Absolute from domain root
-      `./races/${sourceFile}`,    // Current directory
-      `../../races/${sourceFile}` // Up two levels
-    ];
-    
-    for (const testPath of possiblePaths) {
-      try {
-        console.log(`Testing path: ${testPath}`);
-        const res = await fetch(testPath);
-        if (res.ok) {
-          console.log(`✅ Found at: ${testPath}`);
-          const data = await res.json();
-          for (const ancestry of data.ancestries) {
-            ancestry.source = data.source;
-            loaded.push(ancestry);
-            ancestryMap.set(ancestry.id, ancestry);
-          }
-          break; // Found it, stop testing paths for this file
+    try {
+      const res = await fetch(`../races/${sourceFile}`);
+      if (res.ok) {
+        const data = await res.json();
+        for (const ancestry of data.ancestries) {
+          ancestry.source = data.source;
+          loaded.push(ancestry);
+          ancestryMap.set(ancestry.id, ancestry);
         }
-      } catch (e) {
-        // Continue to next path
       }
+    } catch (e) {
+      console.warn(`Could not load ${sourceFile}:`, e);
     }
   }
   
   ANCESTRIES = loaded;
-  console.log(`Total loaded: ${ANCESTRIES.length}`);
   return ANCESTRIES.length > 0;
 }
 
@@ -394,38 +375,30 @@ function computeEliminations() {
     for (let i = 0; i < QUESTIONS.length; i++) {
       const q = QUESTIONS[i];
       const answer = answers[i];
-      if (answer === undefined) continue;
+      if (answer === undefined || answer === "dontcare") continue;
       
-      // Handle Q0 specially (Core Rulebook preference)
-      if (i === 0) {
-        if (answer === true && q.keepOnYes) {
-          // Yes = only core, eliminate non-core
-          for (const tag of q.keepOnYes) {
-            if (!ancestry.tags || !ancestry.tags.includes(tag)) {
-              eliminated = true;
-              eliminationReason = `Q0: You want only Core Rulebook ancestries, but ${ancestry.name} is not from Core Rulebook.`;
-              break;
-            }
-          }
+      // Q0: "Yes, only Core" eliminates non_core
+      if (i === 0 && answer === "yes") {
+        if (!ancestry.tags || !ancestry.tags.includes("core")) {
+          eliminated = true;
+          eliminationReason = `Q0: You want only Core Rulebook ancestries, but ${ancestry.name} is not from Core Rulebook.`;
+          break;
         }
-        if (eliminated) break;
         continue;
       }
       
-      // Handle Q5 specially (mammal vs non-mammal preference)
+      // Q5: Mammal vs non-mammal preference
       if (i === 5) {
-        if (answer === true && q.keepOnYes) {
-          // Yes = keep only mammals
-          let isMammal = ancestry.tags && ancestry.tags.includes("mammal");
-          if (!isMammal) {
+        if (answer === "yes") {
+          // Prefer mammals - eliminate non-mammals
+          if (!ancestry.tags || !ancestry.tags.includes("mammal")) {
             eliminated = true;
             eliminationReason = `Q5: You prefer mammals, but ${ancestry.name} is not a mammal.`;
             break;
           }
-        } else if (answer === false && q.keepOnNo) {
-          // No = keep only non-mammals
-          let isNonMammal = ancestry.tags && ancestry.tags.includes("non_mammal");
-          if (!isNonMammal) {
+        } else if (answer === "no") {
+          // Prefer non-mammals - eliminate mammals
+          if (!ancestry.tags || !ancestry.tags.includes("non_mammal")) {
             eliminated = true;
             eliminationReason = `Q5: You prefer non-mammals, but ${ancestry.name} is a mammal.`;
             break;
@@ -434,22 +407,25 @@ function computeEliminations() {
         continue;
       }
       
-      // For all other questions
-      if (answer === true && q.keepOnYes) {
-        // Yes means "keep these" - no elimination, just continue
-        continue;
-      } else if (answer === false && q.eliminateOnNo) {
-        // No means "eliminate these"
-        for (const tag of q.eliminateOnNo) {
-          if (ancestry.tags && ancestry.tags.includes(tag)) {
-            eliminated = true;
-            eliminationReason = `Q${i}: You said NO to "${q.text.substring(0, 60)}..." - ${ancestry.name} has the tag "${tag}".`;
-            break;
-          }
+      // "avoid" type questions: "No, avoid X" eliminates ancestries with the tag
+      if (q.type === "avoid" && answer === "no") {
+        if (ancestry.tags && ancestry.tags.includes(q.avoidTag)) {
+          eliminated = true;
+          eliminationReason = `Q${i}: You want to avoid ${q.avoidTag.replace(/_/g, ' ')}, and ${ancestry.name} has this trait.`;
+          break;
         }
       }
       
-      if (eliminated) break;
+      // "require" type questions: "Yes, I need X" eliminates ancestries without the tag
+      if (q.type === "require" && answer === "yes") {
+        if (!ancestry.tags || !ancestry.tags.includes(q.requireTag)) {
+          eliminated = true;
+          eliminationReason = `Q${i}: You require ${q.requireTag.replace(/_/g, ' ')}, but ${ancestry.name} does not have this trait.`;
+          break;
+        }
+      }
+      
+      // "limit" type questions are handled above (Q0 only)
     }
     
     if (eliminated) {
@@ -476,6 +452,59 @@ function sortByStatPreference(primary, secondary) {
   });
 }
 
+function getChoiceButtons(q, index) {
+  if (q.type === "avoid") {
+    return `
+      <button class="choice-btn" onclick="answerQuestion('dontcare')">
+        <span class="choice-title">🤷 I don't care</span>
+        <span class="choice-sub">Keep all ancestries regardless of this trait</span>
+      </button>
+      <button class="choice-btn" onclick="answerQuestion('no')">
+        <span class="choice-title">❌ No, avoid these</span>
+        <span class="choice-sub">Eliminate ancestries with this trait</span>
+      </button>
+    `;
+  } else if (q.type === "require") {
+    return `
+      <button class="choice-btn" onclick="answerQuestion('dontcare')">
+        <span class="choice-title">🤷 I don't care</span>
+        <span class="choice-sub">Keep all ancestries regardless of this trait</span>
+      </button>
+      <button class="choice-btn" onclick="answerQuestion('yes')">
+        <span class="choice-title">✅ Yes, I require this</span>
+        <span class="choice-sub">Only keep ancestries with this trait</span>
+      </button>
+    `;
+  } else if (q.type === "limit") {
+    return `
+      <button class="choice-btn" onclick="answerQuestion('dontcare')">
+        <span class="choice-title">🤷 I don't care</span>
+        <span class="choice-sub">Keep all ancestries from any source</span>
+      </button>
+      <button class="choice-btn" onclick="answerQuestion('yes')">
+        <span class="choice-title">✅ Yes, only Core Rulebook</span>
+        <span class="choice-sub">Only keep ancestries from the Core Rulebook</span>
+      </button>
+    `;
+  } else if (q.type === "preference") {
+    return `
+      <button class="choice-btn" onclick="answerQuestion('dontcare')">
+        <span class="choice-title">🤷 I don't care</span>
+        <span class="choice-sub">Keep both mammals and non-mammals</span>
+      </button>
+      <button class="choice-btn" onclick="answerQuestion('yes')">
+        <span class="choice-title">🐾 Yes, prefer mammals</span>
+        <span class="choice-sub">Only keep warm-blooded ancestries with fur/hair</span>
+      </button>
+      <button class="choice-btn" onclick="answerQuestion('no')">
+        <span class="choice-title">🦎 No, prefer non-mammals</span>
+        <span class="choice-sub">Only keep reptiles, birds, plants, fish, etc.</span>
+      </button>
+    `;
+  }
+  return "";
+}
+
 function renderQuestion() {
   const q = QUESTIONS[currentQuestionIndex];
   const answeredCount = answers.filter(a => a !== undefined).length;
@@ -495,14 +524,7 @@ function renderQuestion() {
       <div class="q-text">${q.text}</div>
       ${q.sub ? `<div class="q-sub">${q.sub}</div>` : ""}
       <div class="choices" style="margin-top: 1.5rem;">
-        <button class="choice-btn" onclick="answerQuestion(true)">
-          <span class="choice-title">✅ Yes</span>
-          <span class="choice-sub">${currentQuestionIndex === 0 ? "I'm open to any source book" : (currentQuestionIndex === 9 ? "Yes, I need extra limbs" : "Yes, this is okay with me")}</span>
-        </button>
-        <button class="choice-btn" onclick="answerQuestion(false)">
-          <span class="choice-title">❌ No</span>
-          <span class="choice-sub">${currentQuestionIndex === 0 ? "Only Core Rulebook ancestries" : (currentQuestionIndex === 9 ? "No, standard 2 arms/2 legs is fine" : "No, eliminate ancestries with this trait")}</span>
-        </button>
+        ${getChoiceButtons(q, currentQuestionIndex)}
       </div>
     </div>
   `;
