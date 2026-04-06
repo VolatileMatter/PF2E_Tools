@@ -22,7 +22,7 @@
     {
       "id": "centaur",
       "name": "Centaur",
-      "tags": ["non_core", "mammal", "large", "non_human_appearance", "body_shape_restriction", "no_functional_tail"],
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "body_shape_restriction", "extra_limbs"],
       "description": "Powerful creatures with the upper body of a human and the lower body of a horse, galloping across plains and defending their herds.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=174",
       "boosts": ["Strength", "Wisdom", "Free"],
@@ -31,7 +31,7 @@
     {
       "id": "dragonet",
       "name": "Dragonet",
-      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_functional_tail", "feared_culture"],
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "feared_culture", "extra_limbs"],
       "description": "Tiny dragon-kin with leathery wings, scaly hides, and a draconic lineage that gives them a breath weapon and an instinct to hoard treasure.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=242",
       "boosts": ["Dexterity", "Charisma", "Free"],
@@ -67,7 +67,7 @@
     {
       "id": "jotunborn",
       "name": "Jotunborn",
-      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture", "no_functional_tail"],
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture"],
       "description": "Giant-kin with the blood of frost giants, fire giants, or stone giants flowing through their veins, towering over most humanoids.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=185",
       "boosts": ["Strength", "Constitution", "Free"],
@@ -76,7 +76,7 @@
     {
       "id": "merfolk",
       "name": "Merfolk",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "land_disabled", "body_shape_restriction", "no_functional_tail"],
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "land_disabled", "body_shape_restriction"],
       "description": "Aquatic people with fish-like tails instead of legs, ruling underwater kingdoms and rarely venturing onto land.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=92",
       "boosts": ["Constitution", "Charisma", "Free"],
@@ -85,7 +85,7 @@
     {
       "id": "minotaur",
       "name": "Minotaur",
-      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture", "compulsion", "no_functional_tail"],
+      "tags": ["non_core", "mammal", "large", "non_human_appearance", "feared_culture", "compulsion"],
       "description": "Bull-headed giants with powerful horns, labyrinthine minds, and an instinctive drive to hunt, charge, and track their prey.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=203",
       "boosts": ["Strength", "Constitution", "Free"],
@@ -103,7 +103,7 @@
     {
       "id": "sarangay",
       "name": "Sarangay",
-      "tags": ["non_core", "mammal", "non_human_appearance", "compulsion", "no_functional_tail"],
+      "tags": ["non_core", "mammal", "non_human_appearance", "compulsion", "extra_limbs"],
       "description": "Water-buffalo people with golden horns and a powerful curse that compels them to seek out and hoard wealth and gems.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=257",
       "boosts": ["Strength", "Constitution", "Free"],
@@ -112,7 +112,7 @@
     {
       "id": "shoony",
       "name": "Shoony",
-      "tags": ["non_core", "mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "tags": ["non_core", "mammal", "small", "non_human_appearance"],
       "description": "Small, pig-faced people who value community, farming, and simple pleasures, with snouts perfect for rooting out truffles.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=99",
       "boosts": ["Constitution", "Charisma", "Free"],
@@ -121,7 +121,7 @@
     {
       "id": "surki",
       "name": "Surki",
-      "tags": ["non_core", "non_mammal", "small", "requires_darkvision", "non_human_appearance", "feared_culture", "no_functional_tail"],
+      "tags": ["non_core", "non_mammal", "small", "requires_darkvision", "non_human_appearance", "feared_culture", "extra_limbs"],
       "description": "Insectile humanoids with chitinous exoskeletons, multiple arms, and a hive-mind culture that terrifies surface-dwellers.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=276",
       "boosts": ["Strength", "Wisdom", "Free"],
@@ -139,7 +139,7 @@
     {
       "id": "tripkee",
       "name": "Tripkee",
-      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "no_functional_tail"],
+      "tags": ["non_core", "non_mammal", "small", "non_human_appearance"],
       "description": "Small, agile frog-people with adhesive toe-pads, long jumping tongues, and a deep connection to swamps and wetlands.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=53",
       "boosts": ["Dexterity", "Wisdom", "Free"],
@@ -166,7 +166,7 @@
     {
       "id": "awakened-animal",
       "name": "Awakened Animal",
-      "tags": ["non_core", "mammal", "non_human_appearance", "body_shape_restriction", "no_soul"],
+      "tags": ["non_core", "mammal", "non_human_appearance", "body_shape_restriction", "no_soul", "extra_limbs"],
       "description": "Animals granted human-like intelligence and speech through magic, walking on two legs or four depending on their original form.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=224",
       "boosts": ["Free", "Free", "Free"],
@@ -175,7 +175,7 @@
     {
       "id": "athamaru",
       "name": "Athamaru",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "no_functional_tail"],
+      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather"],
       "description": "Aquatic humanoids with fish-like scales, webbed hands, and gills, who build coral cities beneath the waves.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=289",
       "boosts": ["Strength", "Constitution", "Free"],

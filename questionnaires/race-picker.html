@@ -333,6 +333,11 @@ let primaryStat = "";
 let secondaryStat = "";
 
 async function loadAncestries() {
+  // Debug: Check what path we're on
+  console.log("Current path:", window.location.pathname);
+  console.log("Full URL:", window.location.href);
+  console.log("Base path:", window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/')));
+  
   const sourceFiles = [
     "core-rulebook.json",
     "advanced-players-guide.json",
@@ -341,34 +346,40 @@ async function loadAncestries() {
     "miscellaneous-ancestries.json"
   ];
   
-  // Detect if we're on GitHub Pages
-  const isGitHubPages = window.location.hostname.includes('github.io');
-  const basePath = isGitHubPages ? '/PF2E_TOOLS' : '..';
-  
   const loaded = [];
   
   for (const sourceFile of sourceFiles) {
-    try {
-      const url = `${basePath}/races/${sourceFile}`;
-      console.log(`Fetching: ${url}`); // Debug
-      
-      const res = await fetch(url);
-      if (res.ok) {
-        const data = await res.json();
-        for (const ancestry of data.ancestries) {
-          ancestry.source = data.source;
-          loaded.push(ancestry);
-          ancestryMap.set(ancestry.id, ancestry);
+    // Try different path options
+    const possiblePaths = [
+      `../races/${sourceFile}`,  // Original
+      `races/${sourceFile}`,      // Same directory
+      `/PF2E_TOOLS/races/${sourceFile}`, // Absolute from domain root
+      `./races/${sourceFile}`,    // Current directory
+      `../../races/${sourceFile}` // Up two levels
+    ];
+    
+    for (const testPath of possiblePaths) {
+      try {
+        console.log(`Testing path: ${testPath}`);
+        const res = await fetch(testPath);
+        if (res.ok) {
+          console.log(`✅ Found at: ${testPath}`);
+          const data = await res.json();
+          for (const ancestry of data.ancestries) {
+            ancestry.source = data.source;
+            loaded.push(ancestry);
+            ancestryMap.set(ancestry.id, ancestry);
+          }
+          break; // Found it, stop testing paths for this file
         }
-      } else {
-        console.warn(`Could not load ${sourceFile} - status: ${res.status}`);
+      } catch (e) {
+        // Continue to next path
       }
-    } catch (e) {
-      console.warn(`Error loading ${sourceFile}:`, e);
     }
   }
   
   ANCESTRIES = loaded;
+  console.log(`Total loaded: ${ANCESTRIES.length}`);
   return ANCESTRIES.length > 0;
 }
 
