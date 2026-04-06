@@ -29,7 +29,6 @@
       color: var(--gold);
     }
 
-    /* Sans-serif font for questions and choices */
     .q-card, .choice-btn, .stat-prompt, .q-text, .q-sub, .choice-title, .choice-sub {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
@@ -50,12 +49,10 @@
       font-size: 0.85rem;
     }
     
-    /* Keep headers in Cinzel for style */
     .site-header h1, .site-header .eyebrow, .result-name, .box-title, .section-title {
       font-family: 'Cinzel', serif;
     }
     
-    /* Stat prompt styling */
     .stat-prompt {
       background: var(--gold-faint);
       border: 1px solid var(--gold-border);
@@ -97,14 +94,9 @@
       cursor: pointer;
     }
 
-    .stat-select select:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
-
     .ability-scores-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -179,24 +171,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    .ancestry-link:hover {
-      background: var(--blue-bg);
-      border-color: var(--blue-text);
-    }
-
-    .results-header {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .results-count {
-      font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
-      color: var(--gold);
-      margin-top: 0.5rem;
-    }
-
     .elimination-log {
       background: rgba(0, 0, 0, 0.3);
       border-radius: var(--radius);
@@ -205,25 +179,6 @@
       font-size: 0.8rem;
       color: var(--text-muted);
       font-family: 'Inter', sans-serif;
-    }
-
-    .elimination-log details summary {
-      cursor: pointer;
-      color: var(--text-muted);
-      font-family: 'Inter', sans-serif;
-    }
-
-    .elimination-log details summary:hover {
-      color: var(--gold);
-    }
-
-    .elimination-log ul {
-      margin-top: 0.5rem;
-      padding-left: 1.5rem;
-    }
-
-    .restart-btn {
-      margin-top: 1rem;
     }
   </style>
 </head>
@@ -235,7 +190,7 @@
   <header class="site-header">
     <div class="eyebrow">Pathfinder Second Edition</div>
     <h1>What Ancestry Should I Play?</h1>
-    <p class="subtitle">Find your perfect heritage through 16 questions</p>
+    <p class="subtitle">Find your perfect heritage through 17 questions</p>
   </header>
 
   <div id="app"></div>
@@ -243,134 +198,139 @@
 </div>
 
 <script>
-// ============================================================
-//  ANCESTRY DATASET
-//  Will be loaded from /races/*.json files
-//  Each ancestry has: name, source, tags, description, aon, boosts, flaws
-// ============================================================
-
 let ANCESTRIES = [];
-let ancestryMap = new Map(); // id -> ancestry object
+let ancestryMap = new Map();
 
-// Question definitions with elimination rules
-// IMPORTANT: "No" ALWAYS eliminates ancestries with the listed tags (except Q0 which is inverted)
-// Each question has: text, eliminateIfNo (array of tags that eliminate when answering No)
+// Updated questions - "Yes" means "keep these", "No" means "eliminate these"
 const QUESTIONS = [
   {
     id: "q0",
-    text: "Are you willing to play an ancestry from outside the Core Rulebook?",
+    text: "Do you want to limit yourself to only Core Rulebook ancestries?",
     sub: "Core Rulebook ancestries: Dwarf, Elf, Gnome, Goblin, Halfling, Human",
-    eliminateIfNo: ["non_core"]  // "No" = only core, so eliminate non_core
+    keepOnYes: ["core"],           // Yes = only core, so keep core, eliminate non_core
+    eliminateOnNo: ["non_core"]    // No = keep all, so don't eliminate non_core
   },
   {
     id: "q1",
-    text: "Are you comfortable playing an ancestry that is universally feared, hated, or enslaved in most of Golarion, facing constant social penalties and potential violence from NPCs?",
+    text: "Is it okay if your ancestry is universally feared, hated, or enslaved in most of Golarion?",
     sub: "Examples: Goblins, Orcs, Kobolds, Drow, and similar ancestries with difficult reputations.",
-    eliminateIfNo: ["feared_culture"]  // "No" = not comfortable, eliminate feared cultures
+    keepOnYes: ["feared_culture"],
+    eliminateOnNo: ["feared_culture"]
   },
   {
     id: "q2",
-    text: "Are you comfortable with your character having no conventional soul — being a reincarnating being, a constructed spark, or an undead — and facing potential anti-undead or anti-construct magic?",
-    sub: "Examples: Samsaran, Skeleton, Automaton, Android, Poppet, and other soul-less beings.",
-    eliminateIfNo: ["no_soul"]  // "No" = not comfortable, eliminate soulless
+    text: "Is it okay if your character has no conventional soul (reincarnating, construct, or undead)?",
+    sub: "Examples: Samsaran, Skeleton, Automaton, Android, Poppet.",
+    keepOnYes: ["no_soul"],
+    eliminateOnNo: ["no_soul"]
   },
   {
     id: "q3",
-    text: "Are you okay with your character having a strong compulsion, taboo, or instinct that limits roleplay choices?",
+    text: "Is it okay if your character has a strong compulsion, taboo, or instinct that limits roleplay?",
     sub: "Examples: Kobolds serving dragons, Tengu hoarding shiny objects, Hobgoblins' rigid discipline.",
-    eliminateIfNo: ["compulsion"]  // "No" = not okay, eliminate compulsive ancestries
+    keepOnYes: ["compulsion"],
+    eliminateOnNo: ["compulsion"]
   },
   {
     id: "q4",
-    text: "Are you comfortable being obviously non-human — with fur, scales, feathers, a plant body, or an animal-like face — that cannot be fully hidden?",
+    text: "Is it okay if you are obviously non-human (fur, scales, feathers, plant body)?",
     sub: "NPCs will often react to you as strange or frightening.",
-    eliminateIfNo: ["non_human_appearance"]  // "No" = want to pass as human, eliminate obvious non-humans
+    keepOnYes: ["non_human_appearance"],
+    eliminateOnNo: ["non_human_appearance"]
   },
   {
     id: "q5",
-    text: "Do you prefer an ancestry that is warm-blooded and mammal-like (with fur or hair) over reptile, bird, plant, amphibian, or fish ancestries?",
-    sub: "Answer YES for mammals (humans, dwarves, catfolk, etc.) or NO for non-mammals (lizardfolk, tengu, leshy, etc.)",
-    eliminateIfNo: ["non_mammal"]  // "No" = prefer mammals, eliminate non-mammals
+    text: "Do you prefer to be a mammal (warm-blooded with fur/hair)?",
+    sub: "Answer YES to keep only mammals. Answer NO to keep only non-mammals.",
+    keepOnYes: ["mammal"],
+    keepOnNo: ["non_mammal"]
   },
   {
     id: "q6",
-    text: "Are you willing to play a Small ancestry (2–4 feet tall), with reduced reach and different grappling and mount options?",
-    sub: "Small ancestries include Goblins, Halflings, Kobolds, Ratfolk, Sprites, Gnomes, and Leshys.",
-    eliminateIfNo: ["small"]  // "No" = not willing, eliminate small ancestries
+    text: "Is it okay to be a non-mammal (reptile, bird, plant, amphibian, fish)?",
+    sub: "Examples: Lizardfolk, Tengu, Leshy, Grippli, Merfolk.",
+    keepOnYes: ["non_mammal"],
+    eliminateOnNo: ["non_mammal"]
   },
   {
     id: "q7",
-    text: "Are you willing to play a Large ancestry (7–10+ feet tall), with challenges fitting in buildings and using standard equipment?",
-    sub: "Large ancestries include Centaur, Minotaur, and Jotunborn (giant-kin).",
-    eliminateIfNo: ["large"]  // "No" = not willing, eliminate large ancestries
+    text: "Is it okay to be Small size (2-4 feet tall)?",
+    sub: "Small ancestries: Goblins, Halflings, Kobolds, Ratfolk, Sprites, Gnomes, Leshys.",
+    keepOnYes: ["small"],
+    eliminateOnNo: ["small"]
   },
   {
     id: "q8",
-    text: "For animal-person ancestries, do you require a functional tail that can hold items, provide balance, or make unarmed attacks?",
-    sub: "Ancestries with functional tails: Vanara (monkeys), Kobolds (some), Lizardfolk (tail heritage), Dragonets, Sarangay.",
-    eliminateIfNo: ["no_functional_tail"]  // "No" = require functional tail, eliminate those without
+    text: "Is it okay to be Large size (7-10+ feet tall)?",
+    sub: "Large ancestries: Centaur, Minotaur, Jotunborn (giant-kin).",
+    keepOnYes: ["large"],
+    eliminateOnNo: ["large"]
   },
   {
     id: "q9",
-    text: "Are you comfortable playing a construct or animated object (body of wood, metal, stone, or bones) that doesn't need to eat, sleep, or breathe?",
-    sub: "Examples: Automaton, Poppet, Skeleton, Android.",
-    eliminateIfNo: ["construct"]  // "No" = not comfortable, eliminate constructs
+    text: "Does your ancestry need to have extra useful limbs (more than 2 arms/legs, a functional tail, wings, etc.)?",
+    sub: "YES = your ancestry MUST have extra limbs (centaur, vanara, strix, anadi, etc.). NO = you're fine with standard 2 arms/2 legs.",
+    keepOnYes: ["extra_limbs"],
+    eliminateOnNo: ["extra_limbs"]
   },
   {
     id: "q10",
-    text: "Are you comfortable playing an ancestry made of living plant matter, with vulnerability to fire and plant-affecting magic?",
-    sub: "Examples: Leshy and Ghoran.",
-    eliminateIfNo: ["plant"]  // "No" = not comfortable, eliminate plant ancestries
+    text: "Is it okay to be a construct or animated object (no need to eat/sleep/breathe)?",
+    sub: "Examples: Automaton, Poppet, Skeleton, Android.",
+    keepOnYes: ["construct"],
+    eliminateOnNo: ["construct"]
   },
   {
     id: "q11",
-    text: "Are you okay with having light blindness (being dazzled or blinded in sunlight) and needing goggles or magic to function outdoors during the day?",
-    sub: "Examples: Some Kobold heritages and Drow.",
-    eliminateIfNo: ["light_blindness"]  // "No" = not okay, eliminate light-sensitive ancestries
+    text: "Is it okay to be made of living plant matter (vulnerable to fire & plant magic)?",
+    sub: "Examples: Leshy and Ghoran.",
+    keepOnYes: ["plant"],
+    eliminateOnNo: ["plant"]
   },
   {
     id: "q12",
-    text: "Do you require darkvision (the ability to see in total darkness as if it were dim light)?",
-    sub: "Ancestries with darkvision as a core trait: Dwarf, Elf, Orc, Hobgoblin, Kobold, Fetchling, Strix, Caligni, Surki, Drow, Wayang.",
-    eliminateIfNo: ["requires_darkvision"]  // "No" = don't require it, eliminate those defined by darkvision
+    text: "Is it okay to have light blindness (dazzled in sunlight, need goggles or magic to function outdoors)?",
+    sub: "Examples: Some Kobold heritages and Drow.",
+    keepOnYes: ["light_blindness"],
+    eliminateOnNo: ["light_blindness"]
   },
   {
     id: "q13",
-    text: "Are you comfortable needing to breathe water, and being unable to stay out of water for long periods without magic or equipment?",
-    sub: "Aquatic ancestries: Merfolk, Athamaru, Azarketi, Undine (water planar scion).",
-    eliminateIfNo: ["water_breather"]  // "No" = not comfortable, eliminate water breathers
+    text: "Do you require darkvision (ability to see in total darkness as if it were dim light)?",
+    sub: "Ancestries with darkvision: Dwarf, Elf, Orc, Hobgoblin, Kobold, Fetchling, Strix, Caligni, Surki, Drow, Wayang.",
+    keepOnYes: ["requires_darkvision"],
+    eliminateOnNo: ["requires_darkvision"]
   },
   {
     id: "q14",
-    text: "Are you okay with not being able to walk on land without assistance (magic, wheelchair, being carried), limiting you to water or specialized terrain?",
-    sub: "This primarily affects Merfolk and fully aquatic ancestries.",
-    eliminateIfNo: ["land_disabled"]  // "No" = not okay, eliminate land-disabled ancestries
+    text: "Is it okay to need to breathe water (can't stay on land long without magic or equipment)?",
+    sub: "Aquatic ancestries: Merfolk, Athamaru, Azarketi, Undine.",
+    keepOnYes: ["water_breather"],
+    eliminateOnNo: ["water_breather"]
   },
   {
     id: "q15",
-    text: "Are you comfortable being unable to wear most standard armor or use standard weapons due to non-humanoid body shape (hooves, wings, no hands, snake lower body)?",
-    sub: "Affects Centaurs, Strix, Awakened Animals, Nagaji, Merfolk, and similar.",
-    eliminateIfNo: ["body_shape_restriction"]  // "No" = not comfortable, eliminate those with body restrictions
+    text: "Is it okay to be unable to walk on land without assistance (magic, wheelchair, being carried)?",
+    sub: "This primarily affects Merfolk and fully aquatic ancestries.",
+    keepOnYes: ["land_disabled"],
+    eliminateOnNo: ["land_disabled"]
+  },
+  {
+    id: "q16",
+    text: "Is it okay to have body shape restrictions (can't wear standard armor or use standard weapons)?",
+    sub: "Affects Centaurs, Strix, Awakened Animals, Nagaji, Merfolk.",
+    keepOnYes: ["body_shape_restriction"],
+    eliminateOnNo: ["body_shape_restriction"]
   }
 ];
 
-// ============================================================
-//  QUIZ STATE
-// ============================================================
-
 let currentQuestionIndex = 0;
-let answers = []; // array of boolean answers
+let answers = [];
 let eliminatedAncestries = new Set();
 let remainingAncestries = [];
-
-// Stat preference state (after questions)
 let showStatPrompt = false;
 let primaryStat = "";
 let secondaryStat = "";
-
-// ============================================================
-//  LOAD ANCESTRY DATA
-// ============================================================
 
 async function loadAncestries() {
   const sourceFiles = [
@@ -381,11 +341,18 @@ async function loadAncestries() {
     "miscellaneous-ancestries.json"
   ];
   
+  // Detect if we're on GitHub Pages
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basePath = isGitHubPages ? '/PF2E_TOOLS' : '..';
+  
   const loaded = [];
   
   for (const sourceFile of sourceFiles) {
     try {
-      const res = await fetch(`../races/${sourceFile}`);
+      const url = `${basePath}/races/${sourceFile}`;
+      console.log(`Fetching: ${url}`); // Debug
+      
+      const res = await fetch(url);
       if (res.ok) {
         const data = await res.json();
         for (const ancestry of data.ancestries) {
@@ -394,7 +361,7 @@ async function loadAncestries() {
           ancestryMap.set(ancestry.id, ancestry);
         }
       } else {
-        console.warn(`Could not load ${sourceFile}`);
+        console.warn(`Could not load ${sourceFile} - status: ${res.status}`);
       }
     } catch (e) {
       console.warn(`Error loading ${sourceFile}:`, e);
@@ -404,10 +371,6 @@ async function loadAncestries() {
   ANCESTRIES = loaded;
   return ANCESTRIES.length > 0;
 }
-
-// ============================================================
-//  ELIMINATION LOGIC
-// ============================================================
 
 function computeEliminations() {
   eliminatedAncestries.clear();
@@ -421,12 +384,54 @@ function computeEliminations() {
       const answer = answers[i];
       if (answer === undefined) continue;
       
-      // If answer is No, eliminate ancestries with tags in eliminateIfNo
-      if (answer === false && q.eliminateIfNo) {
-        for (const tag of q.eliminateIfNo) {
+      // Handle Q0 specially (Core Rulebook preference)
+      if (i === 0) {
+        if (answer === true && q.keepOnYes) {
+          // Yes = only core, eliminate non-core
+          for (const tag of q.keepOnYes) {
+            if (!ancestry.tags || !ancestry.tags.includes(tag)) {
+              eliminated = true;
+              eliminationReason = `Q0: You want only Core Rulebook ancestries, but ${ancestry.name} is not from Core Rulebook.`;
+              break;
+            }
+          }
+        }
+        if (eliminated) break;
+        continue;
+      }
+      
+      // Handle Q5 specially (mammal vs non-mammal preference)
+      if (i === 5) {
+        if (answer === true && q.keepOnYes) {
+          // Yes = keep only mammals
+          let isMammal = ancestry.tags && ancestry.tags.includes("mammal");
+          if (!isMammal) {
+            eliminated = true;
+            eliminationReason = `Q5: You prefer mammals, but ${ancestry.name} is not a mammal.`;
+            break;
+          }
+        } else if (answer === false && q.keepOnNo) {
+          // No = keep only non-mammals
+          let isNonMammal = ancestry.tags && ancestry.tags.includes("non_mammal");
+          if (!isNonMammal) {
+            eliminated = true;
+            eliminationReason = `Q5: You prefer non-mammals, but ${ancestry.name} is a mammal.`;
+            break;
+          }
+        }
+        continue;
+      }
+      
+      // For all other questions
+      if (answer === true && q.keepOnYes) {
+        // Yes means "keep these" - no elimination, just continue
+        continue;
+      } else if (answer === false && q.eliminateOnNo) {
+        // No means "eliminate these"
+        for (const tag of q.eliminateOnNo) {
           if (ancestry.tags && ancestry.tags.includes(tag)) {
             eliminated = true;
-            eliminationReason = `Q${i}: "${q.text.substring(0, 50)}..." - answered No, ancestry has tag "${tag}"`;
+            eliminationReason = `Q${i}: You said NO to "${q.text.substring(0, 60)}..." - ${ancestry.name} has the tag "${tag}".`;
             break;
           }
         }
@@ -438,55 +443,26 @@ function computeEliminations() {
     if (eliminated) {
       eliminatedAncestries.add(ancestry.id);
       ancestry.eliminationReason = eliminationReason;
-    } else {
-      ancestry.eliminationReason = null;
     }
   }
   
   remainingAncestries = ANCESTRIES.filter(a => !eliminatedAncestries.has(a.id));
 }
 
-// ============================================================
-//  STAT-BASED SORTING
-// ============================================================
-
 function scoreAncestryForStats(ancestry, primary, secondary) {
   let score = 0;
-  
-  // +100 for boost in primary stat
-  if (ancestry.boosts && ancestry.boosts.includes(primary)) {
-    score += 100;
-  }
-  
-  // +10 for boost in secondary stat (only if primary already matched)
-  if (score >= 100 && ancestry.boosts && ancestry.boosts.includes(secondary)) {
-    score += 10;
-  }
-  
-  // -50 for flaw in primary stat
-  if (ancestry.flaws && ancestry.flaws.includes(primary)) {
-    score -= 50;
-  }
-  
-  // -5 for flaw in secondary stat
-  if (ancestry.flaws && ancestry.flaws.includes(secondary)) {
-    score -= 5;
-  }
-  
+  if (ancestry.boosts && ancestry.boosts.includes(primary)) score += 100;
+  if (score >= 100 && ancestry.boosts && ancestry.boosts.includes(secondary)) score += 10;
+  if (ancestry.flaws && ancestry.flaws.includes(primary)) score -= 50;
+  if (ancestry.flaws && ancestry.flaws.includes(secondary)) score -= 5;
   return score;
 }
 
 function sortByStatPreference(primary, secondary) {
   remainingAncestries.sort((a, b) => {
-    const scoreA = scoreAncestryForStats(a, primary, secondary);
-    const scoreB = scoreAncestryForStats(b, primary, secondary);
-    return scoreB - scoreA;
+    return scoreAncestryForStats(b, primary, secondary) - scoreAncestryForStats(a, primary, secondary);
   });
 }
-
-// ============================================================
-//  RENDER FUNCTIONS
-// ============================================================
 
 function renderQuestion() {
   const q = QUESTIONS[currentQuestionIndex];
@@ -509,11 +485,11 @@ function renderQuestion() {
       <div class="choices" style="margin-top: 1.5rem;">
         <button class="choice-btn" onclick="answerQuestion(true)">
           <span class="choice-title">✅ Yes</span>
-          <span class="choice-sub">I'm okay with this / This describes me</span>
+          <span class="choice-sub">${currentQuestionIndex === 0 ? "I'm open to any source book" : (currentQuestionIndex === 9 ? "Yes, I need extra limbs" : "Yes, this is okay with me")}</span>
         </button>
         <button class="choice-btn" onclick="answerQuestion(false)">
           <span class="choice-title">❌ No</span>
-          <span class="choice-sub">I want to avoid ancestries with this trait</span>
+          <span class="choice-sub">${currentQuestionIndex === 0 ? "Only Core Rulebook ancestries" : (currentQuestionIndex === 9 ? "No, standard 2 arms/2 legs is fine" : "No, eliminate ancestries with this trait")}</span>
         </button>
       </div>
     </div>
@@ -535,12 +511,11 @@ function renderStatPrompt() {
       <div class="q-text" style="margin-bottom: 1rem;">What are your most important ability scores?</div>
       <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-family: 'Inter', sans-serif;">
         We'll sort the remaining ancestries by which give bonuses to your chosen stats.
-        Ancestries with a boost in your #1 stat rise to the top.
       </p>
       
       <div class="stat-selector">
         <div class="stat-select">
-          <label>🎯 Primary Ability Score (most important)</label>
+          <label>🎯 Primary Ability Score</label>
           <select id="primaryStat">
             <option value="">Select...</option>
             ${stats.map(s => `<option value="${s}">${s}</option>`).join("")}
@@ -594,17 +569,14 @@ function renderResults() {
         <div class="result-icon-wrap" style="background: var(--gold)">🌍</div>
         <div>
           <div class="result-name">Your Ancestry Matches</div>
-          <div class="result-tagline">Based on your ${answers.filter(a => a !== undefined).length} answers</div>
+          <div class="result-tagline">Based on your answers</div>
         </div>
       </div>
       
       <div class="result-body">
-        <div class="results-header">
-          <div class="section-text" style="font-family: 'Inter', sans-serif;">
-            After applying your preferences, <strong>${remainingCount}</strong> ancestries remain 
-            (${eliminationCount} eliminated).
-          </div>
-          <div class="results-count">✨ Sorted by ${primaryStat} → ${secondaryStat} synergy</div>
+        <div style="margin-bottom: 1rem;">
+          <div style="font-family: 'Inter', sans-serif;">After applying your preferences, <strong>${remainingCount}</strong> ancestries remain (${eliminationCount} eliminated).</div>
+          <div style="font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); margin-top: 0.5rem;">✨ Sorted by ${primaryStat} → ${secondaryStat} synergy</div>
         </div>
         
         ${eliminationCount > 0 ? `
@@ -621,7 +593,7 @@ function renderResults() {
         </div>
         
         <div class="result-footer" style="margin-top: 2rem;">
-          <button class="btn btn-gold restart-btn" onclick="restartQuiz()">↩ Start Over</button>
+          <button class="btn btn-gold" onclick="restartQuiz()">↩ Start Over</button>
         </div>
       </div>
     </div>
@@ -649,10 +621,6 @@ function renderError(message) {
   `;
 }
 
-// ============================================================
-//  NAVIGATION FUNCTIONS
-// ============================================================
-
 function answerQuestion(answer) {
   answers[currentQuestionIndex] = answer;
   
@@ -660,9 +628,7 @@ function answerQuestion(answer) {
     currentQuestionIndex++;
     renderQuestion();
   } else {
-    // All questions answered, compute eliminations and show stat prompt
     computeEliminations();
-    showStatPrompt = true;
     renderStatPrompt();
   }
 }
@@ -691,15 +657,10 @@ function restartQuiz() {
   currentQuestionIndex = 0;
   answers = [];
   eliminatedAncestries.clear();
-  showStatPrompt = false;
   primaryStat = "";
   secondaryStat = "";
   renderQuestion();
 }
-
-// ============================================================
-//  INITIALIZATION
-// ============================================================
 
 async function init() {
   renderLoading();
