@@ -22,7 +22,7 @@
     {
       "id": "kobold",
       "name": "Kobold",
-      "tags": ["non_core", "non_mammal", "small", "feared_culture", "compulsion", "non_human_appearance", "light_blindness"],
+      "tags": ["non_core", "reptilian", "small", "feared_culture", "compulsion", "non_human_appearance", "light_blindness"],
       "description": "Small, reptilian tunnel-dwellers who revere dragons, love traps, and possess an almost pathological need to serve powerful creatures.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=36",
       "boosts": ["Dexterity", "Charisma", "Free"],
@@ -31,7 +31,7 @@
     {
       "id": "lizardfolk",
       "name": "Lizardfolk",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_functional_tail"],
+      "tags": ["non_core", "reptilian", "non_human_appearance", "no_functional_tail"],
       "description": "Scaly, cold-blooded hunters with a pragmatic worldview, powerful jaws, and an instinctive connection to swamps and jungles.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=37",
       "boosts": ["Strength", "Wisdom", "Free"],

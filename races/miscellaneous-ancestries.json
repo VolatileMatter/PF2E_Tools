@@ -31,7 +31,7 @@
     {
       "id": "dragonet",
       "name": "Dragonet",
-      "tags": ["non_core", "non_mammal", "small", "non_human_appearance", "feared_culture", "extra_limbs"],
+      "tags": ["non_core", "reptilian", "small", "non_human_appearance", "feared_culture", "extra_limbs"],
       "description": "Tiny dragon-kin with leathery wings, scaly hides, and a draconic lineage that gives them a breath weapon and an instinct to hoard treasure.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=242",
       "boosts": ["Dexterity", "Charisma", "Free"],
@@ -58,7 +58,7 @@
     {
       "id": "ifrit",
       "name": "Ifrit",
-      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "elemental"],
       "description": "Planar scions touched by the elemental fire of the Plane of Fire, with reddish skin, fiery hair, and an innate resistance to heat.",
       "aon": "https://2e.aonprd.com/Heritages.aspx?ID=56",
       "boosts": ["Charisma", "Free", "Free"],
@@ -76,7 +76,7 @@
     {
       "id": "merfolk",
       "name": "Merfolk",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather", "land_disabled", "body_shape_restriction"],
+      "tags": ["non_core", "reptilian", "non_human_appearance", "water_breather", "land_disabled", "body_shape_restriction"],
       "description": "Aquatic people with fish-like tails instead of legs, ruling underwater kingdoms and rarely venturing onto land.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=92",
       "boosts": ["Constitution", "Charisma", "Free"],
@@ -94,7 +94,7 @@
     {
       "id": "oread",
       "name": "Oread",
-      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "elemental"],
       "description": "Planar scions touched by the elemental earth of the Plane of Earth, with crystalline growths, stone-like skin, and grounded personalities.",
       "aon": "https://2e.aonprd.com/Heritages.aspx?ID=55",
       "boosts": ["Strength", "Wisdom", "Free"],
@@ -121,7 +121,7 @@
     {
       "id": "surki",
       "name": "Surki",
-      "tags": ["non_core", "non_mammal", "small", "requires_darkvision", "non_human_appearance", "feared_culture", "extra_limbs"],
+      "tags": ["non_core", "insect", "small", "requires_darkvision", "non_human_appearance", "feared_culture", "extra_limbs"],
       "description": "Insectile humanoids with chitinous exoskeletons, multiple arms, and a hive-mind culture that terrifies surface-dwellers.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=276",
       "boosts": ["Strength", "Wisdom", "Free"],
@@ -130,7 +130,7 @@
     {
       "id": "sylph",
       "name": "Sylph",
-      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance"],
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "elemental"],
       "description": "Planar scions touched by the elemental air of the Plane of Air, with pale blue skin, windswept hair, and an innate lightness.",
       "aon": "https://2e.aonprd.com/Heritages.aspx?ID=54",
       "boosts": ["Dexterity", "Intelligence", "Free"],
@@ -139,7 +139,7 @@
     {
       "id": "tripkee",
       "name": "Tripkee",
-      "tags": ["non_core", "non_mammal", "small", "non_human_appearance"],
+      "tags": ["non_core", "amphibian", "small", "non_human_appearance"],
       "description": "Small, agile frog-people with adhesive toe-pads, long jumping tongues, and a deep connection to swamps and wetlands.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=53",
       "boosts": ["Dexterity", "Wisdom", "Free"],
@@ -148,7 +148,7 @@
     {
       "id": "undine",
       "name": "Undine",
-      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "water_breather"],
+      "tags": ["non_core", "mammal", "no_soul", "non_human_appearance", "water_breather", "elemental"],
       "description": "Planar scions touched by the elemental water of the Plane of Water, with blue-green skin, webbed digits, and the ability to breathe underwater.",
       "aon": "https://2e.aonprd.com/Heritages.aspx?ID=57",
       "boosts": ["Dexterity", "Constitution", "Free"],
@@ -175,7 +175,7 @@
     {
       "id": "athamaru",
       "name": "Athamaru",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "water_breather"],
+      "tags": ["non_core", "reptilian", "non_human_appearance", "water_breather"],
       "description": "Aquatic humanoids with fish-like scales, webbed hands, and gills, who build coral cities beneath the waves.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=289",
       "boosts": ["Strength", "Constitution", "Free"],

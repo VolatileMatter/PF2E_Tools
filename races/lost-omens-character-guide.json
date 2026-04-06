@@ -13,7 +13,7 @@
     {
       "id": "tengu",
       "name": "Tengu",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "compulsion", "no_functional_tail"],
+      "tags": ["non_core", "avian", "non_human_appearance", "compulsion", "no_functional_tail"],
       "description": "Crow-like bird-folk with a love for storytelling, blades, and a curse that makes them obsessed with collecting shiny objects.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=42",
       "boosts": ["Dexterity", "Free", "Free"],
@@ -31,7 +31,7 @@
     {
       "id": "lizardfolk",
       "name": "Lizardfolk",
-      "tags": ["non_core", "non_mammal", "non_human_appearance", "no_functional_tail"],
+      "tags": ["non_core", "reptilian", "non_human_appearance", "no_functional_tail"],
       "description": "Ancient reptilian people who ruled the world before the age of humans, with powerful jaws and a deep connection to nature.",
       "aon": "https://2e.aonprd.com/Ancestries.aspx?ID=37",
       "boosts": ["Strength", "Wisdom", "Free"],

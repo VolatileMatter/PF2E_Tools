@@ -237,18 +237,24 @@ const QUESTIONS = [
     sub: "NPCs may react to you as strange or frightening. Most non-core ancestries have this trait.",
     tag: "non_human_appearance"
   },
-  {
-    id: "q_mammal",
-    text: "Mammal ancestries (warm-blooded with fur/hair)?",
-    sub: "Examples: Dwarf, Elf, Human, Catfolk, Ratfolk, Orc, Hobgoblin, Kitsune, Fetchling, Kashrishi, Samsaran, Vanara, plus many planetouched.",
-    tag: "mammal"
-  },
-  {
-    id: "q_non_mammal",
-    text: "Non-mammal ancestries (reptile, bird, plant, amphibian, fish)?",
-    sub: "Examples: Lizardfolk, Kobold, Tengu, Leshy, Anadi, Azarketi, Conrasu, Fleshwarp, Goloma, Grippli, Nagaji, Shisk, Sprite, Strix, Dragonet, Merfolk, Surki, Tripkee, Athamaru.",
-    tag: "non_mammal"
-  },
+{
+  id: "q_mammal",
+  text: "Mammal ancestries (warm-blooded with fur/hair)?",
+  sub: "Examples: Dwarf, Elf, Human, Catfolk, Ratfolk, Orc, Hobgoblin, Kitsune, Fetchling, Kashrishi, Samsaran, Vanara, plus many planetouched. Answer 'WITH' for mammals, 'WITHOUT' for reptilian/cold-blooded.",
+  tag: "mammal"
+},
+{
+  id: "q_reptilian",
+  text: "Reptilian or cold-blooded ancestries (scales, ectothermic, reptile-like)?",
+  sub: "Examples: Lizardfolk, Kobold, Tengu, Nagaji, Dragonet, Strix, Merfolk, Azarketi, Conrasu, Fleshwarp, Goloma, Grippli, Shisk, Sprite, Surki, Tripkee, Athamaru.",
+  tag: "reptilian"
+},
+{
+  id: "q_elemental",
+  text: "Elemental-touched ancestries (connected to air, earth, fire, or water)?",
+  sub: "Examples: Ifrit (fire), Oread (earth), Sylph (air), Undine (water). These scions carry the essence of the elemental planes in their blood.",
+  tag: "elemental"
+},
   {
     id: "q_small",
     text: "Small size ancestries (2-4 feet tall)?",
